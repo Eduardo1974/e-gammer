@@ -2142,7 +2142,7 @@
 								"$ref": "AAAAAAFTcQ8EkK8/mKw="
 							},
 							"name": "pro_quantidade",
-							"type": "double",
+							"type": "int",
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": false,
