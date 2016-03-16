@@ -8,3 +8,12 @@
 1458000766574	Copy package
 1458000778969	Delete element
 1458000792704	Delete element
+1458152443666	Rename type 'Client'
+1458154108601	Rename type 'DesenvolvedorDTO'
+1458154291300	Delete element
+1458154347743	Delete element
+1458154466945	Rename package 'br.com.fatec.egammer.api.servico'
+1458154481077	Rename package 'br.com.fatec.egammer.api.entidade'
+1458154500109	Rename package 'br.com.fatec.egammer.teste.servico'
+1458154572591	Delete element
+1458155340412	Rename package 'br.com.fatec.egammer.teste'

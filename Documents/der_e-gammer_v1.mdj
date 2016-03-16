@@ -227,11 +227,11 @@
 									"containerExtending": false,
 									"left": 456,
 									"top": 197,
-									"width": 229.41162109375,
+									"width": 235.20068359375,
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
-									"text": "Produto",
+									"text": "Game",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
 								},
@@ -265,7 +265,7 @@
 											"containerExtending": false,
 											"left": 461,
 											"top": 220,
-											"width": 219.41162109375,
+											"width": 225.20068359375,
 											"height": 13,
 											"autoResize": false
 										},
@@ -289,7 +289,7 @@
 											"containerExtending": false,
 											"left": 461,
 											"top": 235,
-											"width": 219.41162109375,
+											"width": 225.20068359375,
 											"height": 13,
 											"autoResize": false
 										},
@@ -313,7 +313,7 @@
 											"containerExtending": false,
 											"left": 461,
 											"top": 250,
-											"width": 219.41162109375,
+											"width": 225.20068359375,
 											"height": 13,
 											"autoResize": false
 										},
@@ -337,7 +337,7 @@
 											"containerExtending": false,
 											"left": 461,
 											"top": 265,
-											"width": 219.41162109375,
+											"width": 225.20068359375,
 											"height": 13,
 											"autoResize": false
 										},
@@ -361,7 +361,7 @@
 											"containerExtending": false,
 											"left": 461,
 											"top": 280,
-											"width": 219.41162109375,
+											"width": 225.20068359375,
 											"height": 13,
 											"autoResize": false
 										},
@@ -385,7 +385,7 @@
 											"containerExtending": false,
 											"left": 461,
 											"top": 295,
-											"width": 219.41162109375,
+											"width": 225.20068359375,
 											"height": 13,
 											"autoResize": false
 										},
@@ -409,7 +409,7 @@
 											"containerExtending": false,
 											"left": 461,
 											"top": 310,
-											"width": 219.41162109375,
+											"width": 225.20068359375,
 											"height": 13,
 											"autoResize": false
 										},
@@ -433,7 +433,7 @@
 											"containerExtending": false,
 											"left": 461,
 											"top": 325,
-											"width": 219.41162109375,
+											"width": 225.20068359375,
 											"height": 13,
 											"autoResize": false
 										},
@@ -457,7 +457,7 @@
 											"containerExtending": false,
 											"left": 461,
 											"top": 340,
-											"width": 219.41162109375,
+											"width": 225.20068359375,
 											"height": 13,
 											"autoResize": false
 										},
@@ -481,7 +481,7 @@
 											"containerExtending": false,
 											"left": 461,
 											"top": 355,
-											"width": 219.41162109375,
+											"width": 225.20068359375,
 											"height": 13,
 											"autoResize": false
 										},
@@ -505,7 +505,7 @@
 											"containerExtending": false,
 											"left": 461,
 											"top": 370,
-											"width": 219.41162109375,
+											"width": 225.20068359375,
 											"height": 13,
 											"autoResize": false
 										}
@@ -521,7 +521,7 @@
 									"containerExtending": false,
 									"left": 456,
 									"top": 215,
-									"width": 229.41162109375,
+									"width": 235.20068359375,
 									"height": 173,
 									"autoResize": false
 								}
@@ -537,7 +537,7 @@
 							"containerExtending": false,
 							"left": 456,
 							"top": 192,
-							"width": 229.41162109375,
+							"width": 235.20068359375,
 							"height": 196,
 							"autoResize": false,
 							"nameLabel": {
@@ -1115,7 +1115,7 @@
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
-									"text": "Desenvolvedor",
+									"text": "Desenvolvedora",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
 								},
@@ -1985,7 +1985,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFLzntJC6EktCk="
 					},
-					"name": "Produto",
+					"name": "Game",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
@@ -2085,7 +2085,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFTcQ8EkK8/mKw="
 							},
-							"name": "pro_codigo",
+							"name": "gam_codigo",
 							"type": "int",
 							"length": 0,
 							"primaryKey": true,
@@ -2099,7 +2099,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFTcQ8EkK8/mKw="
 							},
-							"name": "pro_titulo",
+							"name": "gam_titulo",
 							"type": "varchar",
 							"length": 0,
 							"primaryKey": false,
@@ -2113,7 +2113,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFTcQ8EkK8/mKw="
 							},
-							"name": "pro_descricao",
+							"name": "gam_descricao",
 							"type": "varchar",
 							"length": 0,
 							"primaryKey": false,
@@ -2127,7 +2127,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFTcQ8EkK8/mKw="
 							},
-							"name": "pro_preco",
+							"name": "gam_preco",
 							"type": "double",
 							"length": 0,
 							"primaryKey": false,
@@ -2141,7 +2141,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFTcQ8EkK8/mKw="
 							},
-							"name": "pro_quantidade",
+							"name": "gam_quantidade",
 							"type": "int",
 							"length": 0,
 							"primaryKey": false,
@@ -2155,7 +2155,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFTcQ8EkK8/mKw="
 							},
-							"name": "pro_imagem",
+							"name": "gam_imagem",
 							"type": "blob",
 							"length": 0,
 							"primaryKey": false,
@@ -2169,7 +2169,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFTcQ8EkK8/mKw="
 							},
-							"name": "pro_classificacao",
+							"name": "gam_classificacao",
 							"type": "int",
 							"length": 0,
 							"primaryKey": false,
@@ -2183,7 +2183,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFTcQ8EkK8/mKw="
 							},
-							"name": "pro_data_lancamento",
+							"name": "gam_data_lancamento",
 							"type": "date",
 							"length": 0,
 							"primaryKey": false,
@@ -2197,7 +2197,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFTcQ8EkK8/mKw="
 							},
-							"name": "pro_plataforma",
+							"name": "gam_plataforma",
 							"type": "varchar",
 							"length": 0,
 							"primaryKey": false,
@@ -2403,7 +2403,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFTcQ8mXq9ZM8s="
 							},
-							"name": "pro_codigo",
+							"name": "gam_codigo",
 							"type": "int",
 							"length": 0,
 							"primaryKey": false,
@@ -2503,7 +2503,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFLzntJC6EktCk="
 					},
-					"name": "Desenvolvedor",
+					"name": "Desenvolvedora",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
