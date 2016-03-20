@@ -1,0 +1,24 @@
+package br.com.fatec.egammer.test.comum;
+
+import org.junit.After;
+import org.junit.BeforeClass;
+
+import br.com.fatec.egammer.api.entity.Game;
+import br.com.fatec.egammer.api.entity.ItemPedido;
+import br.com.fatec.egammer.api.entity.Pedido;
+import br.com.spektro.minispring.core.dbmapper.ConfigDBMapper;
+import br.com.spektro.minispring.core.implfinder.ContextSpecifier;
+import br.com.spektro.minispring.core.liquibaseRunner.LiquibaseRunnerService;
+import br.com.spektro.minispring.core.query.QueryExecutorService;
+
+public class TestBase {
+
+	@BeforeClass
+	public static void setUp() {
+		ContextSpecifier.setContext("br.com.fatec.egammer");
+		ConfigDBMapper.setDefaultConnectionName("oracle");
+		LiquibaseRunnerService.run();
+	}
+
+	
+}

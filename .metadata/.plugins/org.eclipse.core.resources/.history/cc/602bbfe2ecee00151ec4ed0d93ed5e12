@@ -8,10 +8,9 @@ import org.junit.Test;
 
 import br.com.fatec.egammer.api.dao.ClienteDAO;
 import br.com.fatec.egammer.api.entity.Cliente;
-import br.com.fatec.egammer.test.comum.TestBase;
 import br.com.spektro.minispring.core.implfinder.ImplFinder;
 
-public class ClienteDAOTest extends TestBase{
+public class ClienteDAOTest {
 	private ClienteDAO dao;
 
 	@Before
@@ -93,21 +92,6 @@ public class ClienteDAOTest extends TestBase{
 		Assert.assertEquals("usuario 2", encontrados.get(1).getCli_nome());
 		Assert.assertEquals("senha_2", encontrados.get(1).getCli_senha());
 	}
-	
-	public void runTests() {
-		this.setDown();
-		this.config();
-		this.testSave();
-		this.setDown();
-		this.config();
-		this.testUpdate();
-		this.setDown();
-		this.config();
-		this.testFindAll();
-		this.setDown();
-		this.config();
-		this.testDelete();
-		this.setDown();
-	}
+
 
 }

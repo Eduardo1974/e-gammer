@@ -27,7 +27,6 @@ INDEX VERSION 1.127+D:\labIV\e-gammer\.metadata\.plugins\org.eclipse.jdt.core
 533897122.index
 1606608047.index
 2085746493.index
-3480244147.index
 246518661.index
 1893439535.index
 2671045963.index

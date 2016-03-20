@@ -17,10 +17,10 @@
 	<classpathentry kind="lib" path="D:/labIV/dependencias/jstl-1.2.jar"/>
 	<classpathentry kind="lib" path="D:/labIV/dependencias/liquibase_3_4_1.jar"/>
 	<classpathentry kind="lib" path="D:/labIV/dependencias/mini-spring-2.3.X.jar"/>
-	<classpathentry kind="lib" path="D:/labIV/dependencias/mysql-connector-java-5.1.37-bin.jar"/>
 	<classpathentry kind="lib" path="D:/labIV/dependencias/postgresql-9.4-1201.jdbc4.jar"/>
 	<classpathentry kind="lib" path="D:/labIV/dependencias/reflections-0.9.11-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="D:/labIV/dependencias/servlet-api.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/ojdbc6.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

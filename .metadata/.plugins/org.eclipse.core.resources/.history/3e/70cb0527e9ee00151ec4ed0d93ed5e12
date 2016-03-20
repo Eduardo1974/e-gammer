@@ -1,6 +1,5 @@
 package br.com.fatec.egammer.core.dao;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -9,6 +8,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.mysql.jdbc.Connection;
 
 public class DAOUtils {
 	public static String completarClausulaValues(Class driverClass, int qtdParametros,
