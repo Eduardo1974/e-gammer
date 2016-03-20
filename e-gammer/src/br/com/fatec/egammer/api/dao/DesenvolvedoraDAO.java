@@ -10,11 +10,11 @@ public interface DesenvolvedoraDAO {
 
 	void update(Desenvolvedora desenvolvedora);
 
-	void delete(Long id);
+	void delete(Long codigo);
 
-	Desenvolvedora findById(Long id);
+	Desenvolvedora buscarCodigo(Long codigo);
 
-	List<Desenvolvedora> findAll();
+	List<Desenvolvedora> buscarTodasDesenvolvedoras();
 
 
 }

@@ -29,9 +29,9 @@ public class ClienteDAOTest {
 		usu_salvar.setCli_nome("carlos");
 		usu_salvar.setCli_senha("senha_carlos");
 
-		Long id = this.dao.save(usu_salvar);
+		Long codigo = this.dao.save(usu_salvar);
 
-		Cliente usu_salvo = this.dao.findById(id);
+		Cliente usu_salvo = this.dao.buscarCodigo(codigo);
 
 		Assert.assertNotNull(usu_salvo);
 		Assert.assertEquals("carlos", usu_salvo.getCli_nome());
@@ -44,14 +44,14 @@ public class ClienteDAOTest {
 		usu_salvar.setCli_nome("carlos");
 		usu_salvar.setCli_senha("senha_carlos");
 
-		Long id = this.dao.save(usu_salvar);
-		Cliente usu_atualizar = this.dao.findById(id);
+		Long codigo = this.dao.save(usu_salvar);
+		Cliente usu_atualizar = this.dao.buscarCodigo(codigo);
 
 		usu_atualizar.setCli_nome("carlos oliveira");
 		usu_atualizar.setCli_senha("nova_senha");
 
 		this.dao.update(usu_atualizar);
-		Cliente usu_atualizado = this.dao.findById(id);
+		Cliente usu_atualizado = this.dao.buscarCodigo(codigo);
 
 		Assert.assertNotNull(usu_atualizado);
 		Assert.assertEquals("carlos oliveira", usu_atualizado.getCli_nome());
@@ -67,7 +67,7 @@ public class ClienteDAOTest {
 		Long id = this.dao.save(usu_salvar);
 		this.dao.delete(id);
 
-		Cliente usu_deletado = this.dao.findById(id);
+		Cliente usu_deletado = this.dao.buscarCodigo(id);
 
 		Assert.assertNull(usu_deletado);
 	}
@@ -84,7 +84,7 @@ public class ClienteDAOTest {
 		this.dao.save(cli1);
 		this.dao.save(cli2);
 
-		List<Cliente> encontrados = this.dao.findAll();
+		List<Cliente> encontrados = this.dao.buscarTodosClientes();
 
 		Assert.assertEquals(2, encontrados.size());
 		Assert.assertEquals("usuario 1", encontrados.get(0).getCli_nome());

@@ -10,11 +10,11 @@ public interface ClienteDAO {
 
 	void update(Cliente cliente);
 
-	void delete(Long id);
+	void delete(Long codigo);
 
-	Cliente findById(Long id);
+	Cliente buscarCodigo(Long codigo);
 
-	List<Cliente> findAll();
+	List<Cliente> buscarTodosClientes();
 
 
 }

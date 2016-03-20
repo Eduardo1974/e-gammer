@@ -10,11 +10,11 @@ public interface GameDAO {
 
 	void update(Game game);
 
-	void delete(Long id);
+	void delete(Long codigo);
 
-	Game findById(Long id);
+	Game buscarCodigo(Long codigo);
 
-	List<Game> findAll();
+	List<Game> buscarTodosGames();
 
 
 }
