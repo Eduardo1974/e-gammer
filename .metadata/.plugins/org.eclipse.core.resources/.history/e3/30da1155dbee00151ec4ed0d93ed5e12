@@ -1,0 +1,19 @@
+package br.com.fatec.egammer.api.dao;
+
+import java.util.List;
+import br.com.fatec.egammer.api.entity.Pedido;
+
+public interface PedidoDAO {
+
+	Long save(Pedido pedido);
+
+	void update(Pedido pedido);
+
+	void delete(Long codigo);
+
+	Pedido bucaPorCodigo(Long codigo);
+
+	List<Pedido> buscarTodos();
+
+	List<Pedido> buscarTodosPorCodigo(List<Long> codigos);
+}
