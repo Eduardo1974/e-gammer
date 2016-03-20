@@ -27,7 +27,7 @@ public class Game {
 	private Date gam_data_lancamento;
 	private String gam_plataforma;
 	private Genero genero;
-	private Desenvolverdora desenvolvedora;
+	private Desenvolvedora desenvolvedora;
 	
 	public Long getGam_codigo() {
 		return gam_codigo;
@@ -89,10 +89,10 @@ public class Game {
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
-	public Desenvolverdora getDesenvolvedora() {
+	public Desenvolvedora getDesenvolvedora() {
 		return desenvolvedora;
 	}
-	public void setDesenvolvedora(Desenvolverdora desenvolvedora) {
+	public void setDesenvolvedora(Desenvolvedora desenvolvedora) {
 		this.desenvolvedora = desenvolvedora;
 	}
 	public static String getTable() {

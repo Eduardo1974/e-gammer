@@ -3,6 +3,9 @@ package br.com.fatec.egammer.test.comum;
 import org.junit.After;
 import org.junit.BeforeClass;
 
+import br.com.fatec.egammer.api.entity.Game;
+import br.com.fatec.egammer.api.entity.ItemPedido;
+import br.com.fatec.egammer.api.entity.Pedido;
 import br.com.spektro.minispring.core.dbmapper.ConfigDBMapper;
 import br.com.spektro.minispring.core.implfinder.ContextSpecifier;
 import br.com.spektro.minispring.core.liquibaseRunner.LiquibaseRunnerService;
@@ -12,26 +15,35 @@ public class TestBase {
 
 	@BeforeClass
 	public static void setUp() {
-		ContextSpecifier.setContext("br.com.fatec.projetoweb");
-		ConfigDBMapper.setDefaultConnectionName("test");
+		ContextSpecifier.setContext("br.com.fatec.egammer");
+		ConfigDBMapper.setDefaultConnectionName("oracle");
 		LiquibaseRunnerService.run();
 	}
 
 	@After
 	public void setDown() {
-		QueryExecutorService.executeQuery("DELETE FROM PROJETO_USUARIO_GRUPO_PAPEL");
-		QueryExecutorService.executeQuery("DELETE FROM PROJETO_USUARIO_PAPEL");
-//		QueryExecutorService.executeQuery("DELETE FROM " + Papel.TABLE);
-//		QueryExecutorService.executeQuery("DELETE FROM " + Grupo.TABLE);
-//		QueryExecutorService.executeQuery("DELETE FROM " + Usuario.TABLE);
+		QueryExecutorService.executeQuery("DELETE FROM " + ItemPedido.TABLE);
+		QueryExecutorService.executeQuery("DELETE FROM " + Pedido.TABLE);
+		QueryExecutorService.executeQuery("DELETE FROM " + Game.TABLE);
+//		QueryExecutorService.executeQuery("DELETE FROM " + Genero.TABLE);
+//		QueryExecutorService.executeQuery("DELETE FROM " + Desenvolvedora.TABLE);
+//		QueryExecutorService.executeQuery("DELETE FROM " + Cliente.TABLE);
 
 		QueryExecutorService
-				.executeQuery("ALTER SEQUENCE SEQ_PROJETO_PAPEL RESTART WITH 1");
+				.executeQuery("ALTER SEQUENCE SEQ_GAME WITH 1");
 		QueryExecutorService
-				.executeQuery("ALTER SEQUENCE SEQ_PROJETO_GRUPO_PAPEL RESTART WITH 1");
+				.executeQuery("ALTER SEQUENCE SEQ_GENERO RESTART WITH 1");
 		QueryExecutorService
-				.executeQuery("ALTER SEQUENCE SEQ_PROJETO_USUARIO RESTART WITH 1");
+				.executeQuery("ALTER SEQUENCE SEQ_DESENVOLVEDORA RESTART WITH 1");
+		QueryExecutorService
+				.executeQuery("ALTER SEQUENCE SEQ_CLIENTE RESTART WITH 1");
+		QueryExecutorService
+				.executeQuery("ALTER SEQUENCE SEQ_PEDIDO RESTART WITH 1");
+		QueryExecutorService
+				.executeQuery("ALTER SEQUENCE SEQ_ITEM_DO_PEDIDO RESTART WITH 1");
+
 		;
+		
 	}
 
 }

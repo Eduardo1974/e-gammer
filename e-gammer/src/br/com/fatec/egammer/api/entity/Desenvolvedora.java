@@ -1,6 +1,6 @@
 package br.com.fatec.egammer.api.entity;
 
-public class Desenvolverdora {
+public class Desenvolvedora {
 	
 	public static final String TABLE = "DESENVOLVEDORA";
 	public static final String COL_CODIGO = "DES_CODIGO";
