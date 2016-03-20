@@ -6,16 +6,16 @@ public class Game {
 	
 	public static final String TABLE = "GAME";
 	public static final String COL_CODIGO = "GAM_CODIGO";
-	public static final String COL_TITULO = "GAM_TITULO";
-	public static final String COL_DESCRICAO = "GAM_DESCRICAO";
-	public static final String COL_PRECO = "GAM_PRECO";
-	public static final String COL_QUANTIDADE = "GAM_QUANTIDADE";
-	public static final String COL_IMAGEM = "GAM_IMAGEM";
-	public static final String COL_CLASSIFICACAO = "GAM_CLASSIFICACAO";
-	public static final String COL_DATA_LANCAMENTO = "GAM_FATA_LANCAMENTO";
-	public static final String COL_PLATAFORMA = "GAM_PLATAFORMA";
-	public static final String COL_GEN_CODIGO = "GEN_CODIGO";
-	public static final String COL_DES_CODIGO = "DES_CODIGO";
+	public static final String COL_NOME = "NOME";
+	public static final String COL_DESCRICAO = "DESCRICAO";
+	public static final String COL_ID = "ID";
+	public static final String COL_NOME = "NOME";
+	public static final String COL_DESCRICAO = "DESCRICAO";
+	public static final String COL_ID = "ID";
+	public static final String COL_NOME = "NOME";
+	public static final String COL_DESCRICAO = "DESCRICAO";
+	public static final String COL_ID = "ID";
+	public static final String COL_NOME = "NOME";
 	
 	private Long gam_codigo;
 	private String gam_titulo;
@@ -26,8 +26,9 @@ public class Game {
 	private Integer gam_classificacao;
 	private Date gam_data_lancamento;
 	private String gam_plataforma;
-	private Genero genero;
-	private Desenvolverdora desenvolvedora;
+	private Genero gen_codigo;
+	private Desenvolverdora des_codigo;
+	
 	
 	public Long getGam_codigo() {
 		return gam_codigo;
@@ -83,52 +84,16 @@ public class Game {
 	public void setGam_plataforma(String gam_plataforma) {
 		this.gam_plataforma = gam_plataforma;
 	}
-	public Genero getGenero() {
-		return genero;
+	public Genero getGen_codigo() {
+		return gen_codigo;
 	}
-	public void setGenero(Genero genero) {
-		this.genero = genero;
+	public void setGen_codigo(Genero gen_codigo) {
+		this.gen_codigo = gen_codigo;
 	}
-	public Desenvolverdora getDesenvolvedora() {
-		return desenvolvedora;
+	public Desenvolverdora getDes_codigo() {
+		return des_codigo;
 	}
-	public void setDesenvolvedora(Desenvolverdora desenvolvedora) {
-		this.desenvolvedora = desenvolvedora;
-	}
-	public static String getTable() {
-		return TABLE;
-	}
-	public static String getColCodigo() {
-		return COL_CODIGO;
-	}
-	public static String getColTitulo() {
-		return COL_TITULO;
-	}
-	public static String getColDescricao() {
-		return COL_DESCRICAO;
-	}
-	public static String getColPreco() {
-		return COL_PRECO;
-	}
-	public static String getColQuantidade() {
-		return COL_QUANTIDADE;
-	}
-	public static String getColImagem() {
-		return COL_IMAGEM;
-	}
-	public static String getColClassificacao() {
-		return COL_CLASSIFICACAO;
-	}
-	public static String getColDataLancamento() {
-		return COL_DATA_LANCAMENTO;
-	}
-	public static String getColPlataforma() {
-		return COL_PLATAFORMA;
-	}
-	public static String getColGenCodigo() {
-		return COL_GEN_CODIGO;
-	}
-	public static String getColDesCodigo() {
-		return COL_DES_CODIGO;
+	public void setDes_codigo(Desenvolverdora des_codigo) {
+		this.des_codigo = des_codigo;
 	}
 }

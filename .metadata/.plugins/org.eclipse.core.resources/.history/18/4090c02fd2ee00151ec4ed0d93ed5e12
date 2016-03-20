@@ -1,0 +1,12 @@
+package br.com.fatec.egammer.api.entity;
+
+public class Game {
+	
+	private Long gam_codigo;
+	private String gam_titulo;
+	private String gam_desccricao;
+	private Double gam_preco;
+	private Integer gam_quantidade;
+	private String imagem;
+	
+}

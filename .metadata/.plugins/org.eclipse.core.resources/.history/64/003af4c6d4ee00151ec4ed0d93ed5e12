@@ -2,10 +2,6 @@ package br.com.fatec.egammer.api.entity;
 
 public class Genero {
 	
-	public static final String TABLE = "GENERO";
-	public static final String COL_CODIGO = "GEN_CODIGO";
-	public static final String COL_NOME = "GEN_NOME";
-	
 	private Long gen_codigo;
 	private String gen_nome;
 	

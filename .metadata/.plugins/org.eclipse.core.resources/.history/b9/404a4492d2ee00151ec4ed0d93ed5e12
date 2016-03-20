@@ -1,0 +1,17 @@
+package br.com.fatec.egammer.api.entity;
+
+import java.sql.Date;
+
+public class Game {
+	
+	private Long gam_codigo;
+	private String gam_titulo;
+	private String gam_desccricao;
+	private Double gam_preco;
+	private Integer gam_quantidade;
+	private String gam_imagem;
+	private Integer gam_classificacao;
+	private Date gam_data_lancamento;
+	
+	
+}

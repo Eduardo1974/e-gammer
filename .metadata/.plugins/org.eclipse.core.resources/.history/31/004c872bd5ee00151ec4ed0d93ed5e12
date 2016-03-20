@@ -1,0 +1,16 @@
+package br.com.fatec.egammer.api.entity;
+
+public class ItemPedido {
+	
+	public static final String TABLE = "GAME";
+	public static final String COL_CODIGO = "GAM_CODIGO";
+	public static final String COL_TITULO = "GAM_TITULO";
+	
+	private Long itp_codigo;
+	private Double itp_preco_unitario;
+	private Integer itp_quantidade;
+	private  Double ipt_preco_total;
+	private Game gam_coigo;
+	private Pedido ped_codigo;
+	
+}

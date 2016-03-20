@@ -14,8 +14,8 @@ public class ItemPedido {
 	private Double itp_preco_unitario;
 	private Integer itp_quantidade;
 	private  Double ipt_preco_total;
-	private Game game;
-	private Pedido pedido;
+	private Game gam_coigo;
+	private Pedido ped_codigo;
 	
 	public Long getItp_codigo() {
 		return itp_codigo;
@@ -41,17 +41,17 @@ public class ItemPedido {
 	public void setIpt_preco_total(Double ipt_preco_total) {
 		this.ipt_preco_total = ipt_preco_total;
 	}
-	public Game getGame() {
-		return game;
+	public Game getGam_coigo() {
+		return gam_coigo;
 	}
-	public void setGame(Game game) {
-		this.game = game;
+	public void setGam_coigo(Game gam_coigo) {
+		this.gam_coigo = gam_coigo;
 	}
-	public Pedido getPedido() {
-		return pedido;
+	public Pedido getPed_codigo() {
+		return ped_codigo;
 	}
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
+	public void setPed_codigo(Pedido ped_codigo) {
+		this.ped_codigo = ped_codigo;
 	}
 	public static String getTable() {
 		return TABLE;
@@ -61,17 +61,5 @@ public class ItemPedido {
 	}
 	public static String getColTitulo() {
 		return COL_TITULO;
-	}
-	public static String getColQuantidade() {
-		return COL_QUANTIDADE;
-	}
-	public static String getColPrecoTatal() {
-		return COL_PRECO_TATAL;
-	}
-	public static String getColGamCodigo() {
-		return COL_GAM_CODIGO;
-	}
-	public static String getColPedCodigo() {
-		return COL_PED_CODIGO;
 	}
 }

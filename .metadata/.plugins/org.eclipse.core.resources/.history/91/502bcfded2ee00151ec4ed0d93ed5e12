@@ -3,9 +3,9 @@ package br.com.fatec.egammer.api.entity;
 public class Cliente {
 	
 	public static final String TABLE = "CLIENTE";
-	public static final String COL_CODIGO = "CLI_CODIGO";
+	public static final String COL_ID = "CLI_CODIGO";
 	public static final String COL_NOME = "CLI_NOME";
-	public static final String COL_SENHA = "CLI_SENHA";
+	public static final String COL_DESCRICAO = "CLI_SENHA";
 	
 	private Long cli_codigo;
 	private String cli_nome;
