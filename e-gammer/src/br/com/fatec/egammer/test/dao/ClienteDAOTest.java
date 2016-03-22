@@ -94,7 +94,7 @@ public class ClienteDAOTest extends TestBase{
 		Assert.assertEquals("senha_2", encontrados.get(1).getCli_senha());
 	}
 	
-	public void runTests() {
+	/*public void runTests() {
 		this.setDown();
 		this.config();
 		this.testSave();
@@ -108,6 +108,6 @@ public class ClienteDAOTest extends TestBase{
 		this.config();
 		this.testDelete();
 		this.setDown();
-	}
+	}*/
 
 }
