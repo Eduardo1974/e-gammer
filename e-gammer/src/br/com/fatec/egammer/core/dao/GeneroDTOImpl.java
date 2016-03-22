@@ -141,8 +141,27 @@ public class GeneroDTOImpl implements GeneroDAO{
 
 	@Override
 	public List<Genero> buscarTodosPorCodigo(List<Long> codigos) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Genero> generos = Lists.newArrayList();
+		if (codigos.size() > 0) {
+			Connection conn = null;
+			PreparedStatement stmt = null;
+			try {
+				conn = ConfigDBMapper.getDefaultConnection();
+				String args = DAOUtils.preparePlaceHolders(codigos.size());
+				String sql = "SELECT * FROM " + Genero.TABLE + " WHERE "
+						+ Genero.COL_CODIGO + " IN (" + args + ")";
+				stmt = conn.prepareStatement(sql);
+				DAOUtils.setValues(stmt, codigos);
+				ResultSet rs = stmt.executeQuery();
+				generos = this.criarGeneros(rs);
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			} finally {
+				DbUtils.closeQuietly(conn);
+				DbUtils.closeQuietly(stmt);
+			}
+		}
+		return generos;
 	}
 	private List<Genero> criarGeneros(ResultSet rs) throws SQLException {
 		List<Genero> generos = Lists.newArrayList();

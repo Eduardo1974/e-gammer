@@ -6,6 +6,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.google.common.collect.Lists;
+
 import br.com.fatec.egammer.api.dao.GeneroDAO;
 import br.com.fatec.egammer.api.entity.Genero;
 import br.com.fatec.egammer.test.comum.TestBase;
@@ -63,7 +65,7 @@ public class GeneroDAOTest extends TestBase{
 	}
 
 	@Test
-	public void testFindAll() {
+	public void testBuscarTodos() {
 		Genero genero1 = new Genero();
 		genero1.setGen_nome("Ação");
 		
@@ -79,6 +81,26 @@ public class GeneroDAOTest extends TestBase{
 		Assert.assertEquals(2, encontrados.size());
 		Assert.assertEquals("Ação", encontrados.get(0).getGen_nome());
 		Assert.assertEquals("Terror", encontrados.get(1).getGen_nome());
+	}
 	
+	@Test
+	public void testBuscarTodosCodigo() {
+		Genero genero1 = new Genero();
+		genero1.setGen_nome("Ação");
+		
+		Genero genero2 = new Genero();
+		genero2.setGen_nome("Terror");
+	
+
+		Long id1 =  this.dao.save(genero1);
+		Long id2 =  this.dao.save(genero2);
+		List<Long> ids = Lists.newArrayList();
+		ids.add(id1);
+		ids.add(id2);
+		List<Genero> encontrados = this.dao.buscarTodosPorCodigo(ids);
+
+		Assert.assertEquals(2, encontrados.size());
+		Assert.assertEquals("Ação", encontrados.get(0).getGen_nome());
+		Assert.assertEquals("Terror", encontrados.get(1).getGen_nome());
 	}
 }
