@@ -1,5 +1,7 @@
 package br.com.fatec.egammer.test.dao;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,58 +32,53 @@ public class GeneroDAOTest extends TestBase{
 		Assert.assertEquals("Ação", genero_salvo.getGen_nome());
 	}
 
-	/*@Test
+	@Test
 	public void testUpdate() {
-		Grupo grupo_salvar = new Grupo();
-		grupo_salvar.setNome("grupo 1");
-		grupo_salvar.setDescricao("grupo de teste");
+		Genero genero_salvar = new Genero();
+		genero_salvar.setGen_nome("Aventura");
+		Long id = this.dao.save(genero_salvar);
+		
+		Genero genero_atualizar = this.dao.buscaCodigo(id);
+		genero_atualizar.setGen_nome("Guerra");
 
-		Long id = this.dao.save(grupo_salvar);
-		Grupo grupo_atualizar = this.dao.findById(id);
+		boolean resultado = this.dao.update(genero_atualizar);
+		Genero grupo_atualizado = this.dao.buscaCodigo(id);
 
-		grupo_atualizar.setNome("grupo 1 modificado");
-		grupo_atualizar.setDescricao("grupo de teste modificado");
-
-		this.dao.update(grupo_atualizar);
-		Grupo grupo_atualizado = this.dao.findById(id);
-
+		Assert.assertEquals(true,resultado);
 		Assert.assertNotNull(grupo_atualizado);
-		Assert.assertEquals("grupo 1 modificado", grupo_atualizado.getNome());
-		Assert.assertEquals("grupo de teste modificado", grupo_atualizado.getDescricao());
+		Assert.assertEquals("Guerra", grupo_atualizado.getGen_nome());
 	}
 
 	@Test
 	public void testDelete() {
-		Grupo grupo_salvar = new Grupo();
-		grupo_salvar.setNome("grupo");
-		grupo_salvar.setDescricao("grupo de teste");
+		Genero genero_salvar = new Genero();
+		genero_salvar.setGen_nome("RPG");
 
-		Long id = this.dao.save(grupo_salvar);
-		this.dao.delete(id);
+		Long id = this.dao.save(genero_salvar);
+		boolean resultado = this.dao.delete(id);
 
-		Grupo grupo_deletado = this.dao.findById(id);
-
-		Assert.assertNull(grupo_deletado);
+		Genero genero_deletado = this.dao.buscaCodigo(id);
+		Assert.assertEquals(true,resultado);
+		Assert.assertNull(genero_deletado);
 	}
 
 	@Test
 	public void testFindAll() {
-		Grupo grupo1 = new Grupo();
-		grupo1.setNome("grupo 1");
-		grupo1.setDescricao("grupo de teste 1");
-		Grupo grupo2 = new Grupo();
-		grupo2.setNome("grupo 2");
-		grupo2.setDescricao("grupo de teste 2");
+		Genero genero1 = new Genero();
+		genero1.setGen_nome("Ação");
+		
+		Genero genero2 = new Genero();
+		genero2.setGen_nome("Terror");
+	
 
-		this.dao.save(grupo1);
-		this.dao.save(grupo2);
+		this.dao.save(genero1);
+		this.dao.save(genero2);
 
-		List<Grupo> encontrados = this.dao.findAll();
+		List<Genero> encontrados = this.dao.buscarTodosGeneros();
 
 		Assert.assertEquals(2, encontrados.size());
-		Assert.assertEquals("grupo 1", encontrados.get(0).getNome());
-		Assert.assertEquals("grupo de teste 1", encontrados.get(0).getDescricao());
-		Assert.assertEquals("grupo 2", encontrados.get(1).getNome());
-		Assert.assertEquals("grupo de teste 2", encontrados.get(1).getDescricao());
-	}*/
+		Assert.assertEquals("Ação", encontrados.get(0).getGen_nome());
+		Assert.assertEquals("Terror", encontrados.get(1).getGen_nome());
+	
+	}
 }

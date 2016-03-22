@@ -1,5 +1,9 @@
 package br.com.fatec.egammer.api.entity;
 
+import java.util.List;
+
+import com.google.common.collect.Lists;
+
 public class Genero {
 	
 	public static final String TABLE = "GENERO";
@@ -20,5 +24,13 @@ public class Genero {
 	}
 	public void setGen_nome(String gen_nome) {
 		this.gen_nome = gen_nome;
+	}
+	
+	public static List<String> getColunas() {
+		return Lists.newArrayList(COL_CODIGO, COL_NOME);
+	}
+
+	public static String[] getColunasArray() {
+		return new String[] { COL_CODIGO, COL_NOME };
 	}
 }
