@@ -9,61 +9,61 @@
 <!-- TABELAS SEM PRIMARY KEYs-->	
 	<changeSet id="001" author="marcelo.inacio">
 		<createTable tableName="GAME" >
-			<column name="GAM_CODIGO" type="NUMBER(4)" />
-			<column name="GAM_TITULO" type="VARCHAR2(255)" />
-			<column name="GAM_DESCRICAO" type="VARCHAR2(255)" />
-			<column name="GAM_PRECO" type="NUMBER(3,2)" />
-			<column name="GAM_QUANTIDADE" type="NUMBER(4)" />
+			<column name="GAM_CODIGO" type="BIGINT" />
+			<column name="GAM_TITULO" type="VARCHAR(255)" />
+			<column name="GAM_DESCRICAO" type="VARCHAR(255)" />
+			<column name="GAM_PRECO" type="NUMERIC(4,2)" />
+			<column name="GAM_QUANTIDADE" type="BIGINT" />
 			<column name="GAM_IMAGEM" type="BLOB" />
-			<column name="GAM_CLASSIFICACAO" type="NUMBER(3)" />
+			<column name="GAM_CLASSIFICACAO" type="BIGINT" />
 			<column name="GAM_DATA_LANCAMENTO" type="DATE" />
-			<column name="GAM_PLATAFORMA" type="VARCHAR2(255)" />
-			<column name="GEN_CODIGO" type="NUMBER(4)" />
-			<column name="DES_CODIGO" type="NUMBER(4)" />
+			<column name="GAM_PLATAFORMA" type="VARCHAR(255)" />
+			<column name="GEN_CODIGO" type="BIGINT" />
+			<column name="DES_CODIGO" type="BIGINT" />
 		</createTable>
 	</changeSet>
 
 	<changeSet id="002" author="marcelo.inacio">
 		<createTable tableName="GENERO" >
-			<column name="GEN_CODIGO" type="NUMBER(4)" />
-			<column name="GEN_NOME" type="VARCHAR2(255)" />
+			<column name="GEN_CODIGO" type="BIGINT" />
+			<column name="GEN_NOME" type="VARCHAR(255)" />
 		</createTable>
 	</changeSet>
 
 	<changeSet id="003" author="marcelo.inacio">
 		<createTable tableName="DESENVOLVEDORA" >
-			<column name="DES_CODIGO" type="NUMBER(4)" />
-			<column name="DES_STUDIO" type="VARCHAR2(255)" />
-			<column name="DES_DESTRIBUIDORA" type="VARCHAR2(255)" />
+			<column name="DES_CODIGO" type="BIGINT" />
+			<column name="DES_STUDIO" type="VARCHAR(255)" />
+			<column name="DES_DESTRIBUIDORA" type="VARCHAR(255)" />
 		</createTable>
 	</changeSet>
 
 	<changeSet id="004" author="marcelo.inacio">
 		<createTable tableName="CLIENTE" >
-			<column name="CLI_CODIGO" type="NUMBER(4)" />
-			<column name="CLI_NOME" type="VARCHAR2(255)" />
-			<column name="CLI_EMAIL" type="VARCHAR2(255)" />
-			<column name="CLI_SENHA" type="VARCHAR2(255)" />
+			<column name="CLI_CODIGO" type="BIGINT" />
+			<column name="CLI_NOME" type="VARCHAR(255)" />
+			<column name="CLI_EMAIL" type="VARCHAR(255)" />
+			<column name="CLI_SENHA" type="VARCHAR(255)" />
 		</createTable>
 	</changeSet>
 	
 	<changeSet id="005" author="marcelo.inacio">
 		<createTable tableName="PEDIDO" >
-			<column name="PED_CODIGO" type="NUMBER(4)" />
+			<column name="PED_CODIGO" type="BIGINT" />
 			<column name="PED_DATA" type="DATE" />
-			<column name="PED_VALOR_TOTAL" type="NUMBER(4,2)" />
-			<column name="CLI_CODIGO" type="NUMBER(4)" />
+			<column name="PED_VALOR_TOTAL" type="NUMERIC(4,2)" />
+			<column name="CLI_CODIGO" type="BIGINT" />
 		</createTable>
 	</changeSet>
 	
 	<changeSet id="006" author="marcelo.inacio">
 		<createTable tableName="ITEM_DO_PEDIDO" >
-			<column name="ITP_CODIGO" type="NUMBER(4)" />
-			<column name="ITP_PRECO_UNITARIO" type="NUMBER(4,2)" />
-			<column name="ITP_QUANTIDADE" type="NUMBER(4)" />
-			<column name="ITP_PREÇO_TOTAL" type="NUMBER(4,2)" />
-			<column name="GAM_CODIGO" type="NUMBER(4)" />
-			<column name="PED_CODIGO" type="NUMBER(4)" />
+			<column name="ITP_CODIGO" type="BIGINT" />
+			<column name="ITP_PRECO_UNITARIO" type="NUMERIC(4,2)" />
+			<column name="ITP_QUANTIDADE" type="BIGINT" />
+			<column name="ITP_PREÇO_TOTAL" type="NUMERIC(4,2)" />
+			<column name="GAM_CODIGO" type="BIGINT" />
+			<column name="PED_CODIGO" type="BIGINT" />
 		</createTable>
 	</changeSet>
 
