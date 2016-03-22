@@ -38,7 +38,7 @@ public class ClienteDAOTest extends TestBase{
 		Assert.assertEquals("carlos", usu_salvo.getCli_nome());
 		Assert.assertEquals("senha_carlos", usu_salvo.getCli_senha());
 	}
-
+/*
 	@Test
 	public void testUpdate() {
 		Cliente usu_salvar = new Cliente();
@@ -108,6 +108,6 @@ public class ClienteDAOTest extends TestBase{
 		this.config();
 		this.testDelete();
 		this.setDown();
-	}*/
-
+	}
+*/
 }

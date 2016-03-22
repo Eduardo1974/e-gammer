@@ -1,5 +1,9 @@
 package br.com.fatec.egammer.api.entity;
 
+import java.util.List;
+
+import com.google.common.collect.Lists;
+
 public class Cliente {
 	
 	public static final String TABLE = "CLIENTE";
@@ -35,5 +39,12 @@ public class Cliente {
 	}
 	public void setCli_senha(String cli_senha) {
 		this.cli_senha = cli_senha;
+	}
+	public static List<String> getColunas() {
+		return Lists.newArrayList(COL_CODIGO, COL_NOME, COL_SENHA);
+	}
+
+	public static String[] getColunasArray() {
+		return new String[] { COL_CODIGO, COL_NOME, COL_SENHA };
 	}
 }
