@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF_8"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema_instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog_ext"
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-	dbchangelog-3.4.xsd
-	http://www.liquibase.org/xml/ns/dbchangelog-ext
-	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	dbchangelog_3.4.xsd
+	http://www.liquibase.org/xml/ns/dbchangelog_ext
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog_ext.xsd">
 
 <!-- TABELAS SEM PRIMARY KEYs-->	
 	<changeSet id="001" author="marcelo.inacio">
@@ -143,7 +143,7 @@
 
 <!-- FOREING KEY TABELAS -->	
 	<changeSet id="010" author="marcelo.inacio">
-		<addForeignKeyConstraint constraintName="FK_GAME-GENERO"
+		<addForeignKeyConstraint constraintName="FK_GAME_GENERO"
 			referencedTableName="GENERO"
 			referencedColumnNames="GEN_CODIGO"
 			baseTableName="GAME"
@@ -151,7 +151,7 @@
 	</changeSet>
 	
 	<changeSet id="011" author="marcelo.inacio">
-		<addForeignKeyConstraint constraintName="FK_GAME-DESENVOLVEDORA"
+		<addForeignKeyConstraint constraintName="FK_GAME_DESENVOLVEDORA"
 			referencedTableName="DESENVOLVEDORA"
 			referencedColumnNames="DES_CODIGO"
 			baseTableName="GAME"
@@ -159,7 +159,7 @@
 	</changeSet>
 	
 	<changeSet id="012" author="marcelo.inacio">
-		<addForeignKeyConstraint constraintName="FK_PEDIDO-CLIENTE"
+		<addForeignKeyConstraint constraintName="FK_PEDIDO_CLIENTE"
 			referencedTableName="CLIENTE"
 			referencedColumnNames="CLI_CODIGO"
 			baseTableName="PEDIDO"
@@ -167,7 +167,7 @@
 	</changeSet>
 	
 	<changeSet id="013" author="marcelo.inacio">
-		<addForeignKeyConstraint constraintName="FK_ITEM_DO_PEDIDO-PEDIDO"
+		<addForeignKeyConstraint constraintName="FK_ITEM_DO_PEDIDO_PEDIDO"
 			referencedTableName="PEDIDO"
 			referencedColumnNames="PED_CODIGO"
 			baseTableName="ITEM_DO_PEDIDO"
@@ -175,7 +175,7 @@
 	</changeSet>
 	
 	<changeSet id="014" author="marcelo.inacio">
-		<addForeignKeyConstraint constraintName="FK_ITEM_DO_PEDIDO-GAME"
+		<addForeignKeyConstraint constraintName="FK_ITEM_DO_PEDIDO_GAME"
 			referencedTableName="GAME"
 			referencedColumnNames="GAM_CODIGO"
 			baseTableName="ITEM_DO_PEDIDO"

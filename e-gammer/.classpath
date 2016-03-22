@@ -9,18 +9,19 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/commons-codec-1.10.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/commons-dbutils-1.6.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/commons-lang3-3.4.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/guava-18.0.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/hsqldb.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/javassist-3.19.0-GA.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/liquibase_3_4_1.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/mini-spring-2.3.X.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/mysql-connector-java-5.1.37-bin.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/postgresql-9.4-1201.jdbc4.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/reflections-0.9.11-SNAPSHOT.jar"/>
-	<classpathentry kind="lib" path="D:/Escola/FATEC_Banco_de_Dados/4SEM/Laboratorio_IV/dependencias/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/commons-dbutils-1.6.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/guava-18.0.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/hsqldb.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/javassist-3.19.0-GA.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/liquibase_3_4_1.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/mini-spring-2.3.X.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/mysql-connector-java-5.1.38-bin.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/postgresql-9.4-1201.jdbc4.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/reflections-0.9.11-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="D:/labIV/dependencias/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
