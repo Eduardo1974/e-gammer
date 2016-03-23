@@ -16,7 +16,7 @@ import br.com.fatec.egammer.api.dao.GeneroDAO;
 import br.com.fatec.egammer.api.entity.Genero;
 import br.com.spektro.minispring.core.dbmapper.ConfigDBMapper;
 
-public class GeneroDTOImpl implements GeneroDAO{
+public class GeneroDAOImpl implements GeneroDAO{
 
 	@Override
 	public Long save(Genero genero) {

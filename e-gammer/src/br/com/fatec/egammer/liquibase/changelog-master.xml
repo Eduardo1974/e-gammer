@@ -61,7 +61,7 @@
 			<column name="ITP_CODIGO" type="BIGINT" />
 			<column name="ITP_PRECO_UNITARIO" type="NUMERIC(4,2)" />
 			<column name="ITP_QUANTIDADE" type="BIGINT" />
-			<column name="ITP_PREÇO_TOTAL" type="NUMERIC(4,2)" />
+			<column name="ITP_PRECO_TOTAL" type="NUMERIC(4,2)" />
 			<column name="GAM_CODIGO" type="BIGINT" />
 			<column name="PED_CODIGO" type="BIGINT" />
 		</createTable>

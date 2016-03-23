@@ -43,4 +43,10 @@ public class PedidoDTOImpl implements PedidoDAO{
 		return null;
 	}
 
+	@Override
+	public List<Pedido> buscaTodosPedidosCodigos(List<Long> codigos) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

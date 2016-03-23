@@ -1,12 +1,17 @@
 package br.com.fatec.egammer.api.entity;
 
+import java.util.List;
+
+import com.google.common.collect.Lists;
+
 public class ItemPedido {
 	
 	public static final String TABLE = "ITEM_DO_PEDIDO";
 	public static final String COL_CODIGO = "ITP_CODIGO";
 	public static final String COL_TITULO = "ITP_PRECO_UNITARIO";
 	public static final String COL_QUANTIDADE = "ITP_QUANTIDADE";
-	public static final String COL_PRECO_TATAL = "ITP_PRECO_TOTAL";
+	public static final String COL_PRECO_TOTAL = "ITP_PRECO_TOTAL";
+	public static final String COL_PRECO_UNITARIO = "ITP_PRECO_UNITARIO";
 	public static final String COL_GAM_CODIGO = "GAM_CODIGO";
 	public static final String COL_PED_CODIGO = "PED_CODIGO";
 	
@@ -53,25 +58,12 @@ public class ItemPedido {
 	public void setPedido(Pedido pedido) {
 		this.pedido = pedido;
 	}
-	public static String getTable() {
-		return TABLE;
+		
+	public static List<String> getColunas() {
+		return Lists.newArrayList(COL_CODIGO,COL_PRECO_UNITARIO, COL_QUANTIDADE,COL_PRECO_TOTAL,COL_PED_CODIGO,COL_GAM_CODIGO );
 	}
-	public static String getColCodigo() {
-		return COL_CODIGO;
-	}
-	public static String getColTitulo() {
-		return COL_TITULO;
-	}
-	public static String getColQuantidade() {
-		return COL_QUANTIDADE;
-	}
-	public static String getColPrecoTatal() {
-		return COL_PRECO_TATAL;
-	}
-	public static String getColGamCodigo() {
-		return COL_GAM_CODIGO;
-	}
-	public static String getColPedCodigo() {
-		return COL_PED_CODIGO;
-	}
+
+	public static String[] getColunasArray() {
+		return new String[] {COL_CODIGO,COL_PRECO_UNITARIO,COL_QUANTIDADE,COL_PRECO_TOTAL,COL_PED_CODIGO,COL_GAM_CODIGO};
+	}	
 }
