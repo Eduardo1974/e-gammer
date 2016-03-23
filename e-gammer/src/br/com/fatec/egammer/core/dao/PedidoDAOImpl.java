@@ -5,7 +5,7 @@ import java.util.List;
 import br.com.fatec.egammer.api.dao.PedidoDAO;
 import br.com.fatec.egammer.api.entity.Pedido;
 
-public class PedidoDTOImpl implements PedidoDAO{
+public class PedidoDAOImpl implements PedidoDAO{
 
 	@Override
 	public Long save(Pedido pedido) {

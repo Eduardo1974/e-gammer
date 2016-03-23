@@ -17,7 +17,7 @@ import br.com.fatec.egammer.api.entity.ItemPedido;
 import br.com.fatec.egammer.api.entity.Pedido;
 import br.com.spektro.minispring.core.dbmapper.ConfigDBMapper;
 
-public class ItemPedidoDTOImpl implements ItemPedidoDAO{
+public class ItemPedidoDAOImpl implements ItemPedidoDAO{
 
 	@Override
 	public Long save(ItemPedido itemPedido) {
