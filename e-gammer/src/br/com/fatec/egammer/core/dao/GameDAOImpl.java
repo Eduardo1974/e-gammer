@@ -2,19 +2,19 @@ package br.com.fatec.egammer.core.dao;
 
 import java.util.List;
 
-import br.com.fatec.egammer.api.dao.DesenvolvedoraDAO;
-import br.com.fatec.egammer.api.entity.Desenvolvedora;
+import br.com.fatec.egammer.api.dao.GameDAO;
+import br.com.fatec.egammer.api.entity.Game;
 
-public class DesenvolvedoraDAOImpl implements DesenvolvedoraDAO{
+public class GameDAOImpl implements GameDAO {
 
 	@Override
-	public Long save(Desenvolvedora desenvolvedora) {
+	public Long save(Game game) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void update(Desenvolvedora desenvolvedora) {
+	public void update(Game game) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -26,13 +26,13 @@ public class DesenvolvedoraDAOImpl implements DesenvolvedoraDAO{
 	}
 
 	@Override
-	public Desenvolvedora buscarCodigo(Long codigo) {
+	public Game buscarCodigo(Long codigo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Desenvolvedora> buscarTodasDesenvolvedoras() {
+	public List<Game> buscarTodosGames() {
 		// TODO Auto-generated method stub
 		return null;
 	}

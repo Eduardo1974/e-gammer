@@ -20,66 +20,69 @@ public class ClienteDAOTest extends TestBase{
 	}
 
 	@Test
-	public void testSave1() {
-
-	}
-
-	@Test
 	public void testSave() {
-		Cliente usu_salvar = new Cliente();
-		usu_salvar.setCli_nome("carlos");
-		usu_salvar.setCli_senha("senha_carlos");
+		Cliente cli_salvar = new Cliente();
+		cli_salvar.setCli_nome("carlos");
+		cli_salvar.setCli_email("carlos@fatec.com");
+		cli_salvar.setCli_senha("senha_carlos");
 
-		Long codigo = this.dao.save(usu_salvar);
+		Long codigo = this.dao.save(cli_salvar);
 
-		Cliente usu_salvo = this.dao.buscarCodigo(codigo);
+		Cliente cli_salvo = this.dao.buscarCodigo(codigo);
 
-		Assert.assertNotNull(usu_salvo);
-		Assert.assertEquals("carlos", usu_salvo.getCli_nome());
-		Assert.assertEquals("senha_carlos", usu_salvo.getCli_senha());
+		Assert.assertNotNull(cli_salvo);
+		Assert.assertEquals("carlos", cli_salvo.getCli_nome());
+		Assert.assertEquals("carlos@fatec.com", cli_salvo.getCli_email());
+		Assert.assertEquals("senha_carlos", cli_salvo.getCli_senha());
 	}
-/*
+
 	@Test
 	public void testUpdate() {
-		Cliente usu_salvar = new Cliente();
-		usu_salvar.setCli_nome("carlos");
-		usu_salvar.setCli_senha("senha_carlos");
+		Cliente cli_salvar = new Cliente();
+		cli_salvar.setCli_nome("carlos");
+		cli_salvar.setCli_email("carlos@fatec.com");
+		cli_salvar.setCli_senha("senha_carlos");
 
-		Long codigo = this.dao.save(usu_salvar);
-		Cliente usu_atualizar = this.dao.buscarCodigo(codigo);
+		Long codigo = this.dao.save(cli_salvar);
+		Cliente cli_atualizar = this.dao.buscarCodigo(codigo);
 
-		usu_atualizar.setCli_nome("carlos oliveira");
-		usu_atualizar.setCli_senha("nova_senha");
+		cli_atualizar.setCli_nome("carlos oliveira");
+		cli_atualizar.setCli_email("augusto@fatec.com");
+		cli_atualizar.setCli_senha("nova_senha");
 
-		this.dao.update(usu_atualizar);
+		this.dao.update(cli_atualizar);
 		Cliente usu_atualizado = this.dao.buscarCodigo(codigo);
 
 		Assert.assertNotNull(usu_atualizado);
 		Assert.assertEquals("carlos oliveira", usu_atualizado.getCli_nome());
+		Assert.assertEquals("augusto@fatec.com", usu_atualizado.getCli_email());
 		Assert.assertEquals("nova_senha", usu_atualizado.getCli_senha());
 	}
 
 	@Test
 	public void testDelete() {
-		Cliente usu_salvar = new Cliente();
-		usu_salvar.setCli_nome("carlos");
-		usu_salvar.setCli_senha("senha_carlos");
+		Cliente cli_salvar = new Cliente();
+		cli_salvar.setCli_nome("carlos");
+		cli_salvar.setCli_email("augusto@fatec.com");
+		cli_salvar.setCli_senha("senha_carlos");
 
-		Long id = this.dao.save(usu_salvar);
-		this.dao.delete(id);
+		Long codigo = this.dao.save(cli_salvar);
+		this.dao.delete(codigo);
 
-		Cliente usu_deletado = this.dao.buscarCodigo(id);
+		Cliente cli_deletado = this.dao.buscarCodigo(codigo);
 
-		Assert.assertNull(usu_deletado);
+		Assert.assertNull(cli_deletado);
 	}
 
 	@Test
-	public void testFindAll() {
+	public void testBuscarTodos() {
 		Cliente cli1 = new Cliente();
 		cli1.setCli_nome("cliente 1");
+		cli1.setCli_email("cliente1@fatec.com");
 		cli1.setCli_senha("senha_1");
 		Cliente cli2 = new Cliente();
 		cli2.setCli_nome("cliente 2");
+		cli2.setCli_email("cliente2@fatec.com");
 		cli2.setCli_senha("senha_2");
 
 		this.dao.save(cli1);
@@ -88,9 +91,11 @@ public class ClienteDAOTest extends TestBase{
 		List<Cliente> encontrados = this.dao.buscarTodosClientes();
 
 		Assert.assertEquals(2, encontrados.size());
-		Assert.assertEquals("usuario 1", encontrados.get(0).getCli_nome());
+		Assert.assertEquals("cliente 1", encontrados.get(0).getCli_nome());
+		Assert.assertEquals("cliente1@fatec.com", encontrados.get(0).getCli_email());
 		Assert.assertEquals("senha_1", encontrados.get(0).getCli_senha());
-		Assert.assertEquals("usuario 2", encontrados.get(1).getCli_nome());
+		Assert.assertEquals("cliente 2", encontrados.get(1).getCli_nome());
+		Assert.assertEquals("cliente2@fatec.com", encontrados.get(0).getCli_email());
 		Assert.assertEquals("senha_2", encontrados.get(1).getCli_senha());
 	}
 	
@@ -108,6 +113,6 @@ public class ClienteDAOTest extends TestBase{
 		this.config();
 		this.testDelete();
 		this.setDown();
-	}
-*/
+	}*/
+
 }

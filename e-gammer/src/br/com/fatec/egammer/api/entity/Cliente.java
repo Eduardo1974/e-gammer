@@ -9,6 +9,7 @@ public class Cliente {
 	public static final String TABLE = "CLIENTE";
 	public static final String COL_CODIGO = "CLI_CODIGO";
 	public static final String COL_NOME = "CLI_NOME";
+	public static final String COL_EMAIL = "CLI_EMAIL";
 	public static final String COL_SENHA = "CLI_SENHA";
 	
 	private Long cli_codigo;
@@ -41,10 +42,10 @@ public class Cliente {
 		this.cli_senha = cli_senha;
 	}
 	public static List<String> getColunas() {
-		return Lists.newArrayList(COL_CODIGO, COL_NOME, COL_SENHA);
+		return Lists.newArrayList(COL_CODIGO, COL_NOME, COL_EMAIL, COL_SENHA);
 	}
 
 	public static String[] getColunasArray() {
-		return new String[] { COL_CODIGO, COL_NOME, COL_SENHA };
+		return new String[] { COL_CODIGO, COL_NOME, COL_EMAIL, COL_SENHA };
 	}
 }
