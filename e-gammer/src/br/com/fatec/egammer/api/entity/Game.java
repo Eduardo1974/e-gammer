@@ -95,40 +95,5 @@ public class Game {
 	public void setDesenvolvedora(Desenvolvedora desenvolvedora) {
 		this.desenvolvedora = desenvolvedora;
 	}
-	public static String getTable() {
-		return TABLE;
-	}
-	public static String getColCodigo() {
-		return COL_CODIGO;
-	}
-	public static String getColTitulo() {
-		return COL_TITULO;
-	}
-	public static String getColDescricao() {
-		return COL_DESCRICAO;
-	}
-	public static String getColPreco() {
-		return COL_PRECO;
-	}
-	public static String getColQuantidade() {
-		return COL_QUANTIDADE;
-	}
-	public static String getColImagem() {
-		return COL_IMAGEM;
-	}
-	public static String getColClassificacao() {
-		return COL_CLASSIFICACAO;
-	}
-	public static String getColDataLancamento() {
-		return COL_DATA_LANCAMENTO;
-	}
-	public static String getColPlataforma() {
-		return COL_PLATAFORMA;
-	}
-	public static String getColGenCodigo() {
-		return COL_GEN_CODIGO;
-	}
-	public static String getColDesCodigo() {
-		return COL_DES_CODIGO;
-	}
+	
 }

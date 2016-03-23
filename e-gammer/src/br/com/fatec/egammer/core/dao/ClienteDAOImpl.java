@@ -29,7 +29,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 					Cliente.getColunas());
 
 			String values = DAOUtils.completarClausulaValues(getDefaultConnectionType(),
-					2, "SEQ_CLIENTE");
+					3, "SEQ_CLIENTE");
 
 			String sql = "INSERT INTO " + Cliente.TABLE + colunas + " VALUES " + values;
 
@@ -100,7 +100,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 	public Cliente buscarCodigo(Long codigo) {
 		Connection conn = null;
 		PreparedStatement find = null;
-		Cliente user = null;
+		Cliente cliente = null;
 		try {
 			conn = ConfigDBMapper.getDefaultConnection();
 			String sql = "SELECT * FROM " + Cliente.TABLE + " WHERE " + Cliente.COL_CODIGO
@@ -109,9 +109,9 @@ public class ClienteDAOImpl implements ClienteDAO{
 			find.setLong(1, codigo);
 			ResultSet rs = find.executeQuery();
 			if (rs.next()) {
-				user = this.criarCliente(rs);
+				cliente = this.criarCliente(rs);
 			}
-			return user;
+			return cliente;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		} finally {
@@ -150,6 +150,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 		Cliente usuario = new Cliente();
 		usuario.setCli_codigo(rs.getLong(Cliente.COL_CODIGO));
 		usuario.setCli_nome(rs.getString(Cliente.COL_NOME));
+		usuario.setCli_email(rs.getString(Cliente.COL_EMAIL));
 		usuario.setCli_senha(rs.getString(Cliente.COL_SENHA));
 		return usuario;
 	}
