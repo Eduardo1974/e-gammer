@@ -78,7 +78,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		ItemPedido ItemPedidoDAO_salvo = this.dao.buscaCodigoItemPedido(id);
 
 		Assert.assertNotNull(ItemPedidoDAO_salvo);
-		Assert.assertEquals("Battlefied 4", ItemPedidoDAO_salvo.getGame().getColTitulo());
+		Assert.assertEquals("Battlefied 4", ItemPedidoDAO_salvo.getGame().getGam_titulo());
 		Assert.assertEquals(100.00, ItemPedidoDAO_salvo.getIpt_preco_total().doubleValue());
 		Assert.assertEquals(10.00, ItemPedidoDAO_salvo.getItp_preco_unitario().doubleValue());
 		Assert.assertEquals(10, ItemPedidoDAO_salvo.getItp_quantidade().intValue());
