@@ -2,10 +2,6 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Desenvolverdora"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Pedido"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.ItemPedido"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.ItemPedidoDAO"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.PedidoDAO"/>
 <fullyQualifiedTypeName name="liquibase.util.StringUtils"/>
 <fullyQualifiedTypeName name="org.apache.commons.lang3.StringUtils"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
@@ -20,10 +16,17 @@
 <fullyQualifiedTypeName name="br.com.spektro.minispring.core.implfinder.ImplFinder"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Desenvolvedora"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Cliente"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.test.comum.TestBase"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Genero"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.google.common.collect.Lists"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.ItemPedidoDAO"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.test.dao.ItemPedidoDAOTest"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Cliente"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Desenvolvedora"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Genero"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Game"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.ItemPedido"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.test.comum.TestBase"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.PedidoDAO"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Pedido"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>

@@ -23,5 +23,6 @@
 	<classpathentry kind="lib" path="D:/labIV/dependencias/postgresql-9.4-1201.jdbc4.jar"/>
 	<classpathentry kind="lib" path="D:/labIV/dependencias/reflections-0.9.11-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="D:/labIV/dependencias/servlet-api.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_71"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
