@@ -12,7 +12,7 @@
 			<column name="GAM_CODIGO" type="BIGINT" />
 			<column name="GAM_TITULO" type="VARCHAR(255)" />
 			<column name="GAM_DESCRICAO" type="VARCHAR(255)" />
-			<column name="GAM_PRECO" type="NUMERIC(4,2)" />
+			<column name="GAM_PRECO" type="NUMERIC(10,2)" />
 			<column name="GAM_QUANTIDADE" type="BIGINT" />
 			<column name="GAM_IMAGEM" type="VARCHAR(255)" />
 			<column name="GAM_CLASSIFICACAO" type="BIGINT" />
@@ -51,7 +51,7 @@
 		<createTable tableName="PEDIDO" >
 			<column name="PED_CODIGO" type="BIGINT" />
 			<column name="PED_DATA" type="DATE" />
-			<column name="PED_VALOR_TOTAL" type="NUMERIC(4,2)" />
+			<column name="PED_VALOR_TOTAL" type="NUMERIC(10,2)" />
 			<column name="CLI_CODIGO" type="BIGINT" />
 		</createTable>
 	</changeSet>
@@ -59,9 +59,9 @@
 	<changeSet id="006" author="marcelo.inacio">
 		<createTable tableName="ITEM_DO_PEDIDO" >
 			<column name="ITP_CODIGO" type="BIGINT" />
-			<column name="ITP_PRECO_UNITARIO" type="NUMERIC(4,2)" />
+			<column name="ITP_PRECO_UNITARIO" type="NUMERIC(10,2)" />
 			<column name="ITP_QUANTIDADE" type="BIGINT" />
-			<column name="ITP_PRECO_TOTAL" type="NUMERIC(4,2)" />
+			<column name="ITP_PRECO_TOTAL" type="NUMERIC(10,2)" />
 			<column name="GAM_CODIGO" type="BIGINT" />
 			<column name="PED_CODIGO" type="BIGINT" />
 		</createTable>
