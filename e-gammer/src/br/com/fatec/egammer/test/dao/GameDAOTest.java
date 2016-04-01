@@ -54,7 +54,7 @@ public class GameDAOTest extends TestBase{
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
-		game.setGam_preco(99.00);
+		game.setGam_preco(4000.00);
 		game.setGam_quantidade(200);
 		game.setGam_titulo("Battlefild 4");
 		game.setDesenvolvedora(this.daoDesenvolvedora.buscarCodigo(id_desenv));
@@ -93,7 +93,7 @@ public class GameDAOTest extends TestBase{
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
-		game.setGam_preco(99.88); //DEBUGAR AQUI 188.88
+		game.setGam_preco(188.88); //DEBUGAR AQUI 188.88
 		game.setGam_quantidade(200);
 		game.setGam_titulo("nfs ++");
 		game.setDesenvolvedora(this.daoDesenvolvedora.buscarCodigo(id_desenv));
@@ -115,12 +115,37 @@ public class GameDAOTest extends TestBase{
 	}
 
 	@Test
-	public void testDelete() {
-		Game game_salvar = new Game();
-		game_salvar.setGam_titulo("FARCRY_4");
-		game_salvar.setGam_descricao("farcry 4 é um jogo de tiro em primeira pessoa");
+	public void testDelete() throws ParseException {
+		Desenvolvedora des = new Desenvolvedora();
+		//des.setDes_codigo((long) 1);
+		des.setDes_distribuidora("EA Games");
+		des.setDes_studio("Santa Monica");
+		
+		Long id_desenv = daoDesenvolvedora.save(des);
+		
+		Genero genero = new Genero();
+		//genero.setGen_codigo((long)1);
+		genero.setGen_nome("Ação");
+		
+		Long id_genero = daoGenero.save(genero);
+		
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		Date data = new Date(format.parse("28/03/2016").getTime());
+		
+		Game game = new Game();
+		game.setGam_classificacao(8);
+		game.setGam_data_lancamento(data);
+		game.setGam_descricao("Jogo de Guerra");
+		game.setGam_imagem("C:\\TEMP\\battlefield");
+		game.setGam_plataforma("PC");
+		game.setGam_preco(188.88); //DEBUGAR AQUI 188.88
+		game.setGam_quantidade(200);
+		game.setGam_titulo("nfs ++");
+		game.setDesenvolvedora(this.daoDesenvolvedora.buscarCodigo(id_desenv));
+		game.setGenero(this.daoGenero.buscaCodigo(id_genero));
 
-		Long codigo = this.dao.save(game_salvar);
+		Long codigo = this.dao.save(game);
+		
 		this.dao.delete(codigo);
 
 		Game des_deletado = this.dao.buscarCodigo(codigo);
@@ -129,24 +154,57 @@ public class GameDAOTest extends TestBase{
 	}
 
 	@Test
-	public void testBuscarTodos() {
-		Game game_salvar1 = new Game();
-		game_salvar1.setGam_titulo("FARCRY_4");
-		game_salvar1.setGam_descricao("farcry 4 é um jogo de tiro em primeira pessoa");
-		Game game_salvar2 = new Game();
-		game_salvar2.setGam_titulo("Battlefield 4");
-		game_salvar2.setGam_descricao("Neste título, o usuário comanda os soldados");
+	public void testBuscarTodos() throws ParseException {
+		Desenvolvedora des = new Desenvolvedora();
+		//des.setDes_codigo((long) 1);
+		des.setDes_distribuidora("EA Games");
+		des.setDes_studio("Santa Monica");
+		
+		Long id_desenv = daoDesenvolvedora.save(des);
+		
+		Genero genero = new Genero();
+		//genero.setGen_codigo((long)1);
+		genero.setGen_nome("Ação");
+		
+		Long id_genero = daoGenero.save(genero);
+		
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		Date data = new Date(format.parse("28/03/2016").getTime());
+		
+		Game game1 = new Game();
+		game1.setGam_classificacao(8);
+		game1.setGam_data_lancamento(data);
+		game1.setGam_descricao("Jogo de Guerra Moderna");
+		game1.setGam_imagem("C:\\TEMP\\battlefield");
+		game1.setGam_plataforma("PC");
+		game1.setGam_preco(230.98);
+		game1.setGam_quantidade(200);
+		game1.setGam_titulo("Battle Field");
+		game1.setDesenvolvedora(this.daoDesenvolvedora.buscarCodigo(id_desenv));
+		game1.setGenero(this.daoGenero.buscaCodigo(id_genero));
 
-		this.dao.save(game_salvar1);
-		this.dao.save(game_salvar2);
+		Game game2 = new Game();
+		game2.setGam_classificacao(8);
+		game2.setGam_data_lancamento(data);
+		game2.setGam_descricao("Jogo de Corrida");
+		game2.setGam_imagem("C:\\TEMP\\Need FS");
+		game2.setGam_plataforma("PC");
+		game2.setGam_preco(100.10);
+		game2.setGam_quantidade(30);
+		game2.setGam_titulo("nfs 2016");
+		game2.setDesenvolvedora(this.daoDesenvolvedora.buscarCodigo(id_desenv));
+		game2.setGenero(this.daoGenero.buscaCodigo(id_genero));
+		
+		this.dao.save(game1);
+		this.dao.save(game2);
 
 		List<Game> encontrados = this.dao.buscarTodosGames();
 
 		Assert.assertEquals(2, encontrados.size());
-		Assert.assertEquals("FARCRY_4", encontrados.get(0).getGam_titulo());
-		Assert.assertEquals("farcry 4 é um jogo de tiro em primeira pessoa", encontrados.get(0).getGam_descricao());
-		Assert.assertEquals("Battlefield 4", encontrados.get(1).getGam_titulo());
-		Assert.assertEquals("Neste título, o usuário comanda os soldados", encontrados.get(1).getGam_descricao());
+		Assert.assertEquals("Battle Field", encontrados.get(0).getGam_titulo());
+		Assert.assertEquals("Jogo de Guerra Moderna", encontrados.get(0).getGam_descricao());
+		Assert.assertEquals("nfs 2016", encontrados.get(1).getGam_titulo());
+		Assert.assertEquals("Jogo de Corrida", encontrados.get(1).getGam_descricao());
 	}
 
 }
