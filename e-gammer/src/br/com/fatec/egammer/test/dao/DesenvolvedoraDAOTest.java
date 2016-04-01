@@ -74,9 +74,10 @@ public class DesenvolvedoraDAOTest extends TestBase {
 		Desenvolvedora des1 = new Desenvolvedora();
 		des1.setDes_distribuidora("distribuidora 1");
 		des1.setDes_studio("studio_1");
+		
 		Desenvolvedora des2 = new Desenvolvedora();
-		des1.setDes_distribuidora("distribuidora 2");
-		des1.setDes_studio("studio_2");
+		des2.setDes_distribuidora("distribuidora 2");
+		des2.setDes_studio("studio_2");
 
 		this.dao.save(des1);
 		this.dao.save(des2);
@@ -85,7 +86,7 @@ public class DesenvolvedoraDAOTest extends TestBase {
 
 		Assert.assertEquals(2, encontrados.size());
 		Assert.assertEquals("distribuidora 1", encontrados.get(0).getDes_distribuidora());
-		Assert.assertEquals("studio_2", encontrados.get(0).getDes_studio());
+		Assert.assertEquals("studio_1", encontrados.get(0).getDes_studio());
 		Assert.assertEquals("distribuidora 2", encontrados.get(1).getDes_distribuidora());
 		Assert.assertEquals("studio_2", encontrados.get(1).getDes_studio());
 	}

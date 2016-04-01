@@ -14,7 +14,7 @@
 			<column name="GAM_DESCRICAO" type="VARCHAR(255)" />
 			<column name="GAM_PRECO" type="NUMERIC(4,2)" />
 			<column name="GAM_QUANTIDADE" type="BIGINT" />
-			<column name="GAM_IMAGEM" type="BLOB" />
+			<column name="GAM_IMAGEM" type="VARCHAR(255)" />
 			<column name="GAM_CLASSIFICACAO" type="BIGINT" />
 			<column name="GAM_DATA_LANCAMENTO" type="DATE" />
 			<column name="GAM_PLATAFORMA" type="VARCHAR(255)" />
@@ -34,7 +34,7 @@
 		<createTable tableName="DESENVOLVEDORA" >
 			<column name="DES_CODIGO" type="BIGINT" />
 			<column name="DES_STUDIO" type="VARCHAR(255)" />
-			<column name="DES_DESTRIBUIDORA" type="VARCHAR(255)" />
+			<column name="DES_DISTRIBUIDORA" type="VARCHAR(255)" />
 		</createTable>
 	</changeSet>
 

@@ -57,7 +57,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		game.setGam_classificacao(8);
 		game.setGam_codigo((long)1);
 		game.setGam_data_lancamento(new Date());
-		game.setGam_desccricao("Jogo de Guerra");
+		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
 		game.setGam_preco(99.00);
@@ -114,7 +114,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		game.setGam_classificacao(8);
 		game.setGam_codigo((long)1);
 		game.setGam_data_lancamento(new Date());
-		game.setGam_desccricao("Jogo de Guerra");
+		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
 		game.setGam_preco(99.00);
@@ -170,7 +170,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		game.setGam_classificacao(8);
 		game.setGam_codigo((long)1);
 		game.setGam_data_lancamento(new Date());
-		game.setGam_desccricao("Jogo de Guerra");
+		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
 		game.setGam_preco(99.00);
@@ -222,7 +222,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		game.setGam_classificacao(8);
 		game.setGam_codigo((long)1);
 		game.setGam_data_lancamento(new Date());
-		game.setGam_desccricao("Jogo de Guerra");
+		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
 		game.setGam_preco(99.00);
@@ -264,7 +264,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		game2.setGam_classificacao(8);
 		game2.setGam_codigo((long)1);
 		game2.setGam_data_lancamento(new Date());
-		game2.setGam_desccricao("Aventura");
+		game2.setGam_descricao("Aventura");
 		game2.setGam_imagem("C:\\TEMP\\Gta V");
 		game2.setGam_plataforma("PC");
 		game2.setGam_preco(99.00);
@@ -319,7 +319,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		game.setGam_classificacao(8);
 		game.setGam_codigo((long)1);
 		game.setGam_data_lancamento(new Date());
-		game.setGam_desccricao("Jogo de Guerra");
+		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
 		game.setGam_preco(99.00);
@@ -372,7 +372,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		game.setGam_classificacao(8);
 		game.setGam_codigo((long)1);
 		game.setGam_data_lancamento(new Date());
-		game.setGam_desccricao("Jogo de Guerra");
+		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
 		game.setGam_preco(99.00);
@@ -414,7 +414,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		game2.setGam_classificacao(8);
 		game2.setGam_codigo((long)1);
 		game2.setGam_data_lancamento(new Date());
-		game2.setGam_desccricao("Aventura");
+		game2.setGam_descricao("Aventura");
 		game2.setGam_imagem("C:\\TEMP\\Gta V");
 		game2.setGam_plataforma("PC");
 		game2.setGam_preco(99.00);

@@ -1,5 +1,9 @@
 package br.com.fatec.egammer.api.entity;
 
+import java.util.List;
+
+import com.google.common.collect.Lists;
+
 public class Desenvolvedora {
 	
 	public static final String TABLE = "DESENVOLVEDORA";
@@ -28,5 +32,13 @@ public class Desenvolvedora {
 	}
 	public void setDes_distribuidora(String des_distribuidora) {
 		this.des_distribuidora = des_distribuidora;
+	}
+	
+	public static List<String> getColunas() {
+		return Lists.newArrayList(COL_CODIGO, COL_STUDIO, COL_DISTRIBUIDORA);
+	}
+
+	public static String[] getColunasArray() {
+		return new String[] { COL_CODIGO, COL_STUDIO, COL_DISTRIBUIDORA };
 	}
 }

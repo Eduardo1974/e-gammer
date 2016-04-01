@@ -1,6 +1,9 @@
 package br.com.fatec.egammer.api.entity;
 
-import java.util.Date;
+import java.sql.Date;
+import java.util.List;
+
+import com.google.common.collect.Lists;
 
 public class Game {
 	
@@ -12,14 +15,14 @@ public class Game {
 	public static final String COL_QUANTIDADE = "GAM_QUANTIDADE";
 	public static final String COL_IMAGEM = "GAM_IMAGEM";
 	public static final String COL_CLASSIFICACAO = "GAM_CLASSIFICACAO";
-	public static final String COL_DATA_LANCAMENTO = "GAM_FATA_LANCAMENTO";
+	public static final String COL_DATA_LANCAMENTO = "GAM_DATA_LANCAMENTO";
 	public static final String COL_PLATAFORMA = "GAM_PLATAFORMA";
 	public static final String COL_GEN_CODIGO = "GEN_CODIGO";
 	public static final String COL_DES_CODIGO = "DES_CODIGO";
 	
 	private Long gam_codigo;
 	private String gam_titulo;
-	private String gam_desccricao;
+	private String gam_descricao;
 	private Double gam_preco;
 	private Integer gam_quantidade;
 	private String gam_imagem;
@@ -41,11 +44,11 @@ public class Game {
 	public void setGam_titulo(String gam_titulo) {
 		this.gam_titulo = gam_titulo;
 	}
-	public String getGam_desccricao() {
-		return gam_desccricao;
+	public String getGam_descricao() {
+		return gam_descricao;
 	}
-	public void setGam_desccricao(String gam_desccricao) {
-		this.gam_desccricao = gam_desccricao;
+	public void setGam_descricao(String gam_descricao) {
+		this.gam_descricao = gam_descricao;
 	}
 	public Double getGam_preco() {
 		return gam_preco;
@@ -94,6 +97,18 @@ public class Game {
 	}
 	public void setDesenvolvedora(Desenvolvedora desenvolvedora) {
 		this.desenvolvedora = desenvolvedora;
+	}
+	
+	public static List<String> getColunas() {
+		return Lists.newArrayList(COL_CODIGO, COL_TITULO, COL_DESCRICAO, COL_PRECO,
+				COL_QUANTIDADE, COL_IMAGEM, COL_CLASSIFICACAO, COL_DATA_LANCAMENTO,
+				COL_PLATAFORMA, COL_GEN_CODIGO, COL_DES_CODIGO);
+	}
+
+	public static String[] getColunasArray() {
+		return new String[] { COL_CODIGO, COL_TITULO, COL_DESCRICAO, COL_PRECO,
+				COL_QUANTIDADE, COL_IMAGEM, COL_CLASSIFICACAO, COL_DATA_LANCAMENTO,
+				COL_PLATAFORMA, COL_GEN_CODIGO, COL_DES_CODIGO };
 	}
 	
 }
