@@ -8,10 +8,9 @@ public class ItemPedido {
 	
 	public static final String TABLE = "ITEM_DO_PEDIDO";
 	public static final String COL_CODIGO = "ITP_CODIGO";
-	public static final String COL_TITULO = "ITP_PRECO_UNITARIO";
+	public static final String COL_PRECO_UNITARIO = "ITP_PRECO_UNITARIO";
 	public static final String COL_QUANTIDADE = "ITP_QUANTIDADE";
 	public static final String COL_PRECO_TOTAL = "ITP_PRECO_TOTAL";
-	public static final String COL_PRECO_UNITARIO = "ITP_PRECO_UNITARIO";
 	public static final String COL_GAM_CODIGO = "GAM_CODIGO";
 	public static final String COL_PED_CODIGO = "PED_CODIGO";
 	

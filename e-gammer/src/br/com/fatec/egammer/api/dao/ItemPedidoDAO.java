@@ -14,7 +14,7 @@ public interface ItemPedidoDAO {
 
 	ItemPedido buscaCodigoItemPedido(Long codigo);
 	
-	List<ItemPedido> buscaTodosItemPedido();
+	List<ItemPedido> buscaTodosItemPedido(Long pedido);
 	
 	List<ItemPedido> buscaTodosItensDoPedido(List<Long> codigo);
 }

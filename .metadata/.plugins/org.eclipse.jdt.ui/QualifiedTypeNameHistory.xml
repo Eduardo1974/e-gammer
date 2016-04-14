@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Desenvolverdora"/>
-<fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="liquibase.util.StringUtils"/>
 <fullyQualifiedTypeName name="org.apache.commons.lang3.StringUtils"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
@@ -18,15 +17,24 @@
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.google.common.collect.Lists"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.ItemPedidoDAO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.test.dao.ItemPedidoDAOTest"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Cliente"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Desenvolvedora"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Genero"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Game"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.ItemPedido"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.test.comum.TestBase"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.PedidoDAOImpl"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.DesenvolvedoraDAOImpl"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.GeneroDAOImpl"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.GameDAOImpl"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.ClienteDAOImpl"/>
+<fullyQualifiedTypeName name="javassist.compiler.Javac"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Game"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.GameDAO"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.ClienteDAO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.PedidoDAO"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Pedido"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.ItemPedido"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Pedido"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.ItemPedidoDAO"/>
 </qualifiedTypeNameHistroy>

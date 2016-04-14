@@ -1,6 +1,9 @@
 package br.com.fatec.egammer.api.entity;
 
 import java.util.Date;
+import java.util.List;
+
+import com.google.common.collect.Lists;
 
 public class Pedido {
 	
@@ -38,5 +41,13 @@ public class Pedido {
 	}
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+	
+	public static List<String> getColunas() {
+		return Lists.newArrayList(COL_CODIGO,COL_DATA, COL_PED_VALOR_TOTAL,COL_CLI_CODIGO);
+	}
+
+	public static String[] getColunasArray() {
+		return new String[] {COL_CODIGO,COL_DATA, COL_PED_VALOR_TOTAL,COL_CLI_CODIGO};
 	}
 }

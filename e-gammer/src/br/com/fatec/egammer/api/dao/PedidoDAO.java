@@ -13,8 +13,6 @@ public interface PedidoDAO {
 
 	Pedido buscaPedidoCodigo(Long codigo);
 
-	List<Pedido> buscarTodosPedidos();
-
 	List<Pedido> buscaTodosPedidosCliente(Long codigo);
 	
 	List<Pedido> buscaTodosPedidosCodigos(List<Long> codigos);
