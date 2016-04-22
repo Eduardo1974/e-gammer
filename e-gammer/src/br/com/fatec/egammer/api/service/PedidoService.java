@@ -12,7 +12,7 @@ public interface PedidoService {
 
 	void deletar(Long pedidoId);
 
-	List<PedidoDTO> listar();
+	List<PedidoDTO> listar(Long cliCodigo);
 
 	PedidoDTO buscarPorId(Long pedidoId);
 
