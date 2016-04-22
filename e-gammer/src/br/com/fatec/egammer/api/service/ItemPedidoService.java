@@ -12,8 +12,8 @@ public interface ItemPedidoService {
 
 	void deletar(Long itemPedidoId);
 
-	List<ItemPedidoDTO> listar();
-
 	ItemPedidoDTO buscarPorId(Long itemPedidoId);
+
+	List<ItemPedidoDTO> listar(Long pedCodigo);
 
 }

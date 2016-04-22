@@ -1,7 +1,6 @@
 package br.com.fatec.egammer.api.dto;
 
 import br.com.fatec.egammer.api.entity.Game;
-import br.com.fatec.egammer.api.entity.Pedido;
 
 public class ItemPedidoDTO {
 	
@@ -10,23 +9,8 @@ public class ItemPedidoDTO {
 	private Integer itp_quantidade;
 	private  Double ipt_preco_total;
 	private Game game;
-	private Pedido pedido;
+	private Long ped_codigo;
 	
-	public ItemPedidoDTO(){
-		
-	}
-
-	public ItemPedidoDTO(Long itp_codigo, Double itp_preco_unitario, Integer itp_quantidade, Double ipt_preco_total,
-			Game game, Pedido pedido) {
-		super();
-		this.itp_codigo = itp_codigo;
-		this.itp_preco_unitario = itp_preco_unitario;
-		this.itp_quantidade = itp_quantidade;
-		this.ipt_preco_total = ipt_preco_total;
-		this.game = game;
-		this.pedido = pedido;
-	}
-
 	public Long getItp_codigo() {
 		return itp_codigo;
 	}
@@ -67,17 +51,16 @@ public class ItemPedidoDTO {
 		this.game = game;
 	}
 
-	public Pedido getPedido() {
-		return pedido;
+	public Long getPed_codigo() {
+		return ped_codigo;
 	}
 
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
+	public void setPed_codigo(Long ped_codigo) {
+		this.ped_codigo = ped_codigo;
 	}
 	
 	@Override
 	public String toString(){
 		return "ItemPedido" + this.itp_codigo + " - " + this.ipt_preco_total + "]";
 	}
-
 }

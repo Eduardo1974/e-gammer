@@ -99,20 +99,21 @@ public class ClienteDAOTest extends TestBase{
 		Assert.assertEquals("senha_2", encontrados.get(1).getCli_senha());
 	}
 	
-	/*public void runTests() {
-		this.setDown();
-		this.config();
-		this.testSave();
-		this.setDown();
-		this.config();
-		this.testUpdate();
-		this.setDown();
-		this.config();
-		this.testFindAll();
-		this.setDown();
-		this.config();
-		this.testDelete();
-		this.setDown();
-	}*/
+	@Test
+	public void testLogin() {
+		Cliente cli_salvar = new Cliente();
+		cli_salvar.setCli_nome("carlos");
+		cli_salvar.setCli_email("augusto@fatec.com");
+		cli_salvar.setCli_senha("senha_carlos");
+
+		Long codigo = this.dao.save(cli_salvar);
+
+		Cliente cli_busca = this.dao.buscarCodigo(codigo);
+		Cliente cli_logado = this.dao.buscarPorLoginESenha(cli_busca.getCli_email(), cli_busca.getCli_senha());
+
+		Assert.assertNotNull(cli_logado);
+	}
+	
+	
 
 }

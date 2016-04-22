@@ -200,20 +200,9 @@ public class ItemPedidoDAOImpl implements ItemPedidoDAO{
 	private List<ItemPedido> criarItensPedido(ResultSet rs) throws SQLException {
 		List<ItemPedido> itensPedido = Lists.newArrayList();
 		while (rs.next()) {
-			itensPedido.add(this.criarItem(rs));
+			itensPedido.add(this.criarItemPedido(rs));
 		}
 		return itensPedido;
-	}
-	
-	private ItemPedido criarItem(ResultSet rs) throws SQLException {
-		ItemPedido itemPedido = new ItemPedido();
-		itemPedido.setItp_codigo(rs.getLong(ItemPedido.COL_CODIGO));
-		itemPedido.setIpt_preco_total(rs.getDouble(ItemPedido.COL_PRECO_TOTAL));
-		itemPedido.setItp_preco_unitario(rs.getDouble(ItemPedido.COL_PRECO_UNITARIO));
-		itemPedido.setItp_quantidade(rs.getInt(ItemPedido.COL_QUANTIDADE));
-		itemPedido.setGame(this.gameDao.buscarCodigo(rs.getLong(ItemPedido.COL_GAM_CODIGO)));
-		itemPedido.setPed_codigo(rs.getLong(ItemPedido.COL_PED_CODIGO));
-		return itemPedido;
 	}
 	
 	private ItemPedido criarItemPedido(ResultSet rs) throws SQLException {

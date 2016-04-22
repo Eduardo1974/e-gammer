@@ -6,6 +6,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 import br.com.fatec.egammer.api.entity.Cliente;
+import br.com.fatec.egammer.api.entity.ItemPedido;
 
 public class PedidoDTO {
 	
@@ -13,20 +14,8 @@ public class PedidoDTO {
 	private Date ped_data;
 	private Double ped_valor_total;
 	private Cliente cliente;
-	private List<ItemPedidoDTO> itensPedidos = Lists.newArrayList();
+	private List<ItemPedido> itensPedidos = Lists.newArrayList();
 	
-	public PedidoDTO(){
-		
-	}
-
-	public PedidoDTO(Long ped_codigo, Date ped_data, Double ped_valor_total, Cliente cliente) {
-		super();
-		this.ped_codigo = ped_codigo;
-		this.ped_data = ped_data;
-		this.ped_valor_total = ped_valor_total;
-		this.cliente = cliente;
-	}
-
 	public Long getPed_codigo() {
 		return ped_codigo;
 	}
@@ -65,11 +54,11 @@ public class PedidoDTO {
 	}
 
 
-	public List<ItemPedidoDTO> getItensPedidos() {
+	public List<ItemPedido> getItensPedidos() {
 		return itensPedidos;
 	}
 
-	public void setItensPedidos(List<ItemPedidoDTO> itensPedidos) {
+	public void setItensPedidos(List<ItemPedido> itensPedidos) {
 		this.itensPedidos = itensPedidos;
 	}
 	

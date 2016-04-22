@@ -13,6 +13,7 @@ import org.apache.commons.dbutils.DbUtils;
 import com.google.common.collect.Lists;
 
 import br.com.fatec.egammer.api.dao.ClienteDAO;
+import br.com.fatec.egammer.api.dto.ClienteDTO;
 import br.com.fatec.egammer.api.entity.Cliente;
 import br.com.spektro.minispring.core.dbmapper.ConfigDBMapper;
 
@@ -138,7 +139,31 @@ public class ClienteDAOImpl implements ClienteDAO{
 		}
 	}
 	
-
+	@Override
+	public Cliente buscarPorLoginESenha(String login, String senha) {
+		Connection conn = null;
+		PreparedStatement find = null;
+		Cliente cliente = null;
+		try {
+			conn = ConfigDBMapper.getDefaultConnection();
+			String sql = "SELECT * FROM " + Cliente.TABLE + " WHERE " + Cliente.COL_EMAIL
+					+ " = ? and "+Cliente.COL_SENHA+" = ?;";
+			find = conn.prepareStatement(sql);
+			find.setString(1, login);
+			find.setString(2, senha);
+			ResultSet rs = find.executeQuery();
+			if (rs.next()) {
+				cliente = this.criarCliente(rs);
+			}
+			return cliente;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		} finally {
+			DbUtils.closeQuietly(conn);
+			DbUtils.closeQuietly(find);
+		}
+	}
+	
 	private List<Cliente> criarClientes(ResultSet rs) throws SQLException {
 		List<Cliente> clientes = Lists.newArrayList();
 		while (rs.next()) {
@@ -155,7 +180,4 @@ public class ClienteDAOImpl implements ClienteDAO{
 		usuario.setCli_senha(rs.getString(Cliente.COL_SENHA));
 		return usuario;
 	}
-
-	
-
 }
