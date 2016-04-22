@@ -1,5 +1,7 @@
 package br.com.fatec.egammer.web.context;
 
-public class ContextoPedido {
+import java.io.Serializable;
+
+public class ContextoPedido implements Serializable{
 
 }

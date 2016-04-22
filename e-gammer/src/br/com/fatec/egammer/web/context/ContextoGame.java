@@ -1,5 +1,7 @@
 package br.com.fatec.egammer.web.context;
 
-public class ContextoGame {
+import java.io.Serializable;
+
+public class ContextoGame implements Serializable{
 
 }
