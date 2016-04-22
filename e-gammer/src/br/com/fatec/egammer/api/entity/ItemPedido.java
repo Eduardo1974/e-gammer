@@ -18,8 +18,9 @@ public class ItemPedido {
 	private Double itp_preco_unitario;
 	private Integer itp_quantidade;
 	private  Double ipt_preco_total;
+	private Long ped_codigo;
 	private Game game;
-	private Pedido pedido;
+	
 	
 	public Long getItp_codigo() {
 		return itp_codigo;
@@ -51,18 +52,20 @@ public class ItemPedido {
 	public void setGame(Game game) {
 		this.game = game;
 	}
-	public Pedido getPedido() {
-		return pedido;
+	
+	public Long getPed_codigo() {
+		return ped_codigo;
 	}
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
-	}
-		
+	public void setPed_codigo(Long ped_codigo) {
+		this.ped_codigo = ped_codigo;
+	}	
+	
 	public static List<String> getColunas() {
 		return Lists.newArrayList(COL_CODIGO,COL_PRECO_UNITARIO, COL_QUANTIDADE,COL_PRECO_TOTAL,COL_PED_CODIGO,COL_GAM_CODIGO );
 	}
 
 	public static String[] getColunasArray() {
 		return new String[] {COL_CODIGO,COL_PRECO_UNITARIO,COL_QUANTIDADE,COL_PRECO_TOTAL,COL_PED_CODIGO,COL_GAM_CODIGO};
-	}	
+	}
+	
 }

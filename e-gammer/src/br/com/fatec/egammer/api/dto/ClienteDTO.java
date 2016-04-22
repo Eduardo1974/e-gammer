@@ -4,26 +4,17 @@ import java.util.List;
 
 import com.google.common.collect.Lists;
 
+import br.com.fatec.egammer.api.entity.Pedido;
+
 public class ClienteDTO {
 	
 	private Long cli_codigo;
 	private String cli_nome;
 	private String cli_email;
 	private String cli_senha;
-	private List<PedidoDTO> pedidos = Lists.newArrayList();
+	private List<Pedido> pedidos = Lists.newArrayList();
 	
-	public ClienteDTO(){
-		
-	}
-
-	public ClienteDTO(Long cli_codigo, String cli_nome, String cli_email, String cli_senha) {
-		super();
-		this.cli_codigo = cli_codigo;
-		this.cli_nome = cli_nome;
-		this.cli_email = cli_email;
-		this.cli_senha = cli_senha;
-	}
-
+	
 	public Long getCli_codigo() {
 		return cli_codigo;
 	}
@@ -61,11 +52,11 @@ public class ClienteDTO {
 		return "Cliente[" + this.cli_codigo + " - " + this.cli_nome + "]";
 	}
 
-	public List<PedidoDTO> getPedidos() {
+	public List<Pedido> getPedidos() {
 		return pedidos;
 	}
 
-	public void setPedidos(List<PedidoDTO> pedidos) {
+	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
 	}
 

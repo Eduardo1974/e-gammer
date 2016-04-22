@@ -86,7 +86,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		ItemPedidoDAO_salvar.setIpt_preco_total(100.00);
 		ItemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		ItemPedidoDAO_salvar.setItp_quantidade(10);
-		ItemPedidoDAO_salvar.setPedido(pedido);
+		ItemPedidoDAO_salvar.setPed_codigo(pedCodigo);
 		ItemPedidoDAO_salvar.setGame(game);
 	
 		
@@ -154,7 +154,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		ItemPedidoDAO_salvar.setIpt_preco_total(100.00);
 		ItemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		ItemPedidoDAO_salvar.setItp_quantidade(10);
-		ItemPedidoDAO_salvar.setPedido(pedido);
+		ItemPedidoDAO_salvar.setPed_codigo(pedCodigo);
 		ItemPedidoDAO_salvar.setGame(game);
 	
 		
@@ -225,7 +225,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar.setIpt_preco_total(100.00);
 		itemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar.setItp_quantidade(10);
-		itemPedidoDAO_salvar.setPedido(pedido);
+		itemPedidoDAO_salvar.setPed_codigo(pedCodigo);
 		itemPedidoDAO_salvar.setGame(game);
 	
 		
@@ -289,7 +289,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar.setIpt_preco_total(100.00);
 		itemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar.setItp_quantidade(10);
-		itemPedidoDAO_salvar.setPedido(pedido);
+		itemPedidoDAO_salvar.setPed_codigo(pedCodigo);
 		itemPedidoDAO_salvar.setGame(game);
 		Long id = this.dao.save(itemPedidoDAO_salvar);
 		
@@ -297,7 +297,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar2.setIpt_preco_total(100.00);
 		itemPedidoDAO_salvar2.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar2.setItp_quantidade(10);
-		itemPedidoDAO_salvar2.setPedido(pedido);
+		itemPedidoDAO_salvar2.setPed_codigo(pedCodigo);
 		itemPedidoDAO_salvar2.setGame(game);
 		Long id2 = this.dao.save(itemPedidoDAO_salvar2);
 		
@@ -360,7 +360,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar.setIpt_preco_total(100.00);
 		itemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar.setItp_quantidade(10);
-		itemPedidoDAO_salvar.setPedido(pedido);
+		itemPedidoDAO_salvar.setPed_codigo(pedCodigo);
 		itemPedidoDAO_salvar.setGame(game);
 	
 		
@@ -425,7 +425,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar.setIpt_preco_total(100.00);
 		itemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar.setItp_quantidade(10);
-		itemPedidoDAO_salvar.setPedido(pedido);
+		itemPedidoDAO_salvar.setPed_codigo(pedCodigo);
 		itemPedidoDAO_salvar.setGame(game);
 	
 		
@@ -480,7 +480,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar2.setIpt_preco_total(100.00);
 		itemPedidoDAO_salvar2.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar2.setItp_quantidade(10);
-		itemPedidoDAO_salvar2.setPedido(pedido2);
+		itemPedidoDAO_salvar2.setPed_codigo(pedCodigo2);
 		itemPedidoDAO_salvar2.setGame(game2);
 	
 		Long id2 = this.dao.save(itemPedidoDAO_salvar2);

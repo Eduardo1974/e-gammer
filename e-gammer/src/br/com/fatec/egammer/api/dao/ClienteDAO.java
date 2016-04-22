@@ -15,6 +15,4 @@ public interface ClienteDAO {
 	Cliente buscarCodigo(Long codigo);
 
 	List<Cliente> buscarTodosClientes();
-
-
 }

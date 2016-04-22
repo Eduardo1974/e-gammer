@@ -17,6 +17,8 @@ public class Pedido {
 	private Date ped_data;
 	private Double ped_valor_total;
 	private Cliente cliente;
+	private List<ItemPedido> itensPedido;
+	
 	
 	public Long getPed_codigo() {
 		return ped_codigo;
@@ -43,6 +45,13 @@ public class Pedido {
 		this.cliente = cliente;
 	}
 	
+	public List<ItemPedido> getItensPedido() {
+		return itensPedido;
+	}
+	public void setItensPedido(List<ItemPedido> itensPedido) {
+		this.itensPedido = itensPedido;
+	}
+	
 	public static List<String> getColunas() {
 		return Lists.newArrayList(COL_CODIGO,COL_DATA, COL_PED_VALOR_TOTAL,COL_CLI_CODIGO);
 	}
@@ -50,4 +59,5 @@ public class Pedido {
 	public static String[] getColunasArray() {
 		return new String[] {COL_CODIGO,COL_DATA, COL_PED_VALOR_TOTAL,COL_CLI_CODIGO};
 	}
+	
 }

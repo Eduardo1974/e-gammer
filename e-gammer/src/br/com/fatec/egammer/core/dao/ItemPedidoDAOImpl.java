@@ -28,11 +28,10 @@ public class ItemPedidoDAOImpl implements ItemPedidoDAO{
 	
 	
 	private GameDAO gameDao;
-	private PedidoDAO pedDao;
+	
 	
 	public ItemPedidoDAOImpl(){
 		this.gameDao = ImplFinder.getImpl(GameDAO.class);
-		this.pedDao = ImplFinder.getImpl(PedidoDAO.class);
 	}
 	
 	@Override
@@ -56,7 +55,7 @@ public class ItemPedidoDAOImpl implements ItemPedidoDAO{
 			insert.setDouble(1, itemPedido.getItp_preco_unitario());
 			insert.setInt(2, itemPedido.getItp_quantidade());
 			insert.setDouble(3, itemPedido.getIpt_preco_total());
-			insert.setLong(4, itemPedido.getPedido().getPed_codigo());
+			insert.setLong(4, itemPedido.getPed_codigo());
 			insert.setLong(5, itemPedido.getGame().getGam_codigo());
 			insert.execute();
 
@@ -90,7 +89,7 @@ public class ItemPedidoDAOImpl implements ItemPedidoDAO{
 			
 			update.setInt(1, itemPedido.getItp_quantidade());
 			update.setDouble(2, itemPedido.getIpt_preco_total());
-			update.setLong(3, itemPedido.getPedido().getPed_codigo());
+			update.setLong(3, itemPedido.getPed_codigo());
 			if(update.execute()== false){
 				resultado = true;
 			}
@@ -213,7 +212,7 @@ public class ItemPedidoDAOImpl implements ItemPedidoDAO{
 		itemPedido.setItp_preco_unitario(rs.getDouble(ItemPedido.COL_PRECO_UNITARIO));
 		itemPedido.setItp_quantidade(rs.getInt(ItemPedido.COL_QUANTIDADE));
 		itemPedido.setGame(this.gameDao.buscarCodigo(rs.getLong(ItemPedido.COL_GAM_CODIGO)));
-		itemPedido.setPedido(this.pedDao.buscaPedidoCodigo(rs.getLong(ItemPedido.COL_PED_CODIGO)));
+		itemPedido.setPed_codigo(rs.getLong(ItemPedido.COL_PED_CODIGO));
 		return itemPedido;
 	}
 	
@@ -224,7 +223,7 @@ public class ItemPedidoDAOImpl implements ItemPedidoDAO{
 		itemPedido.setItp_preco_unitario(rs.getDouble(ItemPedido.COL_PRECO_UNITARIO));
 		itemPedido.setItp_quantidade(rs.getInt(ItemPedido.COL_QUANTIDADE));
 		itemPedido.setGame(this.gameDao.buscarCodigo(rs.getLong("GAM_COD")));
-		itemPedido.setPedido(this.pedDao.buscaPedidoCodigo(rs.getLong("P_COD")));
+		itemPedido.setPed_codigo(rs.getLong("P_COD"));
 		return itemPedido;
 	}
 }

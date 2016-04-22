@@ -13,6 +13,7 @@ import org.apache.commons.dbutils.DbUtils;
 
 import com.google.common.collect.Lists;
 
+import br.com.fatec.egammer.api.dao.ClienteDAO;
 import br.com.fatec.egammer.api.dao.GameDAO;
 import br.com.fatec.egammer.api.dao.ItemPedidoDAO;
 import br.com.fatec.egammer.api.dao.PedidoDAO;
@@ -25,6 +26,13 @@ import javassist.compiler.Javac;
 
 public class PedidoDAOImpl implements PedidoDAO{
 	
+	private ClienteDAO cliDao;
+	private ItemPedidoDAO itemDao;
+	
+	public PedidoDAOImpl(){
+		this.cliDao = ImplFinder.getImpl(ClienteDAO.class);
+		this.itemDao = ImplFinder.getImpl(ItemPedidoDAO.class);
+	}
 	
 	@Override
 	public Long save(Pedido pedido) {
@@ -120,7 +128,7 @@ public class PedidoDAOImpl implements PedidoDAO{
 		Pedido pedido = null;
 		try {
 			conn = ConfigDBMapper.getDefaultConnection();
-			String sql = "SELECT P.PED_CODIGO, P.PED_DATA, P.PED_VALOR_TOTAL FROM PEDIDO P WHERE PED_CODIGO = ?;";
+			String sql = "SELECT P.PED_CODIGO, P.PED_DATA, P.PED_VALOR_TOTAL, P.CLI_CODIGO FROM PEDIDO P WHERE PED_CODIGO = ?;";
 			find = conn.prepareStatement(sql);
 			find.setLong(1, codigo);
 			ResultSet rs = find.executeQuery();
@@ -197,6 +205,8 @@ public class PedidoDAOImpl implements PedidoDAO{
 		pedido.setPed_codigo(rs.getLong("PED_CODIGO"));
 		//pedido.setPed_data(rs.getDate("PED_DATA"));
 		pedido.setPed_valor_total(rs.getDouble("PED_VALOR_TOTAL"));
+		pedido.setCliente(this.cliDao.buscarCodigo(rs.getLong("CLI_CODIGO")));
+		pedido.setItensPedido(this.itemDao.buscaTodosItemPedido(rs.getLong("PED_CODIGO")));
 		return pedido;
 	}
 }

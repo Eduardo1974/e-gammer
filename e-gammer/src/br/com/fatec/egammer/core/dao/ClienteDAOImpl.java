@@ -138,6 +138,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 		}
 	}
 	
+
 	private List<Cliente> criarClientes(ResultSet rs) throws SQLException {
 		List<Cliente> clientes = Lists.newArrayList();
 		while (rs.next()) {
@@ -154,5 +155,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 		usuario.setCli_senha(rs.getString(Cliente.COL_SENHA));
 		return usuario;
 	}
+
+	
 
 }
