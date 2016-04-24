@@ -14,18 +14,19 @@
 			<interceptor name="cookieProvider" class="org.apache.struts2.interceptor.CookieProviderInterceptor"/>
 		</interceptors>
 
-		<action name="Test!*" class="br.com.fatec.projetoweb.web.action.TestAction"
+		<action name="Test!*" class="br.com.fatec.egammer.web.action.TestAction"
 			method="{1}">
-			<result name="html">index.html</result>
+			<result name="html">/web_apps/index.html</result>
 		</action>
 
-		<action name="*!*" class="br.com.fatec.projetoweb.web.action.{1}Action"
+		<action name="*!*" class="br.com.fatec.egammer.web.action.{1}Action"
 			method="{2}">
 			<interceptor-ref name="cookie"></interceptor-ref>
 		    <interceptor-ref name="cookieProvider"></interceptor-ref>
 		    <interceptor-ref name="defaultStack"></interceptor-ref>
 			<result name="foi" type="json" />
 		</action>
-
+		
 	</package>
+	
 </struts>
