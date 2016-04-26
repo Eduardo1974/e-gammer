@@ -1,60 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
 	<head>
-		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">  
-	    <title>Visual Admin - Login</title>
+	    <title>E-gammer - Login</title>
         <meta name="description" content="">
         <meta name="author" content="templatemo">
-        <!-- 
-        Visual Admin Template
-        http://www.templatemo.com/preview/templatemo_455_visual_admin
-        -->
-	    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
-	    <link href="css/font-awesome.min.css" rel="stylesheet">
-	    <link href="css/bootstrap.min.css" rel="stylesheet">
-	    <link href="css/templatemo-style.css" rel="stylesheet">
-	    
-	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	    <!--[if lt IE 9]>
-	      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	    <![endif]-->
+
 	</head>
-	<body class="light-gray-bg">
-		<div class="templatemo-content-widget templatemo-login-widget white-bg">
-			<header class="text-center">
-	          <div class="square"></div>
-	          <h1>Visual Admin</h1>
-	        </header>
-	        <form action="index.html" class="templatemo-login-form">
-	        	<div class="form-group">
-	        		<div class="input-group">
-		        		<div class="input-group-addon"><i class="fa fa-user fa-fw"></i></div>	        		
-		              	<input type="text" class="form-control" placeholder="js@dashboard.com">           
-		          	</div>	
-	        	</div>
-	        	<div class="form-group">
-	        		<div class="input-group">
-		        		<div class="input-group-addon"><i class="fa fa-key fa-fw"></i></div>	        		
-		              	<input type="password" class="form-control" placeholder="******">           
-		          	</div>	
-	        	</div>	          	
-	          	<div class="form-group">
-				    <div class="checkbox squaredTwo">
-				        <input type="checkbox" id="c1" name="cc" />
-						<label for="c1"><span></span>Remember me</label>
-				    </div>				    
+	<body ng-app=""  >
+		<div class="templatemo-flex-row ">
+			<ng-include src="'../barra_lateral.html'"></ng-include> 
+			<div class="templatemo-content col-1 light-gray-bg">
+				<ng-include src="'../barra_menu.html'"></ng-include> 
+				<div class="templatemo-content-widget templatemo-login-widget white-bg">
+					<header class="text-center">
+			          <div class="square"></div>
+			          <h1>E-gammer</h1>
+			        </header>
+			        <form class="templatemo-login-form">
+			        	<div class="form-group">
+			        		<div class="input-group">
+				        		<div class="input-group-addon"><i class="fa fa-user fa-fw"></i></div>	        		
+				              	<input type="text" class="form-control" placeholder="js@dashboard.com">           
+				          	</div>	
+			        	</div>
+			        	<div class="form-group">
+			        		<div class="input-group">
+				        		<div class="input-group-addon"><i class="fa fa-key fa-fw"></i></div>	        		
+				              	<input type="password" class="form-control" placeholder="******">           
+				          	</div>	
+			        	</div>	          	
+			          	<div class="form-group">
+						    <div class="checkbox squaredTwo">
+						        <input type="checkbox" id="c1" name="cc" />
+								<label for="c1"><span></span>Esqueci minha senha</label>
+						    </div>				    
+						</div>
+						<div class="form-group">
+							<button type="submit" class="templatemo-blue-button width-100">Login</button>
+						</div>
+			        </form>
 				</div>
-				<div class="form-group">
-					<button type="submit" class="templatemo-blue-button width-100">Login</button>
+		        <div class="templatemo-content-widget templatemo-login-widget templatemo-register-widget white-bg">
+					<p> Ainda não tem uma conta?<strong><a href="../html/registrar.html" class="blue-text"> Cadastre-se</a></strong></p>
 				</div>
-	        </form>
+			</div>
 		</div>
-		<div class="templatemo-content-widget templatemo-login-widget templatemo-register-widget white-bg">
-			<p>Not a registered user yet? <strong><a href="#" class="blue-text">Sign up now!</a></strong></p>
-		</div>
+		<ng-include src="'../rodape.html'"></ng-include> 
+		  
+		<!-- JS -->
+		<script type="text/javascript" src="../controller/angular.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+	    <link href="../css/font-awesome.min.css" rel="stylesheet">
+	    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	    <link href="../css/templatemo-style.css" rel="stylesheet">
+	    <script src="../controller/jquery-1.11.2.min.js"></script>     
+	    <script src="../controller/jquery-migrate-1.2.1.min.js"></script> 
+	    <script type="text/javascript" src="../controller/templatemo-script.js"></script>    
+		<script type="text/javascript" src="../controller/comum/comum.js"></script>
+	  
 	</body>
 </html>

@@ -2,6 +2,7 @@
 // lógicas de negócio e códigos que possuam objetivos comuns.
 // Para se definir um módulo usamos: angular.module('NOME_MODULO', ['DEPENDENCIA_1', 'DEPENDENCIA_2']);
 // O módulo ui-bootstrap serve para facilitar a integração angular->bootstrap CSS
+
 angular.module('egammer', ['ui.bootstrap']);
 
 var StorageHelper = (function(){
@@ -13,7 +14,7 @@ var StorageHelper = (function(){
 	};
 
 	SH.getItem = function(chave, valor) {
-		return angular.fromJson(window.localStorage.getItem('usuario'));
+		return angular.fromJson(window.localStorage.getItem(chave));
 	};
 
 	SH.removeItem = function(chave) {
