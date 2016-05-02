@@ -13,7 +13,7 @@ public class ClienteDTO {
 	private String cli_email;
 	private String cli_senha;
 	private List<Pedido> pedidos = Lists.newArrayList();
-	
+	private Long startSession;
 	
 	public Long getCli_codigo() {
 		return cli_codigo;
@@ -58,6 +58,14 @@ public class ClienteDTO {
 
 	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
+	}
+
+	public Long getStartSession() {
+		return startSession;
+	}
+
+	public void setStartSession(Long startSession) {
+		this.startSession = startSession;
 	}
 
 

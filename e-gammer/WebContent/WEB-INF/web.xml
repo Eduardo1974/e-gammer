@@ -6,7 +6,7 @@
 	<display-name>e-gammer</display-name>
 
 	<welcome-file-list>
-		<welcome-file>web_apps/index.html</welcome-file>
+		<welcome-file>/web_apps/html/index.html</welcome-file>
 	</welcome-file-list>
 
 	<listener>

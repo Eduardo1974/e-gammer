@@ -15,7 +15,7 @@ public class ClienteDTOConverter implements DTOConverter<Cliente, ClienteDTO>{
 	private PedidoDAO pedDAO;
 	
 	public ClienteDTOConverter(){
-		this.pedDAO = ImplFinder.getFinalImpl(PedidoDAO.class);
+		this.pedDAO = ImplFinder.getImpl(PedidoDAO.class);
 	}
 	
 	@Override

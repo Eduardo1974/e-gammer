@@ -22,8 +22,6 @@
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.GameDAOImpl"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.ClienteDAOImpl"/>
 <fullyQualifiedTypeName name="javassist.compiler.Javac"/>
-<fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.converter.DesenvolvedoraDTOConverter"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.DesenvolvedoraDTO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Desenvolvedora"/>
@@ -49,7 +47,6 @@
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.PedidoDAO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.converter.PedidoDTOConverter"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.ClienteDTO"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.ItemPedidoDTO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.PedidoDTO"/>
@@ -57,4 +54,7 @@
 <fullyQualifiedTypeName name="br.com.fatec.egammer.web.context.ContextoCliente"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.web.action.ClienteAction"/>
 <fullyQualifiedTypeName name="br.com.spektro.minispring.core.implfinder.ImplFinder"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.ClienteDTO"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>

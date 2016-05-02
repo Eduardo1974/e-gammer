@@ -16,7 +16,7 @@ public class ClienteServiceImpl implements ClienteService{
 	
 	public ClienteServiceImpl(){
 		this.cliDao = ImplFinder.getImpl(ClienteDAO.class);
-		this.cliDtoConverter = ImplFinder.getImpl(ClienteDTOConverter.class);
+		this.cliDtoConverter = ImplFinder.getFinalImpl(ClienteDTOConverter.class);
 	}
 	
 	@Override

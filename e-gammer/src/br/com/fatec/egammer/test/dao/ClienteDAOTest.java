@@ -22,9 +22,9 @@ public class ClienteDAOTest extends TestBase{
 	@Test
 	public void testSave() {
 		Cliente cli_salvar = new Cliente();
-		cli_salvar.setCli_nome("carlos");
-		cli_salvar.setCli_email("carlos@fatec.com");
-		cli_salvar.setCli_senha("senha_carlos");
+		cli_salvar.setCli_nome("eduardo");
+		cli_salvar.setCli_email("edu@fatec.com");
+		cli_salvar.setCli_senha("1234");
 
 		Long codigo = this.dao.save(cli_salvar);
 

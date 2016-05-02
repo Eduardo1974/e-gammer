@@ -16,7 +16,7 @@
 
 		<action name="Test!*" class="br.com.fatec.egammer.web.action.TestAction"
 			method="{1}">
-			<result name="html">/web_apps/index.html</result>
+			<result name="html">/web_apps/html/index.html</result>
 		</action>
 
 		<action name="*!*" class="br.com.fatec.egammer.web.action.{1}Action"
@@ -24,7 +24,7 @@
 			<interceptor-ref name="cookie"></interceptor-ref>
 		    <interceptor-ref name="cookieProvider"></interceptor-ref>
 		    <interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="foi" type="json" />
+			<result name="success" type="json" />
 		</action>
 		
 	</package>

@@ -141,6 +141,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 	
 	@Override
 	public Cliente buscarPorLoginESenha(String login, String senha) {
+		insereTest();
 		Connection conn = null;
 		PreparedStatement find = null;
 		Cliente cliente = null;
@@ -179,5 +180,13 @@ public class ClienteDAOImpl implements ClienteDAO{
 		usuario.setCli_email(rs.getString(Cliente.COL_EMAIL));
 		usuario.setCli_senha(rs.getString(Cliente.COL_SENHA));
 		return usuario;
+	}
+	
+	public void insereTest(){
+		Cliente cli_salvar = new Cliente();
+		cli_salvar.setCli_nome("eduardo");
+		cli_salvar.setCli_email("edu@fatec.com");
+		cli_salvar.setCli_senha("1234");
+		Long codigo = this.save(cli_salvar);
 	}
 }
