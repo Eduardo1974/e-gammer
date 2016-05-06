@@ -20,6 +20,7 @@ public class DesenvolvedoraDAOImpl implements DesenvolvedoraDAO{
 
 	@Override
 	public Long save(Desenvolvedora desenvolvedora) {
+		
 		Connection conn = null;
 		PreparedStatement insert = null;
 		try {
@@ -52,7 +53,6 @@ public class DesenvolvedoraDAOImpl implements DesenvolvedoraDAO{
 			DbUtils.closeQuietly(insert);
 			DbUtils.closeQuietly(conn);
 		}
-		
 	}
 
 	@Override

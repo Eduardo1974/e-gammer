@@ -17,13 +17,11 @@
 <fullyQualifiedTypeName name="br.com.fatec.egammer.test.dao.ItemPedidoDAOTest"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.test.comum.TestBase"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.PedidoDAOImpl"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.DesenvolvedoraDAOImpl"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.GeneroDAOImpl"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.GameDAOImpl"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.ClienteDAOImpl"/>
 <fullyQualifiedTypeName name="javassist.compiler.Javac"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.converter.DesenvolvedoraDTOConverter"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.DesenvolvedoraDTO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Desenvolvedora"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Game"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.GameDTO"/>
@@ -33,7 +31,6 @@
 <fullyQualifiedTypeName name="com.google.common.collect.Lists"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.ItemPedidoService"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.PedidoService"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.DesenvolvedoraService"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.GameService"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.GeneroService"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.ClienteDAO"/>
@@ -47,14 +44,18 @@
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.PedidoDAO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.converter.PedidoDTOConverter"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.ItemPedidoDTO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.PedidoDTO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.ClienteService"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.web.context.ContextoCliente"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.web.action.ClienteAction"/>
-<fullyQualifiedTypeName name="br.com.spektro.minispring.core.implfinder.ImplFinder"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.ClienteDTO"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.DesenvolvedoraService"/>
+<fullyQualifiedTypeName name="br.com.spektro.minispring.core.implfinder.ImplFinder"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.DesenvolvedoraDTO"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.web.context.ContextoDesenvolvedora"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.DesenvolvedoraDAOImpl"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
