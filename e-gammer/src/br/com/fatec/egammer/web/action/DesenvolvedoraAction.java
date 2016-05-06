@@ -38,8 +38,9 @@ public class DesenvolvedoraAction extends ProjetoWebAction{
 	}
 
 	public String editar() {
-		DesenvolvedoraDTO des = this.service.buscarPorId(this.contexto.getDesenvolvedora().getDes_codigo());
-		this.contexto.setDesenvolvedora(des);
+		this.service.atualizar(this.contexto.getDesenvolvedora());
+		//DesenvolvedoraDTO des = this.service.buscarPorId(this.contexto.getDesenvolvedora().getDes_codigo());
+		//this.contexto.setDesenvolvedora(des);
 		return this.listar();
 	}
 
