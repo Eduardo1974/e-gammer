@@ -97,6 +97,8 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 		    async: false,
 		    success: function (response) {
 		    	$scope.loadDesenvolvedoras();
+		    	$scope.desenvolvedora = null;
+		    	$scope.btnLabel = "Adicionar";
 		    	console.log("alterou");
 		    }
 		});
