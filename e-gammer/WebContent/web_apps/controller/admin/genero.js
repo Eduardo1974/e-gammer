@@ -1,14 +1,14 @@
 
 var app = angular.module('egammer');
 
-app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce',
+app.controller('GeneroController', ['$scope', '$http', '$timeout', '$sce',
                                    function($scope, $http, $timeout, $sce) {
 
 	var CHAVE_STORAGE = 'usuario';
-	var urlPath = "http://localhost:8085/e-gammer/Desenvolvedora!";
+	var urlPath = "http://localhost:8085/e-gammer/Genero!";
 	
-	$scope.desenvolvedora = {};
-	$scope.desenvolvedoras ;
+	$scope.genero = {};
+	$scope.generos ;
 	$scope.btnLabel = "Adicionar";
 	$scope.isLogado = false;
 	$scope.exibirMensagemErro = false;
@@ -19,13 +19,13 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 	
 	
     function init() {
-    	$scope.loadDesenvolvedoras();
+    	$scope.loadGeneros();
     }
 
 	$scope.salvar = function() {
 		$scope.exibirMensagemErro = false;
 		var data = {'contexto' : {
-			'desenvolvedora' : $scope.desenvolvedora
+			'genero' : $scope.genero
 		}};
 		
 		var data1 = JSON.stringify(data);
@@ -42,28 +42,28 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 		    async: false,
 		    success: function (response) {
 		    	
-		    	var des = response.contexto.desenvolvedora
-		    	$scope.desenvolvedora = null;
-		    	$scope.loadDesenvolvedoras();
+		    	var des = response.contexto.genero
+		    	$scope.genero = null;
+		    	$scope.loadGeneros();
 		    }
 		});
 	};
 	
 	
-	$scope.loadDesenvolvedoras = function() {
+	$scope.loadGeneros = function() {
 		$http.get(urlPath + 'listar.action', {
 			cache : false
 		}).success(function(response) {
 			
-			$scope.desenvolvedoras =  angular.copy(response.contexto.desenvolvedoras);
-			console.log($scope.desenvolvedoras);	    	
+			$scope.generos =  angular.copy(response.contexto.generos);
+			console.log($scope.generos);	    	
 		});
 	};
 	
-	$scope.deselvolvedoraDelete = function(codigo){
+	$scope.generoDelete = function(codigo){
 		
 		var data = {contexto : {
-			desenvolvedora : {des_codigo : codigo}
+			genero : {gen_codigo : codigo}
 		}};
 		
 		var data1 = JSON.stringify(data);
@@ -75,7 +75,7 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 		    type: 'POST',
 		    async: false,
 		    success: function (response) {
-		    	$scope.loadDesenvolvedoras();
+		    	$scope.loadGeneros();
 		    	console.log("deletou");
 		    }
 		});
@@ -83,7 +83,7 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 	
 	$scope.editar = function(obj){
 		var data = {contexto : {
-			desenvolvedora : obj
+			genero : obj
 		}};
 		
 		var data1 = JSON.stringify(data);
@@ -95,22 +95,22 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 		    type: 'POST',
 		    async: false,
 		    success: function (response) {
-		    	$scope.loadDesenvolvedoras();
-		    	$scope.desenvolvedora = null;
+		    	$scope.loadGeneros();
+		    	$scope.genero = null;
 		    	$scope.btnLabel = "Adicionar";
 		    	console.log("alterou");
 		    }
 		});
 	}
 	
-	$scope.desenvolvedoraCancel = function() {
+	$scope.generoCancel = function() {
 
         $scope.btnLabel = "Adicionar";
-        $scope.desenvolvedora = null;
+        $scope.genero = null;
     }
 	
-	$scope.desenvolvedoraEditar = function(obj){
-		$scope.desenvolvedora = angular.copy(obj);
+	$scope.generoEditar = function(obj){
+		$scope.genero = angular.copy(obj);
         $scope.btnLabel = "Alterar";
 	}
 	

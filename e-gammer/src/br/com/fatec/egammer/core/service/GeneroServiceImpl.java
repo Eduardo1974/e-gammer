@@ -16,7 +16,7 @@ public class GeneroServiceImpl implements GeneroService{
 	
 	public GeneroServiceImpl() {
 		this.genDAO = ImplFinder.getImpl(GeneroDAO.class);
-		this.genConverter = ImplFinder.getImpl(GeneroDTOConverter.class);
+		this.genConverter = ImplFinder.getFinalImpl(GeneroDTOConverter.class);
 	}
 	
 	@Override
