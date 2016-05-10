@@ -16,7 +16,7 @@ public class GameServiceImpl implements GameService{
 	
 	public GameServiceImpl() {
 		 this.dao = ImplFinder.getImpl(GameDAO.class);
-		 this.converter = ImplFinder.getImpl(GameDTOConverter.class);
+		 this.converter = ImplFinder.getFinalImpl(GameDTOConverter.class);
 	}
 	
 	@Override

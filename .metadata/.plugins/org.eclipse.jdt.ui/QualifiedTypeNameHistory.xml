@@ -25,14 +25,12 @@
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Desenvolvedora"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Game"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.GameDTO"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.GeneroDTO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Genero"/>
 <fullyQualifiedTypeName name="br.com.spektro.minispring.dto.DTOConverter"/>
 <fullyQualifiedTypeName name="com.google.common.collect.Lists"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.ItemPedidoService"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.PedidoService"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.GameService"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.GeneroService"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.ClienteDAO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.converter.ClienteDTOConverter"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Cliente"/>
@@ -58,4 +56,7 @@
 <fullyQualifiedTypeName name="br.com.fatec.egammer.web.context.ContextoDesenvolvedora"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.dao.DesenvolvedoraDAOImpl"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.GeneroDTO"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.GeneroService"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.web.context.ContextoGenero"/>
 </qualifiedTypeNameHistroy>

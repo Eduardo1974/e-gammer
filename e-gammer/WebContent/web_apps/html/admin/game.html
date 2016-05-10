@@ -1,34 +1,134 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">  
-	    <title>E-gammer - Login</title>
-        <meta name="description" content="">
-        <meta name="author" content="templatemo">
-
-	</head>
-	<body ng-app=""  >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>E-gammer - Game</title>
+	<meta name="description" content="">
+	<meta name="author" content="templatemo">
+</head>
+<body ng-app="egammer">
+	<div ng-controller="GameController">
+		
 		<div class="templatemo-flex-row ">
-			<ng-include src="'../../padroes/barra_lateral_admin.html'"></ng-include> 
+			<ng-include src="'../../padroes/barra_lateral_admin.html'"></ng-include>
 			<div class="templatemo-content col-1 light-gray-bg">
+	
+				<form class="container-fluid">
+	
+					<div class="row">
+						<div class="col-md-12">
+							<h2>Game</h2>
+							<div class="linha"></div>
+						</div>
+					</div>
+					<div class="form-group ">
+						<div class="input-group ">
+							<div class="input-group-addon">
+								<i class="fa fa-book"></i>
+							</div>
+							<input type="text" class="form-control" placeholder="Titulo" ng-model="game.gam_titulo">
+						</div>
+					</div>
+					
+					<div class="form-group ">
+						<div class="input-group ">
+							<div class="input-group-addon">
+								<i class="fa fa-paint-brush"></i>
+							</div>
+							<textarea rows="4" cols="50" maxlength="500"  class="form-control textarea_resize" placeholder="Descrição" ng-model="game.gam_descricao;"></textarea>
+						</div>
+					</div>
+					
+					<div class="row">
+						
+						<div class="col-md-2 fields-css">
+							<select class=" form-control" name="classificacao" ng-model="classificacao.selecionado">
+								<option value="" disabled selected>Classificação</option>
+								<option ng-repeat="cla in classificacao.faixa" value="{{cla.tipo}}">{{cla.tipo}}</option>
+							</select>
+						</div>
+							
+						<div class="fields-css  col-md-2">
+							<div  class="input-group border-field ">
+								<input type="text" class="form-control border-field" placeholder="Preço" ng-model="game.gam_preco">
+							</div>
+						</div>
+						
+						<div class="fields-css  col-md-2">
+							<div  class="input-group ">
+								<input type="text" class="form-control border-field" placeholder="Quantidade" ng-model="game.gam_preco">
+							</div>
+						</div>
+							
+						<div class="col-md-2  date-width ">
+							<input name="lancamento" placeholder="dd/mm/aaaa" maxlength="10" type="text" class="form-control" value="">
+                        </div>
+                        
+                        <div class="col-md-2 fields-css">
+							<select class=" form-control" name="plataforma" ng-model="plataforma.selecionado">
+								<option value="" disabled selected>Plataforma</option>
+								<option ng-repeat="pla in plataforma.tipos" value="{{pla.tipo}}">{{pla.tipo}}</option>
+							</select>
+						</div>
+						
+					</div>
+					
+					<div class="row">
+						<div class=" col-md-6">
+							<div  class="input-group border-field image-css">
+								<input type="text" class="form-control border-field " placeholder="Imagem" ng-model="game.gam_imagem">
+							</div>
+						</div>
+						
+						<div class="col-md-2 fields-css">
+							<select class=" form-control " name="genero" ng-model="game.genero">
+								<option value="" disabled selected>Genero</option>
+								<option ng-repeat="gen in generos" value="{{gen.tipo}}">{{gen.tipo}}</option>
+							</select>
+						</div>
+						
+						<div class="col-md-2 fields-css">
+							<select class=" form-control combo-size" name="desenvolvedora" ng-model="game.desenvolvedora">
+								<option value="" disabled selected>Desenvolvedora</option>
+								<option ng-repeat="des in desenvolvedoras" value="{{des.tipo}}">{{des.tipo}}</option>
+							</select>
+						</div>
+					</div>
+					
+					
 				
+					<div class="form-group ">
+						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Adicionar'"
+							ng-click="salvar()">{{btnLabel}}</button>
+					</div>
+					
+					<div class="form-group ">
+						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Alterar'"
+							ng-click="editar(genero)">{{btnLabel}}</button>
+					
+						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Alterar'"
+							ng-click="gameCancel();">Cancelar</button>
+					</div>
+				</form>
 				
 			</div>
 		</div>
-		<ng-include src="'../../padroes/rodape.html'"></ng-include> 
-		  
-		<!-- JS -->
-		<script type="text/javascript" src="../../css/angular.min.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
-	    <link href="../../css/font-awesome.min.css" rel="stylesheet">
-	    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-	    <link href="../../css/templatemo-style.css" rel="stylesheet">
-	    <script src="../../css/jquery-1.11.2.min.js"></script>     
-	    <script src="../../css/jquery-migrate-1.2.1.min.js"></script> 
-	    <script type="text/javascript" src="../../css/templatemo-script.js"></script>    
-		<script type="text/javascript" src="../../controller/comum/comum.js"></script>
-	  
-	</body>
-</html>
+		<ng-include src="'../../padroes/rodape.html'"></ng-include>
+	</div>
+    <!-- JS -->
+	<script type="text/javascript" src="../../css/angular.min.js"></script>
+	<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700'
+	rel='stylesheet' type='text/css'>
+	<link href="../../css/font-awesome.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/templatemo-style.css" rel="stylesheet">
+	<script src="../../css/jquery-1.11.2.min.js"></script>
+	<script src="../../css/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="../../css/templatemo-script.js"></script>
+	<script type="text/javascript" src="../../controller/comum/comum.js"></script>
+	<script type="text/javascript" src="../../controller/admin/game.js"></script>
+</body>
+</html>>

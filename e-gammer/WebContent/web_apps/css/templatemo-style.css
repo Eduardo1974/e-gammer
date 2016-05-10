@@ -684,3 +684,32 @@ input[type="radio"]:checked + label span {
     margin-bottom: 23px;
     font-size: 16px;
 }
+
+
+
+.textarea_resize {
+	resize: none;
+}
+
+.fields-css{
+	width: 20%;	
+}
+
+.border-field{
+	border-radius: 5px !important;
+}
+.margin_fields{
+	margin-left:-0px !important;
+}
+
+.date-width{
+	width: 17%;
+}
+
+.image-css{
+	width: 470px !important;	
+}
+
+.combo-size{
+	width: 240px !important;
+}
