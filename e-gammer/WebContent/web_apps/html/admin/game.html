@@ -7,6 +7,7 @@
 	<title>E-gammer - Game</title>
 	<meta name="description" content="">
 	<meta name="author" content="templatemo">
+			        
 </head>
 <body ng-app="egammer">
 	<div ng-controller="GameController">
@@ -58,12 +59,12 @@
 						
 						<div class="fields-css  col-md-2">
 							<div  class="input-group ">
-								<input type="text" class="form-control border-field" placeholder="Quantidade" ng-model="game.gam_preco">
+								<input type="text" class="form-control border-field" placeholder="Quantidade" ng-model="game.gam_quantidade">
 							</div>
 						</div>
 							
 						<div class="col-md-2  date-width ">
-							<input name="lancamento" placeholder="dd/mm/aaaa" maxlength="10" type="text" class="form-control" value="">
+							<input name="lancamento" placeholder="dd/mm/aaaa" maxlength="10" type="text" class="form-control" ng-model = "game.gam_data_lancamento">
                         </div>
                         
                         <div class="col-md-2 fields-css">
@@ -83,22 +84,21 @@
 						</div>
 						
 						<div class="col-md-2 fields-css">
-							<select class=" form-control " name="genero" ng-model="game.genero">
+							<select class=" form-control " name="genero" ng-model="game.genero.gen_codigo">
 								<option value="" disabled selected>Genero</option>
-								<option ng-repeat="gen in generos" value="{{gen.tipo}}">{{gen.tipo}}</option>
+								<option ng-repeat="gen in generos" value="{{gen.gen_codigo}}">{{gen.gen_nome}}</option>
+							</select>
+						</div>
+					
+						<div class="col-md-2 fields-css">
+							<select class=" form-control combo-size" name="desenvolvedora" ng-model="game.desenvolvedora.des_codigo">
+								<option value="" disabled selected>Desenvolvedora</option>
+								<option ng-repeat="des in desenvolvedoras" value="{{des.des_codigo}}">{{des.des_studio}}</option>
 							</select>
 						</div>
 						
-						<div class="col-md-2 fields-css">
-							<select class=" form-control combo-size" name="desenvolvedora" ng-model="game.desenvolvedora">
-								<option value="" disabled selected>Desenvolvedora</option>
-								<option ng-repeat="des in desenvolvedoras" value="{{des.tipo}}">{{des.tipo}}</option>
-							</select>
-						</div>
 					</div>
 					
-					
-				
 					<div class="form-group ">
 						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Adicionar'"
 							ng-click="salvar()">{{btnLabel}}</button>
@@ -106,7 +106,7 @@
 					
 					<div class="form-group ">
 						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Alterar'"
-							ng-click="editar(genero)">{{btnLabel}}</button>
+							ng-click="editar(game)">{{btnLabel}}</button>
 					
 						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Alterar'"
 							ng-click="gameCancel();">Cancelar</button>
@@ -125,10 +125,16 @@
 	<link href="../../css/font-awesome.min.css" rel="stylesheet">
 	<link href="../../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../../css/templatemo-style.css" rel="stylesheet">
+	<link href="../../jquery-ui/jquery-ui.css" rel="stylesheet">
 	<script src="../../css/jquery-1.11.2.min.js"></script>
 	<script src="../../css/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="../../css/templatemo-script.js"></script>
 	<script type="text/javascript" src="../../controller/comum/comum.js"></script>
+	<script type="text/javascript" src="../../service/admin/generoService.js"></script>
+	<script type="text/javascript" src="../../service/admin/desenvolvedoraService.js"></script>
+	<script type="text/javascript" src="../../controller/admin/genero.js"></script>
+	<script type="text/javascript" src="../../controller/admin/desenvolvedora.js"></script>
 	<script type="text/javascript" src="../../controller/admin/game.js"></script>
+	
 </body>
 </html>>

@@ -5,6 +5,8 @@
 
 angular.module('egammer', []);
 
+
+
 var StorageHelper = (function(){
 
 	var SH = {};

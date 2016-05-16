@@ -49,7 +49,7 @@ public class GameDAOTest extends TestBase{
 		Date data = new Date(format.parse("28/03/2012").getTime());
 		
 		Game game = new Game();
-		game.setGam_classificacao(8);
+		game.setGam_classificacao("8");
 		game.setGam_data_lancamento(data);
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
@@ -88,7 +88,7 @@ public class GameDAOTest extends TestBase{
 		Date data = new Date(format.parse("28/03/2016").getTime());
 		
 		Game game = new Game();
-		game.setGam_classificacao(8);
+		game.setGam_classificacao("8");
 		game.setGam_data_lancamento(data);
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
@@ -133,7 +133,7 @@ public class GameDAOTest extends TestBase{
 		Date data = new Date(format.parse("28/03/2016").getTime());
 		
 		Game game = new Game();
-		game.setGam_classificacao(8);
+		game.setGam_classificacao("8");
 		game.setGam_data_lancamento(data);
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
@@ -172,7 +172,7 @@ public class GameDAOTest extends TestBase{
 		Date data = new Date(format.parse("28/03/2016").getTime());
 		
 		Game game1 = new Game();
-		game1.setGam_classificacao(8);
+		game1.setGam_classificacao("8");
 		game1.setGam_data_lancamento(data);
 		game1.setGam_descricao("Jogo de Guerra Moderna");
 		game1.setGam_imagem("C:\\TEMP\\battlefield");
@@ -184,7 +184,7 @@ public class GameDAOTest extends TestBase{
 		game1.setGenero(this.daoGenero.buscaCodigo(id_genero));
 
 		Game game2 = new Game();
-		game2.setGam_classificacao(8);
+		game2.setGam_classificacao("8");
 		game2.setGam_data_lancamento(data);
 		game2.setGam_descricao("Jogo de Corrida");
 		game2.setGam_imagem("C:\\TEMP\\Need FS");

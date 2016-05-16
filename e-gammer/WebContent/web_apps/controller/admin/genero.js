@@ -1,9 +1,12 @@
 
 var app = angular.module('egammer');
 
-app.controller('GeneroController', ['$scope', '$http', '$timeout', '$sce',
-                                   function($scope, $http, $timeout, $sce) {
 
+app.controller('GeneroController', ['$scope', '$http', '$timeout', '$sce','GeneroService',
+                                   function($scope, $http, $timeout, $sce, generoService) {
+	
+	//Scopes.store('GeneroController', $scope);
+	
 	var CHAVE_STORAGE = 'usuario';
 	var urlPath = "http://localhost:8085/e-gammer/Genero!";
 	
@@ -19,7 +22,7 @@ app.controller('GeneroController', ['$scope', '$http', '$timeout', '$sce',
 	
 	
     function init() {
-    	$scope.loadGeneros();
+    	$scope.loadGeneros2();
     }
 
 	$scope.salvar = function() {
@@ -56,10 +59,20 @@ app.controller('GeneroController', ['$scope', '$http', '$timeout', '$sce',
 		}).success(function(response) {
 			
 			$scope.generos =  angular.copy(response.contexto.generos);
-			console.log($scope.generos);	    	
+			//console.log($scope.generos);	 
+			return response;
 		});
 	};
 	
+	$scope.loadGeneros2 = function() {
+		
+		generoService.generoList().then(function (response) {
+            $scope.generos =  angular.copy(response.data.contexto.generos);
+			//$scope.generos =  angular.copy(response.contexto.generos);
+            console.log($scope.generos);
+            
+        });
+	};
 	$scope.generoDelete = function(codigo){
 		
 		var data = {contexto : {

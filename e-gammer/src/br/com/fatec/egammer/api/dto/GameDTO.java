@@ -13,32 +13,13 @@ public class GameDTO {
 	private Double gam_preco;
 	private Integer gam_quantidade;
 	private String gam_imagem;
-	private Integer gam_classificacao;
+	private String gam_classificacao;
 	private Date gam_data_lancamento;
 	private String gam_plataforma;
 	private Genero genero;
 	private Desenvolvedora desenvolvedora;
 	
-	public GameDTO(){
-		
-	}
-
-	public GameDTO(Long gam_codigo, String gam_titulo, String gam_descricao, Double gam_preco, Integer gam_quantidade,
-			String gam_imagem, Integer gam_classificacao, Date gam_data_lancamento, String gam_plataforma,
-			Genero genero, Desenvolvedora desenvolvedora) {
-		super();
-		this.gam_codigo = gam_codigo;
-		this.gam_titulo = gam_titulo;
-		this.gam_descricao = gam_descricao;
-		this.gam_preco = gam_preco;
-		this.gam_quantidade = gam_quantidade;
-		this.gam_imagem = gam_imagem;
-		this.gam_classificacao = gam_classificacao;
-		this.gam_data_lancamento = gam_data_lancamento;
-		this.gam_plataforma = gam_plataforma;
-		this.genero = genero;
-		this.desenvolvedora = desenvolvedora;
-	}
+	
 
 	public Long getGam_codigo() {
 		return gam_codigo;
@@ -88,13 +69,7 @@ public class GameDTO {
 		this.gam_imagem = gam_imagem;
 	}
 
-	public Integer getGam_classificacao() {
-		return gam_classificacao;
-	}
-
-	public void setGam_classificacao(Integer gam_classificacao) {
-		this.gam_classificacao = gam_classificacao;
-	}
+	
 
 	public Date getGam_data_lancamento() {
 		return gam_data_lancamento;
@@ -131,6 +106,14 @@ public class GameDTO {
 	@Override
 	public String toString(){
 		return "Game[" + this.gam_codigo + " - " + this.gam_titulo + "]";
+	}
+
+	public String getGam_classificacao() {
+		return gam_classificacao;
+	}
+
+	public void setGam_classificacao(String gam_classificacao) {
+		this.gam_classificacao = gam_classificacao;
 	}
 
 }

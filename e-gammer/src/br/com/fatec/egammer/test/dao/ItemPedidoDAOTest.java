@@ -70,7 +70,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		GameDAOImpl gameDao = new GameDAOImpl();
 		Game game = new Game();
 		game.setDesenvolvedora(des);
-		game.setGam_classificacao(8);
+		game.setGam_classificacao("8");
 		game.setGam_data_lancamento(new Date());
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
@@ -138,7 +138,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		GameDAOImpl gameDao = new GameDAOImpl();
 		Game game = new Game();
 		game.setDesenvolvedora(des);
-		game.setGam_classificacao(8);
+		game.setGam_classificacao("8");
 		game.setGam_data_lancamento(new Date());
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
@@ -209,7 +209,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		GameDAOImpl gameDao = new GameDAOImpl();
 		Game game = new Game();
 		game.setDesenvolvedora(des);
-		game.setGam_classificacao(8);
+		game.setGam_classificacao("8");
 		game.setGam_data_lancamento(new Date());
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
@@ -273,7 +273,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		GameDAOImpl gameDao = new GameDAOImpl();
 		Game game = new Game();
 		game.setDesenvolvedora(des);
-		game.setGam_classificacao(8);
+		game.setGam_classificacao("8");
 		game.setGam_data_lancamento(new Date());
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
@@ -344,7 +344,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		GameDAOImpl gameDao = new GameDAOImpl();
 		Game game = new Game();
 		game.setDesenvolvedora(des);
-		game.setGam_classificacao(8);
+		game.setGam_classificacao("8");
 		game.setGam_data_lancamento(new Date());
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
@@ -409,7 +409,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		GameDAOImpl gameDao = new GameDAOImpl();
 		Game game = new Game();
 		game.setDesenvolvedora(des);
-		game.setGam_classificacao(8);
+		game.setGam_classificacao("8");
 		game.setGam_data_lancamento(new Date());
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
@@ -464,7 +464,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		GameDAOImpl gameDao2 = new GameDAOImpl();
 		Game game2 = new Game();
 		game2.setDesenvolvedora(des);
-		game2.setGam_classificacao(8);
+		game2.setGam_classificacao("8");
 		game2.setGam_data_lancamento(new Date());
 		game2.setGam_descricao("Jogo de Guerra");
 		game2.setGam_imagem("C:\\TEMP\\battlefield");

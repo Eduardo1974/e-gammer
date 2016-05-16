@@ -26,7 +26,7 @@ public class Game {
 	private Double gam_preco;
 	private Integer gam_quantidade;
 	private String gam_imagem;
-	private Integer gam_classificacao;
+	private String gam_classificacao;
 	private Date gam_data_lancamento;
 	private String gam_plataforma;
 	private Genero genero;
@@ -68,12 +68,7 @@ public class Game {
 	public void setGam_imagem(String gam_imagem) {
 		this.gam_imagem = gam_imagem;
 	}
-	public Integer getGam_classificacao() {
-		return gam_classificacao;
-	}
-	public void setGam_classificacao(Integer gam_classificacao) {
-		this.gam_classificacao = gam_classificacao;
-	}
+	
 	public Date getGam_data_lancamento() {
 		return gam_data_lancamento;
 	}
@@ -109,6 +104,12 @@ public class Game {
 		return new String[] { COL_CODIGO, COL_TITULO, COL_DESCRICAO, COL_PRECO,
 				COL_QUANTIDADE, COL_IMAGEM, COL_CLASSIFICACAO, COL_DATA_LANCAMENTO,
 				COL_PLATAFORMA, COL_GEN_CODIGO, COL_DES_CODIGO };
+	}
+	public String getGam_classificacao() {
+		return gam_classificacao;
+	}
+	public void setGam_classificacao(String gam_classificacao) {
+		this.gam_classificacao = gam_classificacao;
 	}
 	
 }

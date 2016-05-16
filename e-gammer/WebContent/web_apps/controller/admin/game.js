@@ -1,9 +1,12 @@
 
 var app = angular.module('egammer');
 
-app.controller('GameController', ['$scope', '$http', '$timeout', '$sce',
-                                   function($scope, $http, $timeout, $sce) {
 
+
+app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','GeneroService','DesenvolvedoraService',
+                                   function($scope, $http, $timeout, $sce, generoService,desenvolvedoraService) {
+	
+	
 	var CHAVE_STORAGE = 'usuario';
 	var urlPath = "http://localhost:8085/e-gammer/Game!";
 	
@@ -31,7 +34,16 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce',
 		    ],
 		};
 	
-	$scope.desenvolvedora = {};
+	$scope.game = {
+			desenvolvedora : {
+				des_codigo: null
+			},
+			genero : {
+				gen_codigo : null
+			}
+	};
+	$scope.games ;
+	$scope.generos ;
 	$scope.desenvolvedoras ;
 	$scope.btnLabel = "Adicionar";
 	$scope.isLogado = false;
@@ -42,14 +54,18 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce',
 	};
 	
 	
+	
     function init() {
-    	//$scope.loadDesenvolvedoras();
+    	$scope.getGenero();
+    	$scope.getDesenvolvedora();
     }
-
+    
 	$scope.salvar = function() {
 		$scope.exibirMensagemErro = false;
+		$scope.game.gam_classificacao = $scope.classificacao.selecionado;
+		$scope.game.gam_plataforma = $scope.plataforma.selecionado; 
 		var data = {'contexto' : {
-			'desenvolvedora' : $scope.desenvolvedora
+			'game' : $scope.game
 		}};
 		
 		var data1 = JSON.stringify(data);
@@ -66,28 +82,28 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce',
 		    async: false,
 		    success: function (response) {
 		    	
-		    	var des = response.contexto.desenvolvedora
-		    	$scope.desenvolvedora = null;
-		    	$scope.loadDesenvolvedoras();
+		    	console.log(response.contexto.game);
+		    	$scope.game = null;
+		    	//$scope.loadGames();
 		    }
 		});
 	};
 	
 	
-	$scope.loadDesenvolvedoras = function() {
+	$scope.loadGames = function() {
 		$http.get(urlPath + 'listar.action', {
 			cache : false
 		}).success(function(response) {
 			
-			$scope.desenvolvedoras =  angular.copy(response.contexto.desenvolvedoras);
-			console.log($scope.desenvolvedoras);	    	
+			$scope.games =  angular.copy(response.contexto.games);
+			console.log($scope.games);	    	
 		});
 	};
 	
-	$scope.deselvolvedoraDelete = function(codigo){
+	$scope.gameDelete = function(codigo){
 		
 		var data = {contexto : {
-			desenvolvedora : {des_codigo : codigo}
+			game : {des_codigo : codigo}
 		}};
 		
 		var data1 = JSON.stringify(data);
@@ -99,7 +115,7 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce',
 		    type: 'POST',
 		    async: false,
 		    success: function (response) {
-		    	$scope.loadDesenvolvedoras();
+		    	//$scope.loadGames();
 		    	console.log("deletou");
 		    }
 		});
@@ -107,7 +123,7 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce',
 	
 	$scope.editar = function(obj){
 		var data = {contexto : {
-			desenvolvedora : obj
+			game : obj
 		}};
 		
 		var data1 = JSON.stringify(data);
@@ -119,24 +135,39 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce',
 		    type: 'POST',
 		    async: false,
 		    success: function (response) {
-		    	$scope.loadDesenvolvedoras();
-		    	$scope.desenvolvedora = null;
+		    	//$scope.loadGames();
+		    	$scope.game = null;
 		    	$scope.btnLabel = "Adicionar";
 		    	console.log("alterou");
 		    }
 		});
 	}
 	
-	$scope.desenvolvedoraCancel = function() {
+	$scope.gameCancel = function() {
 
         $scope.btnLabel = "Adicionar";
-        $scope.desenvolvedora = null;
+        $scope.game = null;
     }
 	
-	$scope.desenvolvedoraEditar = function(obj){
-		$scope.desenvolvedora = angular.copy(obj);
+	$scope.gameEditar = function(obj){
+		$scope.game = angular.copy(obj);
         $scope.btnLabel = "Alterar";
 	}
 	
+	$scope.getGenero = function(){
+		generoService.generoList().then(function (response) {
+            $scope.generos =  angular.copy(response.data.contexto.generos);
+			//$scope.generos =  angular.copy(response.contexto.generos);
+            console.log($scope.generos);
+        });
+	}
+	
+	$scope.getDesenvolvedora = function(){
+		desenvolvedoraService.desenvolvedoraList().then(function (response) {
+            $scope.desenvolvedoras =  angular.copy(response.data.contexto.desenvolvedoras);
+			//$scope.generos =  angular.copy(response.contexto.generos);
+            console.log($scope.desenvolvedoras);
+        });
+	}
 	init();
 }]);

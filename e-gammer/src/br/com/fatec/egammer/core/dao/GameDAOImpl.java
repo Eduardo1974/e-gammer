@@ -53,7 +53,7 @@ public class GameDAOImpl implements GameDAO {
 			insert.setDouble(3, game.getGam_preco());
 			insert.setInt(4, game.getGam_quantidade());
 			insert.setString(5, game.getGam_imagem());
-			insert.setInt(6, game.getGam_classificacao());
+			insert.setString(6, game.getGam_classificacao());
 			insert.setDate(7, new java.sql.Date(game.getGam_data_lancamento().getDate()));
 			insert.setString(8, game.getGam_plataforma());
 			insert.setLong(9, game.getGenero().getGen_codigo());
@@ -93,7 +93,7 @@ public class GameDAOImpl implements GameDAO {
 			update.setDouble(3, game.getGam_preco());
 			update.setInt(4, game.getGam_quantidade());
 			update.setString(5, game.getGam_imagem());
-			update.setInt(6, game.getGam_classificacao());
+			update.setString(6, game.getGam_classificacao());
 			update.setDate(7, (Date)game.getGam_data_lancamento());
 			update.setString(8, game.getGam_plataforma());
 			update.setLong(9, game.getGenero().getGen_codigo());
@@ -184,7 +184,7 @@ public class GameDAOImpl implements GameDAO {
 		game.setGam_preco(rs.getDouble(Game.COL_PRECO));
 		game.setGam_quantidade(rs.getInt(Game.COL_QUANTIDADE));
 		game.setGam_imagem(rs.getString(Game.COL_IMAGEM));
-		game.setGam_classificacao(rs.getInt(Game.COL_CLASSIFICACAO));
+		game.setGam_classificacao(rs.getString(Game.COL_CLASSIFICACAO));
 		game.setGam_data_lancamento(rs.getDate(Game.COL_DATA_LANCAMENTO));
 		game.setGam_plataforma(rs.getString(Game.COL_PLATAFORMA));
 		game.setGenero( this.generoDao.buscaCodigo(rs.getLong(Game.COL_GEN_CODIGO) ));

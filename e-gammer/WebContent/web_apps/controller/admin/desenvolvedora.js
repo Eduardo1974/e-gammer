@@ -1,8 +1,8 @@
 
 var app = angular.module('egammer');
 
-app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce',
-                                   function($scope, $http, $timeout, $sce) {
+app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce','DesenvolvedoraService',
+                                   function($scope, $http, $timeout, $sce,desenvolvedoraService) {
 
 	var CHAVE_STORAGE = 'usuario';
 	var urlPath = "http://localhost:8085/e-gammer/Desenvolvedora!";
@@ -19,7 +19,8 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 	
 	
     function init() {
-    	$scope.loadDesenvolvedoras();
+    	//$scope.loadDesenvolvedoras();
+    	$scope.loadDesenvolvedoras2();
     }
 
 	$scope.salvar = function() {
@@ -56,8 +57,17 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 		}).success(function(response) {
 			
 			$scope.desenvolvedoras =  angular.copy(response.contexto.desenvolvedoras);
-			console.log($scope.desenvolvedoras);	    	
+			//console.log($scope.desenvolvedoras);	    	
 		});
+	};
+	
+	$scope.loadDesenvolvedoras2 = function() {
+		desenvolvedoraService.desenvolvedoraList().then(function (response) {
+            $scope.desenvolvedoras =  angular.copy(response.data.contexto.desenvolvedoras);
+			//$scope.generos =  angular.copy(response.contexto.generos);
+            console.log($scope.desenvolvedoras);
+            
+        });
 	};
 	
 	$scope.deselvolvedoraDelete = function(codigo){
