@@ -1,11 +1,14 @@
 var app = angular.module('egammer');
 
-app.factory('GeneroService', ['$http', '$q', function ($http, $q) {
+app.factory('GeneroService', ['$http', function ($http) {
 	
 	var urlPath = "http://localhost:8085/e-gammer/Genero!";
 	
     return {
-        generoList: _generoList
+        generoList: _generoList,
+        generoSave: _generoSave,
+        generoEdit: _generoEdit,
+        generoDelete: _generoDelete
     };
     
     function _generoList() {
@@ -17,27 +20,57 @@ app.factory('GeneroService', ['$http', '$q', function ($http, $q) {
 		});
     	return promessa;
     }
+    
+    function _generoSave(genObj) {
+    	var promessa;
+    	var data = JSON.stringify(genObj);
+    	promessa = jQuery.ajax({
+		    url: urlPath + 'salvar.action',
+		    data: data,
+		    dataType: 'json',
+		    contentType: 'application/json',
+		    type: 'POST',
+		    async: false,
+		    success: function (response) {
+		    	return promessa;
+		    }
+		});
+    	return promessa;
+    }
+    
+    function _generoEdit(genObj) {
+    	var promessa;
+    	var data = JSON.stringify(genObj);
+    	promessa = jQuery.ajax({
+    		url: urlPath + 'editar.action',
+		    data: data,
+		    dataType: 'json',
+		    contentType: 'application/json',
+		    type: 'POST',
+		    async: false,
+		    success: function (response) {
+		    	return promessa;
+		    }
+		});
+    	return promessa;
+    }
+
+	function _generoDelete(genObj) {
+		var promessa;
+    	var data = JSON.stringify(genObj);
+    	promessa = jQuery.ajax({
+			
+    		url: urlPath + 'deletar.action',
+		    data: data,
+		    dataType: 'json',
+		    contentType: 'application/json',
+		    type: 'POST',
+		    async: false,
+		    success: function (response) {
+		    	return promessa;
+		    }
+		});
+    	return promessa;
+	}
 }]);
 
-
-/*  	var app = angular.module('egammer');
- 	app.factory('GeneroService', ['$http', '$q', function ($http, $q) {
-	
-	var urlPath = "http://localhost:8085/e-gammer/Genero!";
-	
-    return {
-        generoList: _generoList
-       
-    };
-        
-    function _generoList() {
-    	var deferred = $q.defer();
-    	$http.get(urlPath + 'listar.action', {
-			cache : false
-		}).success(function(response) {
-			console.log(response);
-			deferred.resolve(response);
-		});
-    	return deferred.promise;
-    }
-}]);*/

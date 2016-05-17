@@ -58,6 +58,7 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 		}};
 		
 		desenvolvedoraService.desenvolvedoraEdit(data).then(function (response) {
+			$scope.btnLabel = "Adicionar";
 			$scope.desenvolvedora = null;
 	    	$scope.loadDesenvolvedoras();
         });
