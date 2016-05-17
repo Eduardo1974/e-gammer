@@ -5,8 +5,6 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
                                    function($scope, $http, $timeout, $sce,desenvolvedoraService) {
 
 	var CHAVE_STORAGE = 'usuario';
-	var urlPath = "http://localhost:8085/e-gammer/Desenvolvedora!";
-	
 	$scope.desenvolvedora = {};
 	$scope.desenvolvedoras ;
 	$scope.btnLabel = "Adicionar";
@@ -17,54 +15,26 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 		return TelaHelper.tela == tela ? 'active' : '';
 	};
 	
-	
     function init() {
-    	//$scope.loadDesenvolvedoras();
-    	$scope.loadDesenvolvedoras2();
+    	$scope.loadDesenvolvedoras();
     }
 
 	$scope.salvar = function() {
+		
 		$scope.exibirMensagemErro = false;
 		var data = {'contexto' : {
 			'desenvolvedora' : $scope.desenvolvedora
 		}};
 		
-		var data1 = JSON.stringify(data);
-		
-		console.log(data1);
-		
-		jQuery.ajax({
-			
-		    url: urlPath + 'salvar.action',
-		    data: data1,
-		    dataType: 'json',
-		    contentType: 'application/json',
-		    type: 'POST',
-		    async: false,
-		    success: function (response) {
-		    	
-		    	var des = response.contexto.desenvolvedora
-		    	$scope.desenvolvedora = null;
-		    	$scope.loadDesenvolvedoras();
-		    }
-		});
+		desenvolvedoraService.desenvolvedoraSave(data).then(function (response) {
+			$scope.desenvolvedora = null;
+	    	$scope.loadDesenvolvedoras();
+        });
 	};
-	
 	
 	$scope.loadDesenvolvedoras = function() {
-		$http.get(urlPath + 'listar.action', {
-			cache : false
-		}).success(function(response) {
-			
-			$scope.desenvolvedoras =  angular.copy(response.contexto.desenvolvedoras);
-			//console.log($scope.desenvolvedoras);	    	
-		});
-	};
-	
-	$scope.loadDesenvolvedoras2 = function() {
 		desenvolvedoraService.desenvolvedoraList().then(function (response) {
             $scope.desenvolvedoras =  angular.copy(response.data.contexto.desenvolvedoras);
-			//$scope.generos =  angular.copy(response.contexto.generos);
             console.log($scope.desenvolvedoras);
             
         });
@@ -76,19 +46,10 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 			desenvolvedora : {des_codigo : codigo}
 		}};
 		
-		var data1 = JSON.stringify(data);
-		jQuery.ajax({
-		    url: urlPath + 'deletar.action',
-		    data: data1,
-		    dataType: 'json',
-		    contentType: 'application/json',
-		    type: 'POST',
-		    async: false,
-		    success: function (response) {
-		    	$scope.loadDesenvolvedoras();
-		    	console.log("deletou");
-		    }
-		});
+		desenvolvedoraService.desenvolvedoraDelete(data).then(function (response) {
+			$scope.desenvolvedora = null;
+	    	$scope.loadDesenvolvedoras();
+        });
 	}
 	
 	$scope.editar = function(obj){
@@ -96,21 +57,10 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 			desenvolvedora : obj
 		}};
 		
-		var data1 = JSON.stringify(data);
-		jQuery.ajax({
-		    url: urlPath + 'editar.action',
-		    data: data1,
-		    dataType: 'json',
-		    contentType: 'application/json',
-		    type: 'POST',
-		    async: false,
-		    success: function (response) {
-		    	$scope.loadDesenvolvedoras();
-		    	$scope.desenvolvedora = null;
-		    	$scope.btnLabel = "Adicionar";
-		    	console.log("alterou");
-		    }
-		});
+		desenvolvedoraService.desenvolvedoraEdit(data).then(function (response) {
+			$scope.desenvolvedora = null;
+	    	$scope.loadDesenvolvedoras();
+        });
 	}
 	
 	$scope.desenvolvedoraCancel = function() {
