@@ -9,7 +9,7 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','GeneroS
 	
 	var CHAVE_STORAGE = 'usuario';
 	var urlPath = "http://localhost:8085/e-gammer/Game!";
-	
+ 
 	$scope.classificacao = {
 	    selecionado: null,
 	    faixa: [
@@ -42,6 +42,8 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','GeneroS
 				gen_codigo : null
 			}
 	};
+	
+	$scope.data;
 	$scope.games ;
 	$scope.generos ;
 	$scope.desenvolvedoras ;
@@ -49,6 +51,21 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','GeneroS
 	$scope.isLogado = false;
 	$scope.exibirMensagemErro = false;
 	
+	
+	$(document).ready(function () {
+	    $('.datepicker').datepicker({
+	        format: 'dd/mm/yyyy',                
+	        language: 'pt-BR'
+	        	 
+	    });
+	});
+
+	$(".datepicker").blur("click", function() {
+		$scope.data = $("#agregar").datepicker("getDate");
+		$scope.game.gam_data_lancamento = $scope.data;
+			console.log( $scope.data);
+	});
+	 
 	$scope.isAtivo = function(tela) {
 		return TelaHelper.tela == tela ? 'active' : '';
 	};
@@ -82,7 +99,7 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','GeneroS
 		    async: false,
 		    success: function (response) {
 		    	
-		    	console.log(response.contexto.game);
+		    	console.log(response);
 		    	$scope.game = null;
 		    	//$scope.loadGames();
 		    }

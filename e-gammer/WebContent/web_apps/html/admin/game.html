@@ -64,7 +64,7 @@
 						</div>
 							
 						<div class="col-md-2  date-width ">
-							<input name="lancamento" placeholder="dd/mm/aaaa" maxlength="10" type="text" class="form-control" ng-model = "game.gam_data_lancamento">
+							<input name="lancamento" placeholder="dd/mm/aaaa" id = "agregar" type="text"  class="form-control datepicker" >
                         </div>
                         
                         <div class="col-md-2 fields-css">
@@ -96,8 +96,9 @@
 								<option ng-repeat="des in desenvolvedoras" value="{{des.des_codigo}}">{{des.des_studio}}</option>
 							</select>
 						</div>
-						
 					</div>
+					
+					
 					
 					<div class="form-group ">
 						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Adicionar'"
@@ -118,16 +119,18 @@
 		<ng-include src="'../../padroes/rodape.html'"></ng-include>
 	</div>
     <!-- JS -->
+  
 	<script type="text/javascript" src="../../css/angular.min.js"></script>
-	<link
-	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700'
-	rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="../../css/font-awesome.min.css" rel="stylesheet">
 	<link href="../../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../../css/templatemo-style.css" rel="stylesheet">
 	<link href="../../jquery-ui/jquery-ui.css" rel="stylesheet">
+	<link href="../../css/bootstrap-datepicker.css" rel="stylesheet">
 	<script src="../../css/jquery-1.11.2.min.js"></script>
 	<script src="../../css/jquery-migrate-1.2.1.min.js"></script>
+	<script src="../../css/bootstrap-datepicker.js"></script>
+	<script src="../../css/bootstrap-datepicker.pt-BR.min.js"></script>
 	<script type="text/javascript" src="../../css/templatemo-script.js"></script>
 	<script type="text/javascript" src="../../controller/comum/comum.js"></script>
 	<script type="text/javascript" src="../../service/admin/generoService.js"></script>
