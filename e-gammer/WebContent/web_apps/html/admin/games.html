@@ -4,9 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>E-gammer - Genero</title>
+	<title>E-gammer - Game</title>
 	<meta name="description" content="">
 	<meta name="author" content="templatemo">
+			        
 </head>
 <body ng-app="egammer">
 	<div ng-controller="GameController">
@@ -14,38 +15,6 @@
 		<div class="templatemo-flex-row ">
 			<ng-include src="'../padroes/barra_lateral_admin.html'"></ng-include>
 			<div class="templatemo-content col-1 light-gray-bg">
-	
-				<form class="container-fluid">
-	
-					<div class="row">
-						<div class="col-md-12">
-							<h2>Genero</h2>
-							<div class="linha"></div>
-						</div>
-					</div>
-					<div class="form-group ">
-						<div class="input-group ">
-							<div class="input-group-addon">
-								<i class="fa fa-paint-brush"></i>
-							</div>
-							<input type="text" class="form-control" placeholder="Genero" ng-model="genero.gen_nome">
-						</div>
-					</div>
-				
-					<div class="form-group ">
-						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Adicionar'"
-							ng-click="salvar()">{{btnLabel}}</button>
-					</div>
-					
-					<div class="form-group ">
-						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Alterar'"
-							ng-click="editar(genero)">{{btnLabel}}</button>
-					
-						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Alterar'"
-							ng-click="generoCancel();">Cancelar</button>
-					</div>
-				</form>
-				
 				<div class="container-fluid ">
 					<table class="table table-striped ">
 						<thead >
@@ -54,35 +23,56 @@
 							</tr>
 						</thead>
 						<tbody >
-							<tr data-ng-repeat="gen in generos" >
+							<tr data-ng-repeat="gam in games.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))"  ng-if="games.length != 0">
 								
-								<td class="col-md-9">{{gen.gen_nome}}</td>
+								<td class="col-md-9">{{gam.gam_titulo}}</td>
 								<td>
-		                            <a class="btn btn-danger" ng-click="generoDelete(gen.gen_codigo);"> <i class="fa fa-trash-o"></i> Apagar</a>
-		                            <a class="btn btn-warning" ng-click="generoEditar(gen);"> <i class="fa fa-trash-o"></i> Editar</a>
+		                            <a class="btn btn-danger" ng-click="gameDelete(gen.gen_codigo);"> <i class="fa fa-trash-o"></i> Apagar</a>
+		                            <a class="btn btn-warning" ng-click="gameEditar(gen);"> <i class="fa fa-trash-o"></i> Editar</a>
 		                        </td>
+							</tr>
+							<tr ng-if="games.length == 0">
+								<td>
+									<p>Não existem Games Cadastrados</p>
+								</td>
 							</tr>
 						</tbody>
 					</table>
 					</br>
+					
+					<uib-pagination boundary-links="true" total-items="games.length" ng-model="currentPage" 
+						items-per-page="itemsPerPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" 
+						first-text="&laquo;" last-text="&raquo;" ng-change="pageChange()"></uib-pagination>
+					</br>
 				</div>
-				
 			</div>
 		</div>
 		<ng-include src="'../padroes/rodape.html'"></ng-include>
 	</div>
     <!-- JS -->
+  
 	<script type="text/javascript" src="../../js/bibliotecas/angular.min.js"></script>
-	<link
-	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700'
-	rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="../../css/font-awesome.min.css" rel="stylesheet">
 	<link href="../../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../../css/templatemo-style.css" rel="stylesheet">
+	<link href="../../css/jquery-ui.css" rel="stylesheet">
+	<link href="../../css/bootstrap-datepicker.css" rel="stylesheet">
 	<script src="../../js/bibliotecas/jquery-1.11.2.min.js"></script>
 	<script src="../../js/bibliotecas/jquery-migrate-1.2.1.min.js"></script>
+	<script src="../../js/bibliotecas/bootstrap-datepicker.js"></script>
+	<script src="../../js/bibliotecas/bootstrap-datepicker.pt-BR.min.js"></script>
 	<script type="text/javascript" src="../../js/bibliotecas/templatemo-script.js"></script>
-	<script type="text/javascript" src="../../js/controller/comum/comum.js"></script>
+	<script src="../../js/bibliotecas/angular-animate.js"></script>
+	<script src="../../js/bibliotecas/ui-bootstrap.js"></script>
+	<script src="../../js/bibliotecas/bootstrap.min.js"></script>
+	<script src="../../js/bibliotecas/dirPagination.js"></script>
+	<script type="text/javascript" src="../../js/comum/comum.js"></script>
+	<script type="text/javascript" src="../../js/service/admin/generoService.js"></script>
+	<script type="text/javascript" src="../../js/service/admin/desenvolvedoraService.js"></script>
+	<script type="text/javascript" src="../../js/controller/admin/generoController.js"></script>
+	<script type="text/javascript" src="../../js/controller/admin/desenvolvedoraController.js"></script>
 	<script type="text/javascript" src="../../js/controller/admin/gameController.js"></script>
+	
 </body>
-</html>>
+</html>

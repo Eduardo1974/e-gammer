@@ -3,8 +3,8 @@ var app = angular.module('egammer');
 
 
 
-app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','GeneroService','DesenvolvedoraService',
-                                   function($scope, $http, $timeout, $sce, generoService,desenvolvedoraService) {
+app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','$log','GeneroService','DesenvolvedoraService',
+                                   function($scope, $http, $timeout, $sce,$log, generoService,desenvolvedoraService) {
 	
 	
 	var CHAVE_STORAGE = 'usuario';
@@ -50,8 +50,21 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','GeneroS
 	$scope.btnLabel = "Adicionar";
 	$scope.isLogado = false;
 	$scope.exibirMensagemErro = false;
+	$scope.currentPage = 1;
+	$scope.itemsPerPage = 4;
+	$scope.maxSize = 5;
+	$scope.bigTotalItems = 175;
+	$scope.bigCurrentPage = 1;
 	
 	
+	$scope.setPage = function (pageNo) {
+	    $scope.currentPage = pageNo;
+	  };
+
+	$scope.pageChanged = function() {
+	   $log.log('Page changed to: ' + $scope.currentPage);
+	};
+	  
 	$(document).ready(function () {
 	    $('.datepicker').datepicker({
 	        format: 'dd/mm/yyyy',                
@@ -75,6 +88,7 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','GeneroS
     function init() {
     	$scope.getGenero();
     	$scope.getDesenvolvedora();
+    	$scope.loadGames();
     }
     
 	$scope.salvar = function() {
