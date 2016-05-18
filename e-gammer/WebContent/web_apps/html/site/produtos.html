@@ -36,15 +36,15 @@
 		<div id="site-content">
 			
 			<header class="row" id="top-barra">
-				<div class="col-md-3 col-sm-3">
-					<div class=" " id="logotipo">
+				<div class="col-md-3 col-sm-12">
+					<div class="profile-photo-container" id="logotipo">
 						<a href="index.html" id="branding">
 							<img src="/e-gammer/web_apps/images/site/logo/logo_white.png" alt="Profile Photo" class="img-responsive">
 						</a>
 					</div>
 					
 				</div>
-				<div class="col-md-6 col-xs-8">
+				<div class="col-md-6 col-xs-8 col-sm-8">
 					<div class="input-group" id="barra-pesquisa">
 						<input type="text" class="form-control" placeholder="Buscar...">
 						<span class="input-group-btn">
@@ -53,9 +53,9 @@
 					</div>
 					
 				</div>
-				<div class="col-md-3 col-xs-4">
+				<div class="col-md-3 col-xs-4 col-sm-4">
 					<div class="right-section pull-right" id="carrinho-login">
-						<a href="carrinho.html" class="cart"><i class="fa fa-shopping-cart"></i> 32 itens </a>
+						<a href="carrinho.html" class="cart"><i class="fa fa-shopping-cart"></i> 0 itens </a>
 						<a href="#" class="login-button">Login/Register</a>
 					</div>	
 
@@ -66,50 +66,106 @@
 			
 			<div class="row" id="principal">
 				
-				<aside class="col-md-2 col-sm-3">
-					<div class="templatemo-sidebar templatemo-left-nav">
-						<nav class="templatemo-left-nav">  
-							
-						  <ul>			
-							<a href="#" class="active"><i class="fa fa-binoculars"></i>Aventura</a>
-							<a href="#"><i class="fa fa-bomb" aria-hidden="true"></i>A&ccedil;&atilde;o</a>
-							<a href="#"><i class="fa fa-car"></i>Corrida</a>
-							<a href="#"><i class="fa fa-trophy"></i>Esportes</a>
-							<a href="#"><i class="fa fa-university"></i>Estrat&eacute;gia</a>
-						  </ul>  
-						</nav>
-					</div>	
-				</aside>
-				
-				<div role="main" class="col-md-10 col-xs-12 col-sm-9">
-					<div class="row">
-					
-						<div id="">
-							<div class=" ">
-								<img id="imagem" src="/e-gammer/web_apps/images/site/banner/Mirrors-Edge-Catalyst.jpg" alt="Profile Photo" class="img-responsive">  
-							</div>
-						</div>
-						
-					</div>
-					<div class="row">
-						<section>
-							<header>
-								<h2 class="section-title">promoção</h2>
-								<a href="produtos.html" class="all">Show All</a>
-							</header>
+				<div class="container">
+					<div class="page" id="conteudo">
+						<div class="filter-bar">
+							<div class="filter">
+								<span>
+									<label>Ordenar por:</label>
+									<select name="#">
+										<option value="#">Popularidade</option>
+										<option value="#">Highest Rating</option>
+										<option value="#">Lowest price</option>
+									</select>
+								</span>
+								<span>
+									<label>Genero</label>
+									<select name="#">
+										<option value="#">Show All</option>
+										<option value="#">Action</option>
+										<option value="#">Racing</option>
+										<option value="#">Strategy</option>
+									</select>
+								</span>
+								<span>
+									<label>Show:</label>
+									<select name="#">
+										<option value="#">8</option>
+										<option value="#">16</option>
+										<option value="#">24</option>
+									</select>
+								</span>
+							</div> <!-- .filter -->
 
-							<div class="product-list">
+							<div class="pagination">
+								<a href="#" class="page-number"><i class="fa fa-angle-left"></i></a>
+								<span class="page-number current">1</span>
+								<a href="#" class="page-number">2</a>
+								<a href="#" class="page-number">3</a>
+								<a href="#" class="page-number">...</a>
+								<a href="#" class="page-number">12</a>
+								<a href="#" class="page-number"><i class="fa fa-angle-right"></i></a>
+							</div> <!-- .pagination -->
+						</div> <!-- .filter-bar -->
+						
+						<div class="product-list">
+								<div class="product">
+									<div class="inner-product">
+										<div class="figure-image">
+											<a href="single.html"><img src="dummy/game-1.jpg" alt="Game 1"></a>
+										</div>
+										<h3 class="product-title"><a href="#">Alpha Protocol</a></h3>
+										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
+										<a href="#" class="button unmuted">Add to cart</a>
+										<a href="#" class="button muted">Read Details</a>
+									</div>
+								</div> <!-- .product -->
+
+								<div class="product">
+									<div class="inner-product">
+										<div class="figure-image">
+											<a href="single.html"><img src="dummy/game-2.jpg" alt="Game 2"></a>
+										</div>
+										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
+										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
+										<a href="#" class="button unmuted">Add to cart</a>
+										<a href="#" class="button muted">Read Details</a>
+									</div>
+								</div> <!-- .product -->
+
+								<div class="product">
+									<div class="inner-product">
+										<div class="figure-image">
+											<a href="single.html"><img src="dummy/game-3.jpg" alt="Game 3"></a>
+										</div>
+										<h3 class="product-title"><a href="#">Need for Speed rivals</a></h3>
+										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
+										<a href="#" class="button unmuted">Add to cart</a>
+										<a href="#" class="button muted">Read Details</a>
+									</div>
+								</div> <!-- .product -->
+
+								<div class="product">
+									<div class="inner-product">
+										<div class="figure-image">
+											<a href="single.html"><img src="dummy/game-4.jpg" alt="Game 4"></a>
+										</div>
+										<h3 class="product-title"><a href="#">Big game hunter</a></h3>
+										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
+										<a href="#" class="button unmuted">Add to cart</a>
+										<a href="#" class="button muted">Read Details</a>
+									</div>
+								</div> <!-- .product -->
 								
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<a href="detalhes.html"><img src="/e-gammer/web_apps/images/site/capa/nfs-rivals-capa-small.jpg" alt="Game 1"></a>
+											<a href="single.html"><img src="dummy/game-5.jpg" alt="Game 1"></a>
 										</div>
-										<h3 class="product-title"><a href="#">Need</a></h3>
-										<small class="price">R$39,89</small>
+										<h3 class="product-title"><a href="#">Watch Dogs</a></h3>
 										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button unmuted">Add carrinho</a>
-										<a href="#" class="button muted">Mais detalhes</a>
+										<a href="#" class="button unmuted">Add to cart</a>
+										<a href="#" class="button muted">Read Details</a>
 									</div>
 								</div> <!-- .product -->
 								
@@ -120,9 +176,8 @@
 											<a href="single.html"><img src="dummy/game-6.jpg" alt="Game 2"></a>
 										</div>
 										<h3 class="product-title"><a href="#">Mortal Kombat X</a></h3>
-										<small class="price">$19.00</small>
 										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button  unmuted">Add to cart</a>
+										<a href="#" class="button unmuted">Add to cart</a>
 										<a href="#" class="button muted">Read Details</a>
 									</div>
 								</div> <!-- .product -->
@@ -134,9 +189,8 @@
 											<a href="single.html"><img src="dummy/game-7.jpg" alt="Game 3"></a>
 										</div>
 										<h3 class="product-title"><a href="#">Metal Gear Solid V</a></h3>
-										<small class="price">$19.00</small>
 										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button unmuted">Add to cart</a>
+										<a href="#" class="button unmuted">Add to cart</a>
 										<a href="#" class="button muted">Read Details</a>
 									</div>
 								</div> <!-- .product -->
@@ -148,18 +202,27 @@
 											<a href="single.html"><img src="dummy/game-8.jpg" alt="Game 4"></a>
 										</div>
 										<h3 class="product-title"><a href="#">Nascar '14</a></h3>
-										<small class="price">$19.00</small>
 										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button unmuted">Add to cart</a>
+										<a href="#" class="button unmuted">Add to cart</a>
 										<a href="#" class="button muted">Read Details</a>
 									</div>
 								</div> <!-- .product -->
 								
-							</div> <!-- .product-list -->
+						</div> <!-- .product-list -->
 
-						</section>
+						<div class="pagination-bar">
+							<div class="pagination">
+								<a href="#" class="page-number"><i class="fa fa-angle-left"></i></a>
+								<span class="page-number current">1</span>
+								<a href="#" class="page-number">2</a>
+								<a href="#" class="page-number">3</a>
+								<a href="#" class="page-number">...</a>
+								<a href="#" class="page-number">12</a>
+								<a href="#" class="page-number"><i class="fa fa-angle-right"></i></a>
+							</div> <!-- .pagination -->
+						</div>
 					</div>
-				</div> <!--FECHA MAIN-->
+				</div> <!-- .container -->
 			
 			</div>
 			

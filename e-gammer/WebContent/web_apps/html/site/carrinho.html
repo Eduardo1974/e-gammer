@@ -1,34 +1,239 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">  
-	    <title>E-gammer - Login</title>
-        <meta name="description" content="">
-        <meta name="author" content="templatemo">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>E-Gammer.com</title>
+
+		<!-- Bootstrap -->
+		<link href="/e-gammer/web_apps/css/bootstrap.min.css" rel="stylesheet"> 
+		
+		<!-- Loading third party fonts -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="/e-gammer/web_apps/css/site/style.css">
+		
+		<!-- Templatemo -->
+		<link rel="stylesheet" href="/e-gammer/web_apps/css/site/top-style.css">
+		<link rel="stylesheet" href="/e-gammer/web_apps/css/site/left-column.css">
+		<link rel="stylesheet" href="/e-gammer/web_apps/css/site/id-style.css">
+		
+		
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
 
 	</head>
-	<body ng-app=""  >
-		<div class="templatemo-flex-row ">
-			<ng-include src="'../padroes/barra_lateral.html'"></ng-include> 
-			<div class="templatemo-content col-1 light-gray-bg">
+
+
+	<body>
+		
+		<div id="site-content">
+			
+			<header class="row" id="top-barra">
+				<div class="col-md-3 col-sm-3">
+					<div class="profile-photo-container" id="logotipo">
+						<a href="index.html" id="branding">
+							<img src="/e-gammer/web_apps/images/site/logo/logo_white.png" alt="Profile Photo" class="img-responsive">
+						</a>
+					</div>
+					
+				</div>
+				<div class="col-md-6 col-xs-8">
+					<div class="input-group" id="barra-pesquisa">
+						<input type="text" class="form-control" placeholder="Buscar...">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+						</span>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-xs-4">
+					<div class="right-section pull-right" id="carrinho-login">
+						<a href="#" class="cart"><i class="fa fa-shopping-cart"></i> 0 itens </a>
+						<a href="#" class="login-button">Login/Register</a>
+					</div>	
+
+				</div>
+
+			</header>
+			
+			
+			<div class="row" id="principal">
 				
-				
-			</div>
+				<main class="main-content">
+					<div class="container">
+						<div class="page">
+							
+							<table class="cart">
+								<thead>
+									<tr>
+										<th class="product-name">Product Name</th>
+										<th class="product-price">Price</th>
+										<th class="product-qty">Quantity</th>
+										<th class="product-total">Total</th>
+										<th class="action"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="product-name">
+											<div class="product-thumbnail">
+												<img src="dummy/cart-thumb-1.jpg" alt="">
+											</div>
+											<div class="product-detail">
+												<h3 class="product-title">GTA V</h3>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nobis architecto dolorum, alias laborum sit odit, saepe expedita similique eius enim quasi obcaecati voluptates, autem eveniet ratione veniam omnis modi.</p>
+											</div>
+										</td>
+										<td class="product-price">$150.00</td>
+										<td class="product-qty">
+											<select name="#">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+											</select>
+										</td>
+										<td class="product-total">$150.00</td>
+										<td class="action"><a href="#"><i class="fa fa-times"></i></a></td>
+									</tr>
+									<tr>
+										<td class="product-name">
+											<div class="product-thumbnail">
+												<img src="dummy/cart-thumb-2.jpg" alt="">
+											</div>
+											<div class="product-detail">
+												<h3 class="product-title">Big Game Hunter</h3>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nobis architecto dolorum, alias laborum sit odit, saepe expedita similique eius enim quasi obcaecati voluptates, autem eveniet ratione veniam omnis modi.</p>
+											</div>
+										</td>
+										<td class="product-price">$150.00</td>
+										<td class="product-qty">
+											<select name="#">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+											</select>
+										</td>
+										<td class="product-total">$150.00</td>
+										<td class="action"><a href="#"><i class="fa fa-times"></i></a></td>
+									</tr>
+									<tr>
+										<td class="product-name">
+											<div class="product-thumbnail">
+												<img src="dummy/cart-thumb-3.jpg" alt="">
+											</div>
+											<div class="product-detail">
+												<h3 class="product-title">Meal Gear Solid</h3>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nobis architecto dolorum, alias laborum sit odit, saepe expedita similique eius enim quasi obcaecati voluptates, autem eveniet ratione veniam omnis modi.</p>
+											</div>
+										</td>
+										<td class="product-price">$150.00</td>
+										<td class="product-qty">
+											<select name="#">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+											</select>
+										</td>
+										<td class="product-total">$150.00</td>
+										<td class="action"><a href="#"><i class="fa fa-times"></i></a></td>
+									</tr>
+								</tbody>
+							</table> <!-- .cart -->
+
+							<div class="cart-total">
+								<p><strong>Subtotal:</strong> $650.00</p>
+								<p><strong>Shipment:</strong> $15.00</p>
+								<p class="total"><strong>Total</strong><span class="num">$665.00</span></p>
+								<p>
+									<a href="#" class="button muted">Continue Shopping</a>
+									<a href="#" class="button unmuted">Finalize and pay</a>
+								</p>
+							</div> <!-- .cart-total -->
+							
+						</div>
+					</div> <!-- .container -->
+			</main> <!-- .main-content -->
+			
+			</div><!-- FECHA PRINCIPAL -->
+			
+
+			
+
+			<div class="site-footer" style="font-size: 15px">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title" style="font-size:20px">Informações</h3>
+								<ul class="no-bullet">
+									<li><a href="#">Mapa do Site</a></li>
+									<li><a href="#">Sobre nós</a></li>
+									<li><a href="#">FAQ</a></li>
+									<li><a href="#">Politica de Privacidade</a></li>
+									<li><a href="#">Contato</a></li>
+								</ul>
+							</div> <!-- .widget -->
+						</div> <!-- column -->
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title" style="font-size:20px">Atendimento ao consumidor</h3>
+								<ul class="no-bullet">
+									<li><a href="#">Segurança</a></li>
+									<li><a href="#">Shipping</a></li>
+									<li><a href="#">Pedidos &amp; Retornos</a></li>
+									<li><a href="#">Gropos de Vendas</a></li>
+								</ul>
+							</div> <!-- .widget -->
+						</div> <!-- column -->
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title" style="font-size:20px">Minha conta</h3>
+								<ul class="no-bullet">
+									<li><a href="#">Login/Register</a></li>
+									<li><a href="#">Configurações</a></li>
+									<li><a href="#">Carrinho</a></li>
+									<li><a href="#">Rastrear Pedido</a></li>
+									<li><a href="#">Sair</a></li>
+								</ul>
+							</div> <!-- .widget -->
+						</div> <!-- column -->
+						<div class="col-md-6">
+							<div class="widget">
+								<h3 class="widget-title" style="font-size:20px">Assine nossa newsletter</h3>
+								<form action="#" class="newsletter-form">
+									<input type="text" placeholder="Entre com seu email...">
+									<input type="submit" value="Inscrever-me">
+								</form>
+							</div> <!-- .widget -->
+						</div> <!-- column -->
+					</div><!-- .row -->
+
+					<div class="colophon">
+						<div class="copy">Copyright 2016 E-Gammer. Designed by Themezy. All rights reserved.</div>
+						<div class="social-links square">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-google-plus"></i></a>
+							<a href="#"><i class="fa fa-pinterest"></i></a>
+						</div> <!-- .social-links -->
+					</div> <!-- .colophon -->
+				</div> <!-- .container -->
+			</div> <!-- .site-footer -->
 		</div>
-		<ng-include src="'../padroes/rodape.html'"></ng-include> 
-		  
-		<!-- JS -->
-		<script type="text/javascript" src="../../js/bibliotecas/angular.min.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
-	    <link href="../../css/font-awesome.min.css" rel="stylesheet">
-	    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-	    <link href="../../css/templatemo-style.css" rel="stylesheet">
-	    <script src="../../../js/bibliotecas/jquery-1.11.2.min.js"></script>     
-	    <script src="../../js/bibliotecas/jquery-migrate-1.2.1.min.js"></script> 
-	    <script type="text/javascript" src="../../js/bibliotecas/templatemo-script.js"></script>    
-		<script type="text/javascript" src="../../js/comum/comum.js"></script>
-	  
+
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="/e-gammer/web_apps/js/bibliotecas/bootstrap.min.js"></script>
+		
+	
+		
 	</body>
+
 </html>
