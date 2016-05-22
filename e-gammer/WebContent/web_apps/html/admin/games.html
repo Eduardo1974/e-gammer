@@ -10,7 +10,7 @@
 			        
 </head>
 <body ng-app="egammer">
-	<div ng-controller="GameController">
+	<div ng-controller="GameControllerMenu">
 		
 		<div class="templatemo-flex-row ">
 			<ng-include src="'../padroes/barra_lateral_admin.html'"></ng-include>
@@ -27,8 +27,8 @@
 								
 								<td class="col-md-9">{{gam.gam_titulo}}</td>
 								<td>
-		                            <a class="btn btn-danger" ng-click="gameDelete(gen.gen_codigo);"> <i class="fa fa-trash-o"></i> Apagar</a>
-		                            <a class="btn btn-warning" ng-click="gameEditar(gen);"> <i class="fa fa-trash-o"></i> Editar</a>
+		                            <a class="btn btn-danger" ng-click="gameDelete(gam.gam_codigo);"> <i class="fa fa-trash-o"></i> Apagar</a>
+		                            <a class="btn btn-warning" ng-click="gameEditar(gam);"> <i class="fa fa-trash-o"></i> Editar</a>
 		                        </td>
 							</tr>
 							<tr ng-if="games.length == 0">
@@ -52,6 +52,8 @@
     <!-- JS -->
   
 	<script type="text/javascript" src="../../js/bibliotecas/angular.min.js"></script>
+	<script type="text/javascript" src="../../js/bibliotecas/angular-local-storage.min.js"></script>
+	<script type="text/javascript" src="../../js/bibliotecas/angular-route.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="../../css/font-awesome.min.css" rel="stylesheet">
 	<link href="../../css/bootstrap.min.css" rel="stylesheet">
@@ -70,9 +72,10 @@
 	<script type="text/javascript" src="../../js/comum/comum.js"></script>
 	<script type="text/javascript" src="../../js/service/admin/generoService.js"></script>
 	<script type="text/javascript" src="../../js/service/admin/desenvolvedoraService.js"></script>
+	<script type="text/javascript" src="../../js/service/admin/gameService.js"></script>
 	<script type="text/javascript" src="../../js/controller/admin/generoController.js"></script>
 	<script type="text/javascript" src="../../js/controller/admin/desenvolvedoraController.js"></script>
+	<script type="text/javascript" src="../../js/controller/admin/gameControllerMenu.js"></script>
 	<script type="text/javascript" src="../../js/controller/admin/gameController.js"></script>
-	
 </body>
 </html>

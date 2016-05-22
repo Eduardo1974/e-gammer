@@ -1,12 +1,9 @@
 
 var app = angular.module('egammer');
 
-
-
-app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','$log','GeneroService','DesenvolvedoraService',
-                                   function($scope, $http, $timeout, $sce,$log, generoService,desenvolvedoraService) {
+app.controller('GameController', function($scope,GameService, $http, $log, GeneroService,DesenvolvedoraService) {
 	
-	
+	//GameService.store('GameController', $scope);
 	var CHAVE_STORAGE = 'usuario';
 	var urlPath = "http://localhost:8085/e-gammer/Game!";
  
@@ -86,10 +83,12 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','$log','
 	
 	
     function init() {
+    	//debugger;
     	$scope.getGenero();
     	$scope.getDesenvolvedora();
-    	$scope.loadGames();
+    	$scope.loadGames(); 
     }
+    
     
 	$scope.salvar = function() {
 		$scope.exibirMensagemErro = false;
@@ -134,7 +133,7 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','$log','
 	$scope.gameDelete = function(codigo){
 		
 		var data = {contexto : {
-			game : {des_codigo : codigo}
+			game : {gam_codigo : codigo}
 		}};
 		
 		var data1 = JSON.stringify(data);
@@ -146,7 +145,7 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','$log','
 		    type: 'POST',
 		    async: false,
 		    success: function (response) {
-		    	//$scope.loadGames();
+		    	$scope.loadGames();
 		    	console.log("deletou");
 		    }
 		});
@@ -181,12 +180,19 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','$log','
     }
 	
 	$scope.gameEditar = function(obj){
-		$scope.game = angular.copy(obj);
+		
+        document.location.href='game.html';
+        $scope.game = angular.copy(obj);
         $scope.btnLabel = "Alterar";
+        console.log(obj);
+	}
+	
+	$scope.teste = function(){
+		
 	}
 	
 	$scope.getGenero = function(){
-		generoService.generoList().then(function (response) {
+		GeneroService.generoList().then(function (response) {
             $scope.generos =  angular.copy(response.data.contexto.generos);
 			//$scope.generos =  angular.copy(response.contexto.generos);
             console.log($scope.generos);
@@ -194,11 +200,15 @@ app.controller('GameController', ['$scope', '$http', '$timeout', '$sce','$log','
 	}
 	
 	$scope.getDesenvolvedora = function(){
-		desenvolvedoraService.desenvolvedoraList().then(function (response) {
+		DesenvolvedoraService.desenvolvedoraList().then(function (response) {
             $scope.desenvolvedoras =  angular.copy(response.data.contexto.desenvolvedoras);
 			//$scope.generos =  angular.copy(response.contexto.generos);
             console.log($scope.desenvolvedoras);
         });
 	}
 	init();
-}]);
+	
+//	$scope.foo = GameService.foo;
+//	console.log($scope.foo);
+	//console.log("OneController::variable1", GameService.get('GameController').maxSize);
+});

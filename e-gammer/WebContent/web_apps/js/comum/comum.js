@@ -3,7 +3,7 @@
 // Para se definir um módulo usamos: angular.module('NOME_MODULO', ['DEPENDENCIA_1', 'DEPENDENCIA_2']);
 // O módulo ui-bootstrap serve para facilitar a integração angular->bootstrap CSS
 
-angular.module('egammer', ['ngAnimate', 'ui.bootstrap']);
+var app = angular.module('egammer', ['ngAnimate', 'ui.bootstrap']);
 
 
 
