@@ -16,7 +16,7 @@
 
 		<action name="Test!*" class="br.com.fatec.egammer.web.action.TestAction"
 			method="{1}">
-			<result name="html">/web_apps/html/index.html</result>
+			<result name="html">/web_apps/html/site/index.html</result>
 		</action>
 
 		<action name="*!*" class="br.com.fatec.egammer.web.action.{1}Action"
