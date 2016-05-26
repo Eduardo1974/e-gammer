@@ -31,7 +31,7 @@
 						<div class="col-md-2 fields-css">
 							<select class=" form-control" name="classificacao" ng-model="classificacao.selecionado">
 								<option value="" disabled selected>Classificação</option>
-								<option ng-repeat="cla in classificacao.faixa" value="{{cla.tipo}}" selected>{{cla.tipo}}</option>
+								<option ng-repeat="cla in classificacao.faixa" value="{{cla.tipo}}">{{cla.tipo}}</option>
 							</select>
 						</div>
 							
@@ -54,7 +54,7 @@
                         <div class="col-md-2 fields-css">
 							<select class=" form-control" name="plataforma" ng-model="plataforma.selecionado">
 								<option value="" disabled selected>Plataforma</option>
-								<option ng-repeat="pla in plataforma.tipos" value="{{pla.tipo}}" selected>{{pla.tipo}}</option>
+								<option ng-repeat="pla in plataforma.tipos" value="{{pla.tipo}}" >{{pla.tipo}}</option>
 							</select>
 						</div>
 						
@@ -70,14 +70,14 @@
 						<div class="col-md-2 fields-css">
 							<select class=" form-control " name="genero" ng-model="game.genero.gen_codigo">
 								<option value="" disabled selected>Genero</option>
-								<option ng-repeat="gen in generos" value="{{gen.gen_codigo}}" selected>{{gen.gen_nome}}</option>
+								<option ng-repeat="gen in generos" value="{{gen.gen_codigo}}" >{{gen.gen_nome}}</option>
 							</select>
 						</div>
 					
 						<div class="col-md-2 fields-css">
 							<select class=" form-control combo-size" name="desenvolvedora" ng-model="game.desenvolvedora.des_codigo">
 								<option value="" disabled selected>Desenvolvedora</option>
-								<option ng-repeat="des in desenvolvedoras" value="{{des.des_codigo}}" selected>{{des.des_studio}}</option>
+								<option ng-repeat="des in desenvolvedoras" value="{{des.des_codigo}}">{{des.des_studio}}</option>
 							</select>
 						</div>
 					</div>

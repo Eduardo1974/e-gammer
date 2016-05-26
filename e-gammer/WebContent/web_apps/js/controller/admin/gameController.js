@@ -63,10 +63,16 @@ eGammerControllers.controller('GameController', function($scope,GameService, $ht
 		return TelaHelper.tela == tela ? 'active' : '';
 	};
 	
-	
+	function toDate(dateStr) {
+	    var parts = dateStr.split("-");
+	    var p2 = parts[2].split("T");
+	    return p2[0]+"/"+parts[1]+"/"+parts[0];
+	}
 	
     function init() {
+    	
     	$scope.btnLabel  = GameService.label;
+    	
     	if($scope.btnLabel == "Adicionar"){
     		$scope.game = null;
     		$scope.data = null;
@@ -76,16 +82,10 @@ eGammerControllers.controller('GameController', function($scope,GameService, $ht
     		$scope.classificacao.selecionado = null;
     		$scope.plataforma.selecionado = null;
     	}else{
-    		$scope.game = null;
-    		$scope.data = null;
-    		$scope.games = null ;
-    		$scope.generos = null;
-    		$scope.desenvolvedoras = null;
-    		$scope.classificacao.selecionado = null;
-    		$scope.plataforma.selecionado = null;
-    		
     		$scope.game = GameService.gameSelecionado;
-    		console.log(GameService.gameSelecionado);
+    		$scope.data = $scope.game.gam_data_lancamento;
+    		var from = toDate($scope.game.gam_data_lancamento); 
+    		$("#agregar").datepicker('setDate', from);
     	}
     	
     	$scope.getGenero();
