@@ -1,6 +1,6 @@
 package br.com.fatec.egammer.test.dao;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import org.junit.Assert;
@@ -45,10 +45,11 @@ public class ItemPedidoDAOTest extends TestBase {
 		cliente.setCli_codigo(cliCoodigo);
 		
 		PedidoDAOImpl pedDao = new PedidoDAOImpl();
-		Date date = new Date();
+		java.util.Date dataUtil = new java.util.Date();
+		Date date = new java.sql.Date(dataUtil.getTime());
 		Pedido pedido = new Pedido();
 		pedido.setCliente(cliente);
-		pedido.setPed_data(new Date());
+		pedido.setPed_data(new java.sql.Date(dataUtil.getTime()));
 		pedido.setPed_valor_total(100.00);
 		Long pedCodigo = pedDao.save(pedido);
 		pedido.setPed_codigo(pedCodigo);
@@ -71,7 +72,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		Game game = new Game();
 		game.setDesenvolvedora(des);
 		game.setGam_classificacao("8");
-		game.setGam_data_lancamento(new Date());
+		game.setGam_data_lancamento(new java.sql.Date(dataUtil.getTime()));
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
@@ -113,10 +114,11 @@ public class ItemPedidoDAOTest extends TestBase {
 		cliente.setCli_codigo(cliCoodigo);
 		
 		PedidoDAOImpl pedDao = new PedidoDAOImpl();
-		Date date = new Date();
+		java.util.Date dataUtil = new java.util.Date();
+		Date date = new java.sql.Date(dataUtil.getTime());
 		Pedido pedido = new Pedido();
 		pedido.setCliente(cliente);
-		pedido.setPed_data(new Date());
+		pedido.setPed_data(new java.sql.Date(dataUtil.getTime()));
 		pedido.setPed_valor_total(100.00);
 		Long pedCodigo = pedDao.save(pedido);
 		pedido.setPed_codigo(pedCodigo);
@@ -139,7 +141,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		Game game = new Game();
 		game.setDesenvolvedora(des);
 		game.setGam_classificacao("8");
-		game.setGam_data_lancamento(new Date());
+		game.setGam_data_lancamento(new java.sql.Date(dataUtil.getTime()));
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
@@ -184,10 +186,11 @@ public class ItemPedidoDAOTest extends TestBase {
 		cliente.setCli_codigo(cliCoodigo);
 		
 		PedidoDAOImpl pedDao = new PedidoDAOImpl();
-		Date date = new Date();
+		java.util.Date dataUtil = new java.util.Date();
+		Date date = new java.sql.Date(dataUtil.getTime());
 		Pedido pedido = new Pedido();
 		pedido.setCliente(cliente);
-		pedido.setPed_data(new Date());
+		pedido.setPed_data(new java.sql.Date(dataUtil.getTime()));
 		pedido.setPed_valor_total(100.00);
 		Long pedCodigo = pedDao.save(pedido);
 		pedido.setPed_codigo(pedCodigo);
@@ -210,7 +213,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		Game game = new Game();
 		game.setDesenvolvedora(des);
 		game.setGam_classificacao("8");
-		game.setGam_data_lancamento(new Date());
+		game.setGam_data_lancamento(new java.sql.Date(dataUtil.getTime()));
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
@@ -248,10 +251,11 @@ public class ItemPedidoDAOTest extends TestBase {
 		cliente.setCli_codigo(cliCoodigo);
 		
 		PedidoDAOImpl pedDao = new PedidoDAOImpl();
-		Date date = new Date();
+		java.util.Date dataUtil = new java.util.Date();
+		Date date = new java.sql.Date(dataUtil.getTime());
 		Pedido pedido = new Pedido();
 		pedido.setCliente(cliente);
-		pedido.setPed_data(new Date());
+		pedido.setPed_data(new java.sql.Date(dataUtil.getTime()));
 		pedido.setPed_valor_total(100.00);
 		Long pedCodigo = pedDao.save(pedido);
 		pedido.setPed_codigo(pedCodigo);
@@ -274,7 +278,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		Game game = new Game();
 		game.setDesenvolvedora(des);
 		game.setGam_classificacao("8");
-		game.setGam_data_lancamento(new Date());
+		game.setGam_data_lancamento(new java.sql.Date(dataUtil.getTime()));
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
@@ -319,10 +323,11 @@ public class ItemPedidoDAOTest extends TestBase {
 		cliente.setCli_codigo(cliCoodigo);
 		
 		PedidoDAOImpl pedDao = new PedidoDAOImpl();
-		Date date = new Date();
+		java.util.Date dataUtil = new java.util.Date();
+		Date date = new java.sql.Date(dataUtil.getTime());
 		Pedido pedido = new Pedido();
 		pedido.setCliente(cliente);
-		pedido.setPed_data(new Date());
+		pedido.setPed_data(new java.sql.Date(dataUtil.getTime()));
 		pedido.setPed_valor_total(100.00);
 		Long pedCodigo = pedDao.save(pedido);
 		pedido.setPed_codigo(pedCodigo);
@@ -345,7 +350,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		Game game = new Game();
 		game.setDesenvolvedora(des);
 		game.setGam_classificacao("8");
-		game.setGam_data_lancamento(new Date());
+		game.setGam_data_lancamento(new java.sql.Date(dataUtil.getTime()));
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
@@ -384,10 +389,11 @@ public class ItemPedidoDAOTest extends TestBase {
 		cliente.setCli_codigo(cliCoodigo);
 		
 		PedidoDAOImpl pedDao = new PedidoDAOImpl();
-		Date date = new Date();
+		java.util.Date dataUtil = new java.util.Date();
+		Date date = new java.sql.Date(dataUtil.getTime());
 		Pedido pedido = new Pedido();
 		pedido.setCliente(cliente);
-		pedido.setPed_data(new Date());
+		pedido.setPed_data(new java.sql.Date(dataUtil.getTime()));
 		pedido.setPed_valor_total(100.00);
 		Long pedCodigo = pedDao.save(pedido);
 		pedido.setPed_codigo(pedCodigo);
@@ -410,7 +416,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		Game game = new Game();
 		game.setDesenvolvedora(des);
 		game.setGam_classificacao("8");
-		game.setGam_data_lancamento(new Date());
+		game.setGam_data_lancamento(new java.sql.Date(dataUtil.getTime()));
 		game.setGam_descricao("Jogo de Guerra");
 		game.setGam_imagem("C:\\TEMP\\battlefield");
 		game.setGam_plataforma("PC");
@@ -442,7 +448,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		PedidoDAOImpl pedDao2 = new PedidoDAOImpl();
 		Pedido pedido2 = new Pedido();
 		pedido2.setCliente(cliente);
-		pedido2.setPed_data(new Date());
+		pedido2.setPed_data(new java.sql.Date(dataUtil.getTime()));
 		pedido2.setPed_valor_total(100.00);
 		Long pedCodigo2 = pedDao2.save(pedido2);
 		pedido2.setPed_codigo(pedCodigo2);
@@ -465,7 +471,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		Game game2 = new Game();
 		game2.setDesenvolvedora(des);
 		game2.setGam_classificacao("8");
-		game2.setGam_data_lancamento(new Date());
+		game2.setGam_data_lancamento(new java.sql.Date(dataUtil.getTime()));
 		game2.setGam_descricao("Jogo de Guerra");
 		game2.setGam_imagem("C:\\TEMP\\battlefield");
 		game2.setGam_plataforma("PC");

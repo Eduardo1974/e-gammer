@@ -1,5 +1,7 @@
 package br.com.fatec.egammer.core.converter;
 
+
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +43,9 @@ public class GameDTOConverter implements DTOConverter<Game, GameDTO>{
 		 entidade.setDesenvolvedora(dto.getDesenvolvedora());
 		 entidade.setGam_classificacao(dto.getGam_classificacao());
 		 entidade.setGam_codigo(dto.getGam_codigo());
-		 entidade.setGam_data_lancamento(dto.getGam_data_lancamento());
+		 java.util.Date dataUtil = new java.util.Date();
+		 java.sql.Date dataSql = new java.sql.Date(dto.getGam_data_lancamento().getTime());
+		 entidade.setGam_data_lancamento(dataSql );
 		 entidade.setGam_descricao(dto.getGam_descricao());
 		 entidade.setGam_imagem(dto.getGam_imagem());
 		 entidade.setGam_plataforma(dto.getGam_plataforma());

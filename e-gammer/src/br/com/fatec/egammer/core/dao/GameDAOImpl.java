@@ -54,7 +54,7 @@ public class GameDAOImpl implements GameDAO {
 			insert.setInt(4, game.getGam_quantidade());
 			insert.setString(5, game.getGam_imagem());
 			insert.setString(6, game.getGam_classificacao());
-			insert.setDate(7, new java.sql.Date(game.getGam_data_lancamento().getDate()));
+			insert.setDate(7, (Date)game.getGam_data_lancamento());
 			insert.setString(8, game.getGam_plataforma());
 			insert.setLong(9, game.getGenero().getGen_codigo());
 			insert.setLong(10, game.getDesenvolvedora().getDes_codigo());

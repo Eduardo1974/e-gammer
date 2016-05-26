@@ -69,7 +69,21 @@ eGammerControllers.controller('GameController', function($scope,GameService, $ht
     	$scope.btnLabel  = GameService.label;
     	if($scope.btnLabel == "Adicionar"){
     		$scope.game = null;
+    		$scope.data = null;
+    		$scope.games = null ;
+    		$scope.generos = null;
+    		$scope.desenvolvedoras = null;
+    		$scope.classificacao.selecionado = null;
+    		$scope.plataforma.selecionado = null;
     	}else{
+    		$scope.game = null;
+    		$scope.data = null;
+    		$scope.games = null ;
+    		$scope.generos = null;
+    		$scope.desenvolvedoras = null;
+    		$scope.classificacao.selecionado = null;
+    		$scope.plataforma.selecionado = null;
+    		
     		$scope.game = GameService.gameSelecionado;
     		console.log(GameService.gameSelecionado);
     	}
@@ -113,13 +127,6 @@ eGammerControllers.controller('GameController', function($scope,GameService, $ht
         $scope.game = null;
     }
 	
-	$scope.gameEditar = function(obj){
-		
-        document.location.href='game.html';
-        $scope.game = angular.copy(obj);
-        $scope.btnLabel = "Alterar";
-        console.log(obj);
-	}
 	
 	$scope.getGenero = function(){
 		GeneroService.generoList().then(function (response) {
