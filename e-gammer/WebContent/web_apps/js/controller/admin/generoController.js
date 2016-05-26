@@ -1,8 +1,5 @@
 
-var app = angular.module('egammer');
-
-
-app.controller('GeneroController', ['$scope', '$http', '$timeout', '$sce','GeneroService',
+eGammerControllers.controller('GeneroController', ['$scope', '$http', '$timeout', '$sce','GeneroService',
                                    function($scope, $http, $timeout, $sce, generoService) {
 	
 	var CHAVE_STORAGE = 'usuario';

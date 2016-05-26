@@ -1,39 +1,34 @@
-// Um módulo angular serve para encapsular diferentes partes da aplicação, o objetivo é separar
-// lógicas de negócio e códigos que possuam objetivos comuns.
-// Para se definir um módulo usamos: angular.module('NOME_MODULO', ['DEPENDENCIA_1', 'DEPENDENCIA_2']);
-// O módulo ui-bootstrap serve para facilitar a integração angular->bootstrap CSS
+window.publication =  angular.module('egammer', ['ngAnimate', 'ui.bootstrap','ngRoute','eGammerControllers']);
 
-var app = angular.module('egammer', ['ngAnimate', 'ui.bootstrap']);
+publication.config(function($routeProvider){
+    
+	  $routeProvider
+	  
+      .when('/games', {
+        templateUrl: 'games.html',
+        controller: 'GameControllerMenu'
+      })
+      
+      .when('/game', {
+        templateUrl: 'game.html',
+        controller: 'GameController'
+      })
+      
+      .when('/genero', {
+        templateUrl: 'genero.html',
+        controller: 'GeneroController'
+      })
+      
+      .when('/desenvolvedora', {
+        templateUrl: 'desenvolvedora.html',
+        controller: 'DesenvolvedoraController'
+      })
+      
+	  .otherwise({
+        redirectTo: 'genero.html'
+		
+      });
+});
 
-
-
-var StorageHelper = (function(){
-
-	var SH = {};
-
-	SH.setItem = function(chave, valor) {
-		window.localStorage.setItem(chave, angular.toJson(valor));
-	};
-
-	SH.getItem = function(chave, valor) {
-		return angular.fromJson(window.localStorage.getItem(chave));
-	};
-
-	SH.removeItem = function(chave) {
-		window.localStorage.removeItem(chave);
-	}
-
-	return SH;
-
-})();
-
-var TelaHelper = (function(){
-	
-	var TH = {};
-	
-	TH.tela = '';
-
-	return TH;
-
-})();
+window.eGammerControllers = angular.module('eGammerControllers', ['ngAnimate', 'ui.bootstrap']);
 
