@@ -29,6 +29,7 @@ publication.factory('GameService',  ['$http', function ($http) {
     function _editarGame(gamObj) {
 	   	var data = JSON.stringify(gamObj);
 	   	var promessa;
+	   	console.log(data);
 	   	promessa = jQuery.ajax({
 			    url: urlPath + 'editar.action',
 			    data: data,

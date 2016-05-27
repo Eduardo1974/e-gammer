@@ -69,6 +69,12 @@ eGammerControllers.controller('GameController', function($scope,GameService, $ht
 	    return p2[0]+"/"+parts[1]+"/"+parts[0];
 	}
 	
+	function getDes() {
+		console.log(document.getElementById("desValue").value);
+	};
+	
+	
+	
     function init() {
     	
     	$scope.btnLabel  = GameService.label;
@@ -76,20 +82,18 @@ eGammerControllers.controller('GameController', function($scope,GameService, $ht
     	if($scope.btnLabel == "Adicionar"){
     		$scope.game = null;
     		$scope.data = null;
-    		$scope.games = null ;
-    		$scope.generos = null;
-    		$scope.desenvolvedoras = null;
-    		$scope.classificacao.selecionado = null;
-    		$scope.plataforma.selecionado = null;
+    		$scope.getGenero();
+        	$scope.getDesenvolvedora();
     	}else{
+    		$scope.getGenero();
+        	$scope.getDesenvolvedora();
     		$scope.game = GameService.gameSelecionado;
+    		$scope.classificacao.selecionado =  $scope.game.gam_classificacao;
+    		$scope.plataforma.selecionado = $scope.game.gam_plataforma;
     		$scope.data = $scope.game.gam_data_lancamento;
     		var from = toDate($scope.game.gam_data_lancamento); 
     		$("#agregar").datepicker('setDate', from);
     	}
-    	
-    	$scope.getGenero();
-    	$scope.getDesenvolvedora();
     }
     
     

@@ -31,7 +31,7 @@
 						<div class="col-md-2 fields-css">
 							<select class=" form-control" name="classificacao" ng-model="classificacao.selecionado">
 								<option value="" disabled selected>Classificação</option>
-								<option ng-repeat="cla in classificacao.faixa" value="{{cla.tipo}}">{{cla.tipo}}</option>
+								<option ng-repeat="cla in classificacao.faixa" value="{{cla.tipo}}" >{{cla.tipo}}</option>
 							</select>
 						</div>
 							
@@ -68,21 +68,18 @@
 						</div>
 						
 						<div class="col-md-2 fields-css">
-							<select class=" form-control " name="genero" ng-model="game.genero.gen_codigo">
-								<option value="" disabled selected>Genero</option>
-								<option ng-repeat="gen in generos" value="{{gen.gen_codigo}}" >{{gen.gen_nome}}</option>
+							<select class=" form-control" ng-model="game.genero.gen_codigo" ng-options="item.gen_codigo as item.gen_nome for item in generos">
+								<option value="" disabled selected>Generos</option>
 							</select>
+							
 						</div>
 					
 						<div class="col-md-2 fields-css">
-							<select class=" form-control combo-size" name="desenvolvedora" ng-model="game.desenvolvedora.des_codigo">
-								<option value="" disabled selected>Desenvolvedora</option>
-								<option ng-repeat="des in desenvolvedoras" value="{{des.des_codigo}}">{{des.des_studio}}</option>
+							<select class=" form-control combo-size" ng-model="game.desenvolvedora.des_codigo" ng-options="item.des_codigo as item.des_studio for item in desenvolvedoras ">
+								<option value="" disabled selected>Desenvolvedoras</option>
 							</select>
 						</div>
 					</div>
-					
-					
 					
 					<div class="form-group ">
 						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Adicionar'"
