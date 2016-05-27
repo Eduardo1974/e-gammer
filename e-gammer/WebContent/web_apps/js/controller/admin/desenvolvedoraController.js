@@ -1,7 +1,4 @@
-
-var app = angular.module('egammer');
-
-app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce','DesenvolvedoraService',
+eGammerControllers.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce','DesenvolvedoraService',
                                    function($scope, $http, $timeout, $sce,desenvolvedoraService) {
 
 	var CHAVE_STORAGE = 'usuario';
@@ -16,7 +13,13 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 	};
 	
     function init() {
-    	$scope.loadDesenvolvedoras();
+    	$scope.btnLabel  = desenvolvedoraService.label;
+    	
+    	if($scope.btnLabel == "Adicionar"){
+    		$scope.desenvolvedora = null;    		
+    	}else{		
+    		$scope.desenvolvedora = desenvolvedoraService.desSelecionado;
+    	}	
     }
 
 	$scope.salvar = function() {
@@ -40,18 +43,6 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
         });
 	};
 	
-	$scope.deselvolvedoraDelete = function(codigo){
-		
-		var data = {contexto : {
-			desenvolvedora : {des_codigo : codigo}
-		}};
-		
-		desenvolvedoraService.desenvolvedoraDelete(data).then(function (response) {
-			$scope.desenvolvedora = null;
-	    	$scope.loadDesenvolvedoras();
-        });
-	}
-	
 	$scope.editar = function(obj){
 		var data = {contexto : {
 			desenvolvedora : obj
@@ -60,7 +51,6 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
 		desenvolvedoraService.desenvolvedoraEdit(data).then(function (response) {
 			$scope.btnLabel = "Adicionar";
 			$scope.desenvolvedora = null;
-	    	$scope.loadDesenvolvedoras();
         });
 	}
 	
@@ -70,10 +60,6 @@ app.controller('DesenvolvedoraController', ['$scope', '$http', '$timeout', '$sce
         $scope.desenvolvedora = null;
     }
 	
-	$scope.desenvolvedoraEditar = function(obj){
-		$scope.desenvolvedora = angular.copy(obj);
-        $scope.btnLabel = "Alterar";
-	}
 	
 	init();
 }]);

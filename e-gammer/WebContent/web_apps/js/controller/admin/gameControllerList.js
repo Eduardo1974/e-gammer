@@ -1,4 +1,4 @@
-eGammerControllers.controller('GameControllerMenu', function($scope,GameService, $http, $log) {
+eGammerControllers.controller('GameControllerList', function($scope,GameService, $http, $log) {
 	
 	
 	var urlPath = "http://localhost:8085/e-gammer/Game!";

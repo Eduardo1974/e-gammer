@@ -6,7 +6,7 @@ publication.config(function($routeProvider){
 	  
       .when('/games', {
         templateUrl: 'games.html',
-        controller: 'GameControllerMenu'
+        controller: 'GameControllerList'
       })
       
       .when('/game', {
@@ -19,6 +19,10 @@ publication.config(function($routeProvider){
         controller: 'GeneroController'
       })
       
+      .when('/desenvolvedoras', {
+        templateUrl: 'desenvolvedoras.html',
+        controller: 'DesenvolvedoraControllerList'
+      })
       .when('/desenvolvedora', {
         templateUrl: 'desenvolvedora.html',
         controller: 'DesenvolvedoraController'

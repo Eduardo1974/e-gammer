@@ -1,6 +1,4 @@
-var app = angular.module('egammer');
-
-app.factory('DesenvolvedoraService', ['$http', function ($http) {
+publication.factory('DesenvolvedoraService', ['$http', function ($http) {
 	
 	var urlPath = "http://localhost:8085/e-gammer/Desenvolvedora!";
 	
