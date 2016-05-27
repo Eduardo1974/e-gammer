@@ -1,13 +1,14 @@
 
 var app = angular.module('egammer');
 
-app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce',
-                                   function($scope, $http, $timeout, $sce) {
+app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce','ClienteService',
+                                   function($scope, $http, $timeout, $sce,clienteService) {
 
 	var CHAVE_STORAGE = 'usuario';
 	var urlPath = "http://localhost:8085/e-gammer/Cliente!";
 
 	$scope.usuario = {};
+	$scope.confirmacao = {};
 	$scope.isLogado = false;
 	$scope.exibirMensagemErro = false;
 	
@@ -52,7 +53,23 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce',
 		});
 	};
 	
-
+	$scope.salvar = function() {
+		if($scope.usuario.cli_email == $scope.confirmacao.cli_email &&  $scope.usuario.cli_senha == $scope.confirmacao.cli_senha){
+			$scope.exibirMensagemErro = false;
+			var data = {'contexto' : {
+				'cliente' : $scope.usuario
+			}};
+			
+			clienteService.clienteSave(data).then(function (response) {
+				$scope.usuario = null;
+				$scope.confirmacao = null;
+				console.log("salvouu");
+	        });
+		}else{
+			alert("Confirmção dos campos invalida!!!")
+		}
+	};
+	
 	$scope.getMensagemApresentacao = function() {
 		return $sce.trustAsHtml("Olá, " + $scope.usuario.cli_nome);
 	}

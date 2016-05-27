@@ -30,7 +30,17 @@ public class ClienteAction extends ProjetoWebAction{
 		this.contexto.setCliente(usuarioEncontrado);
 		return SUCCESS;
 	}
-
+	
+	public String salvar() {
+		if (this.contexto.getCliente().getCli_codigo() != null) {
+			this.cliService.atualizar(this.contexto.getCliente());
+		} else {
+			this.cliService.salvar(this.contexto.getCliente());
+		}
+		
+		return SUCCESS;
+	}
+	
 	public String logout() {
 		this.contexto.setCliente(null);
 		this.getSession().remove("usuario");

@@ -37,7 +37,38 @@ publication.config(function($routeProvider){
         redirectTo: 'genero.html'
 		
       });
+	  
+	  
 });
+var StorageHelper = (function(){
+
+	var SH = {};
+
+	SH.setItem = function(chave, valor) {
+		window.localStorage.setItem(chave, angular.toJson(valor));
+	};
+
+	SH.getItem = function(chave, valor) {
+		return angular.fromJson(window.localStorage.getItem(chave));
+	};
+
+	SH.removeItem = function(chave) {
+		window.localStorage.removeItem(chave);
+	}
+
+	return SH;
+
+})();
+
+var TelaHelper = (function(){
+	
+	var TH = {};
+	
+	TH.tela = '';
+
+	return TH;
+
+})();
 
 window.eGammerControllers = angular.module('eGammerControllers', ['ngAnimate', 'ui.bootstrap']);
 
