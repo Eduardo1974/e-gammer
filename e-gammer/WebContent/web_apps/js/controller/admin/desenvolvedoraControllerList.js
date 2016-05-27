@@ -1,21 +1,32 @@
 eGammerControllers.controller('DesenvolvedoraControllerList', ['$scope', '$http', '$timeout', '$sce','DesenvolvedoraService',
                                    function($scope, $http, $timeout, $sce,desenvolvedoraService) {
 
-	var CHAVE_STORAGE = 'usuario';
+	$scope.currentPage = 1;
+	$scope.itemsPerPage = 4;
+	$scope.maxSize = 5;
+	$scope.bigTotalItems = 175;
+	$scope.bigCurrentPage = 1;
+	
 	$scope.desenvolvedora = {};
 	$scope.desenvolvedoras ;
 	$scope.btnLabel = "Adicionar";
 	$scope.isLogado = false;
 	$scope.exibirMensagemErro = false;
 	
-	$scope.isAtivo = function(tela) {
-		return TelaHelper.tela == tela ? 'active' : '';
-	};
+	
 	
     function init() {
     	$scope.loadDesenvolvedoras();
     }
+    
+    $scope.setPage = function (pageNo) {
+	    $scope.currentPage = pageNo;
+	  };
 
+	$scope.pageChanged = function() {
+	   $log.log('Page changed to: ' + $scope.currentPage);
+	};
+	
 	$scope.loadDesenvolvedoras = function() {
 		desenvolvedoraService.desenvolvedoraList().then(function (response) {
             $scope.desenvolvedoras =  angular.copy(response.data.contexto.desenvolvedoras);

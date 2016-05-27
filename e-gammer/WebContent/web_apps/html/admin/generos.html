@@ -10,7 +10,7 @@
 			</tr>
 		</thead>
 		<tbody >
-			<tr data-ng-repeat="gen in generos" >
+			<tr data-ng-repeat="gen in generos.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" ng-if="generos.length != 0">
 				
 				<td class="col-md-9">{{gen.gen_nome}}</td>
 				<td>
@@ -18,7 +18,16 @@
                     <a class="btn btn-warning" ng-click="generoEditar(gen);"> <i class="fa fa-trash-o"></i> Editar</a>
                 </td>
 			</tr>
+			<tr ng-if="generos.length == 0">
+				<td>
+					<p>Não existem Generos Cadastrados</p>
+				</td>
+			</tr>
 		</tbody>
 	</table>
+	</br>
+	<uib-pagination boundary-links="true" total-items="generos.length" ng-model="currentPage" 
+		items-per-page="itemsPerPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" 
+		first-text="&laquo;" last-text="&raquo;" ng-change="pageChange()"></uib-pagination>
 	</br>
 </div>

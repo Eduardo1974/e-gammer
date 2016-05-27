@@ -1,24 +1,33 @@
 
-eGammerControllers.controller('GeneroControllerList', ['$scope', '$http', '$timeout', '$sce','GeneroService',
-                                   function($scope, $http, $timeout, $sce, generoService) {
+eGammerControllers.controller('GeneroControllerList', ['$scope', '$http', '$timeout', '$sce','$log','GeneroService',
+                                   function($scope, $http, $timeout, $sce,$log, generoService) {
 	
-	var CHAVE_STORAGE = 'usuario';
+	$scope.currentPage = 1;
+	$scope.itemsPerPage = 4;
+	$scope.maxSize = 5;
+	$scope.bigTotalItems = 175;
+	$scope.bigCurrentPage = 1;
+	
 	$scope.genero = {};
 	$scope.generos ;
 	$scope.btnLabel = "Adicionar";
 	$scope.isLogado = false;
 	$scope.exibirMensagemErro = false;
 	
-	$scope.isAtivo = function(tela) {
-		return TelaHelper.tela == tela ? 'active' : '';
-	};
 	
 	
     function init() {
     	$scope.loadGeneros();
     }
 
+    $scope.setPage = function (pageNo) {
+	    $scope.currentPage = pageNo;
+	  };
 
+	$scope.pageChanged = function() {
+	   $log.log('Page changed to: ' + $scope.currentPage);
+	};
+	
 	$scope.loadGeneros = function() {
 		
 		generoService.generoList().then(function (response) {
