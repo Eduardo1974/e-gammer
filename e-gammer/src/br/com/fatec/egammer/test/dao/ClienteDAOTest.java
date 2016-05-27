@@ -25,15 +25,15 @@ public class ClienteDAOTest extends TestBase{
 		cli_salvar.setCli_nome("eduardo");
 		cli_salvar.setCli_email("edu@fatec.com");
 		cli_salvar.setCli_senha("1234");
-
+		cli_salvar.setCli_tipo("cliente");
 		Long codigo = this.dao.save(cli_salvar);
 
 		Cliente cli_salvo = this.dao.buscarCodigo(codigo);
 
 		Assert.assertNotNull(cli_salvo);
-		Assert.assertEquals("carlos", cli_salvo.getCli_nome());
-		Assert.assertEquals("carlos@fatec.com", cli_salvo.getCli_email());
-		Assert.assertEquals("senha_carlos", cli_salvo.getCli_senha());
+		Assert.assertEquals("eduardo", cli_salvo.getCli_nome());
+		Assert.assertEquals("edu@fatec.com", cli_salvo.getCli_email());
+		Assert.assertEquals("1234", cli_salvo.getCli_senha());
 	}
 
 	@Test

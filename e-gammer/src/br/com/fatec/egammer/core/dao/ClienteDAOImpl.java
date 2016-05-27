@@ -30,7 +30,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 					Cliente.getColunas());
 
 			String values = DAOUtils.completarClausulaValues(getDefaultConnectionType(),
-					3, "SEQ_CLIENTE");
+					4, "SEQ_CLIENTE");
 
 			String sql = "INSERT INTO " + Cliente.TABLE + colunas + " VALUES " + values;
 
@@ -40,6 +40,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 			insert.setString(1, cliente.getCli_nome());
 			insert.setString(2, cliente.getCli_email());
 			insert.setString(3, cliente.getCli_senha());
+			insert.setString(4, cliente.getCli_tipo());
 			insert.execute();
 
 			ResultSet generatedKeys = insert.getGeneratedKeys();
@@ -178,6 +179,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 		usuario.setCli_nome(rs.getString(Cliente.COL_NOME));
 		usuario.setCli_email(rs.getString(Cliente.COL_EMAIL));
 		usuario.setCli_senha(rs.getString(Cliente.COL_SENHA));
+		usuario.setCli_tipo(rs.getString(Cliente.COL_TIPO));
 		return usuario;
 	}
 	

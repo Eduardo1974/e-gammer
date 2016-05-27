@@ -36,9 +36,6 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce','Client
 		    type: 'POST',
 		    async: false,
 		    success: function (response) {
-		    	
-		    	alert(response.contexto.cliente.cli_email);
-		    	
 		    	var usuario = response.contexto.cliente
 		    	if (usuario == null) {
 	    			$scope.exibirMensagemErro = true;
@@ -47,8 +44,12 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce','Client
 		    	$scope.usuario = usuario;
 		    	StorageHelper.setItem(CHAVE_STORAGE, usuario);
 		    	$scope.isLogado = true;
-		    	
-		    	document.location.href='index.html';
+		    	alert(response.contexto.cliente.cli_tipo);
+		    	if(response.contexto.cliente.cli_tipo == "cliente"){
+		    		document.location.href='index.html';
+		    	}else{
+		    		document.location.href='../admin/administrador.html';
+		    	} 	
 		    }
 		});
 	};
@@ -63,7 +64,7 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce','Client
 			clienteService.clienteSave(data).then(function (response) {
 				$scope.usuario = null;
 				$scope.confirmacao = null;
-				console.log("salvouu");
+				console.log("salvouu "+response);
 	        });
 		}else{
 			alert("Confirmção dos campos invalida!!!")

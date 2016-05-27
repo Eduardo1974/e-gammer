@@ -11,11 +11,13 @@ public class Cliente {
 	public static final String COL_NOME = "CLI_NOME";
 	public static final String COL_EMAIL = "CLI_EMAIL";
 	public static final String COL_SENHA = "CLI_SENHA";
+	public static final String COL_TIPO = "CLI_TIPO";
 	
 	private Long cli_codigo;
 	private String cli_nome;
 	private String cli_email;
 	private String cli_senha;
+	private String cli_tipo;
 	
 	public Long getCli_codigo() {
 		return cli_codigo;
@@ -41,11 +43,20 @@ public class Cliente {
 	public void setCli_senha(String cli_senha) {
 		this.cli_senha = cli_senha;
 	}
+	
+	public String getCli_tipo() {
+		return cli_tipo;
+	}
+	public void setCli_tipo(String cli_tipo) {
+		this.cli_tipo = cli_tipo;
+	}
+	
 	public static List<String> getColunas() {
-		return Lists.newArrayList(COL_CODIGO, COL_NOME, COL_EMAIL, COL_SENHA);
+		return Lists.newArrayList(COL_CODIGO, COL_NOME, COL_EMAIL, COL_SENHA, COL_TIPO);
 	}
 
 	public static String[] getColunasArray() {
-		return new String[] { COL_CODIGO, COL_NOME, COL_EMAIL, COL_SENHA };
+		return new String[] { COL_CODIGO, COL_NOME, COL_EMAIL, COL_SENHA, COL_TIPO };
 	}
+	
 }

@@ -12,6 +12,7 @@ public class ClienteDTO {
 	private String cli_nome;
 	private String cli_email;
 	private String cli_senha;
+	private String cli_tipo;
 	private List<Pedido> pedidos = Lists.newArrayList();
 	private Long startSession;
 	
@@ -66,6 +67,14 @@ public class ClienteDTO {
 
 	public void setStartSession(Long startSession) {
 		this.startSession = startSession;
+	}
+
+	public String getCli_tipo() {
+		return cli_tipo;
+	}
+
+	public void setCli_tipo(String cli_tipo) {
+		this.cli_tipo = cli_tipo;
 	}
 
 

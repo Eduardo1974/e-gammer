@@ -22,6 +22,7 @@ public class ClienteServiceImpl implements ClienteService{
 	@Override
 	public ClienteDTO salvar(ClienteDTO clienteDTO) {
 		Cliente cliente = this.cliDtoConverter.toEntity(clienteDTO);
+		cliente.setCli_tipo("cliente");
 		Long id = this.cliDao.save(cliente);
 		clienteDTO.setCli_codigo(id);
 		return clienteDTO;

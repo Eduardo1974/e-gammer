@@ -25,6 +25,7 @@ public class ClienteDTOConverter implements DTOConverter<Cliente, ClienteDTO>{
 		dto.setCli_email(entidade.getCli_email());
 		dto.setCli_nome(entidade.getCli_nome());
 		dto.setCli_senha(entidade.getCli_senha());
+		dto.setCli_tipo(entidade.getCli_tipo());
 		dto.setPedidos(this.pedDAO.buscaTodosPedidosCliente(entidade.getCli_codigo()));
 		return dto;
 	}
@@ -45,6 +46,7 @@ public class ClienteDTOConverter implements DTOConverter<Cliente, ClienteDTO>{
 		cliente.setCli_email(dto.getCli_email());
 		cliente.setCli_nome(dto.getCli_nome());
 		cliente.setCli_senha(dto.getCli_senha());
+		cliente.setCli_tipo(dto.getCli_tipo());
 		return cliente;
 	}
 

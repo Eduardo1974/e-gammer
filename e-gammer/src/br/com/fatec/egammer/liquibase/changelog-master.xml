@@ -11,7 +11,7 @@
 		<createTable tableName="GAME" >
 			<column name="GAM_CODIGO" type="BIGINT" />
 			<column name="GAM_TITULO" type="VARCHAR(255)" />
-			<column name="GAM_DESCRICAO" type="VARCHAR(255)" />
+			<column name="GAM_DESCRICAO" type="VARCHAR(1000)" />
 			<column name="GAM_PRECO" type="NUMERIC(10,2)" />
 			<column name="GAM_QUANTIDADE" type="BIGINT" />
 			<column name="GAM_IMAGEM" type="VARCHAR(255)" />
@@ -44,6 +44,7 @@
 			<column name="CLI_NOME" type="VARCHAR(255)" />
 			<column name="CLI_EMAIL" type="VARCHAR(255)" />
 			<column name="CLI_SENHA" type="VARCHAR(255)" />
+			<column name="CLI_TIPO" type="VARCHAR(10)" />
 		</createTable>
 	</changeSet>
 	
