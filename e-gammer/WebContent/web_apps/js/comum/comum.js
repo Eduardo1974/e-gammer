@@ -14,6 +14,11 @@ publication.config(function($routeProvider){
         controller: 'GameController'
       })
       
+      .when('/generos', {
+        templateUrl: 'generos.html',
+        controller: 'GeneroControllerList'
+      })
+      
       .when('/genero', {
         templateUrl: 'genero.html',
         controller: 'GeneroController'

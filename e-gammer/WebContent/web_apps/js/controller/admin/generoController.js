@@ -15,7 +15,13 @@ eGammerControllers.controller('GeneroController', ['$scope', '$http', '$timeout'
 	
 	
     function init() {
-    	$scope.loadGeneros();
+    	$scope.btnLabel  = generoService.label;
+    	
+    	if($scope.btnLabel == "Adicionar"){
+    		$scope.genero = null;    		
+    	}else{		
+    		$scope.genero = generoService.genSelecionado;
+    	}
     }
 
 	$scope.salvar = function() {
@@ -26,15 +32,6 @@ eGammerControllers.controller('GeneroController', ['$scope', '$http', '$timeout'
 		
 		generoService.generoSave(data).then(function (response) {
 			$scope.genero = null;
-			$scope.loadGeneros();
-        });
-	};
-	
-	$scope.loadGeneros = function() {
-		
-		generoService.generoList().then(function (response) {
-            $scope.generos =  angular.copy(response.data.contexto.generos);
-            console.log($scope.generos);
         });
 	};
 	
@@ -46,7 +43,6 @@ eGammerControllers.controller('GeneroController', ['$scope', '$http', '$timeout'
 		
 		generoService.generoDelete(data).then(function (response) {
 			$scope.genero = null;
-			$scope.loadGeneros();
         });
 	}
 	
@@ -58,7 +54,6 @@ eGammerControllers.controller('GeneroController', ['$scope', '$http', '$timeout'
 		generoService.generoEdit(data).then(function (response) {
 			$scope.btnLabel = "Adicionar";
 			$scope.genero = null;
-			$scope.loadGeneros();
         });
 	}
 	
@@ -67,11 +62,6 @@ eGammerControllers.controller('GeneroController', ['$scope', '$http', '$timeout'
         $scope.btnLabel = "Adicionar";
         $scope.genero = null;
     }
-	
-	$scope.generoEditar = function(obj){
-		$scope.genero = angular.copy(obj);
-        $scope.btnLabel = "Alterar";
-	}
 	
 	init();
 }]);

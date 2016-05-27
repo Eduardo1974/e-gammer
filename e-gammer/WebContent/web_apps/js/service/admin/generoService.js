@@ -1,6 +1,4 @@
-var app = angular.module('egammer');
-
-app.factory('GeneroService', ['$http', function ($http) {
+publication.factory('GeneroService', ['$http', function ($http) {
 	
 	var urlPath = "http://localhost:8085/e-gammer/Genero!";
 	
