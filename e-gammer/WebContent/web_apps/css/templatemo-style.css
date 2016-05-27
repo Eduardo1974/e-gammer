@@ -677,6 +677,7 @@ input[type="radio"]:checked + label span {
 .linha {
     border-bottom: 1px solid #eee;
     margin-bottom: 15px;
+    margin-top: 4px;
 }
 
 .row{

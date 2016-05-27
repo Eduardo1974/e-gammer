@@ -73,8 +73,6 @@ eGammerControllers.controller('GameController', function($scope,GameService, $ht
 		console.log(document.getElementById("desValue").value);
 	};
 	
-	
-	
     function init() {
     	
     	$scope.btnLabel  = GameService.label;
@@ -129,6 +127,9 @@ eGammerControllers.controller('GameController', function($scope,GameService, $ht
 
         $scope.btnLabel = "Adicionar";
         $scope.game = null;
+        $scope.classificacao.selecionado =  null;
+		$scope.plataforma.selecionado = null;
+		$("#agregar").datepicker('setDate', "");
     }
 	
 	
