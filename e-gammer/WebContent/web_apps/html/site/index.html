@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!-- <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">  
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-		
+		-->
 		<title>E-Gammer.com</title>
-
+		
+		
 		<!-- Bootstrap -->
 		<link href="/e-gammer/web_apps/css/bootstrap.min.css" rel="stylesheet"> 
 		
@@ -31,206 +33,39 @@
 	</head>
 
 
-	<body>
+	<body ng-app="egammer">
 		
 		<div id="site-content">
 			
-			<header class="row" id="top-barra">
-				<div class="col-md-3 col-sm-3">
-					<div class=" " id="logotipo">
-						<a href="index.html" id="branding">
-							<img src="/e-gammer/web_apps/images/site/logo/logo_white.png" alt="Profile Photo" class="img-responsive">
-						</a>
-					</div>
-					
-				</div>
-				<div class="col-md-6 col-xs-8">
-					<div class="input-group" id="barra-pesquisa">
-						<input type="text" class="form-control" placeholder="Buscar...">
-						<span class="input-group-btn">
-							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></button>
-						</span>
-					</div>
-					
-				</div>
-				<div class="col-md-3 col-xs-4">
-					<div class="right-section pull-right" id="carrinho-login">
-						<a href="carrinho.html" class="cart"><i class="fa fa-shopping-cart"></i> 32 itens </a>
-						<a href="#" class="login-button">Login/Register</a>
-					</div>	
-
-				</div>
-
-			</header>
+			<div ng-include=" 'header.html' "></div>
 			
 			
-			<div class="row" id="principal">
-				
-				<aside class="col-md-2 col-sm-3">
-					<div class="templatemo-sidebar templatemo-left-nav">
-						<nav class="templatemo-left-nav">  
-							
-						  <ul>			
-							<a href="#" class="active"><i class="fa fa-binoculars"></i>Aventura</a>
-							<a href="#"><i class="fa fa-bomb" aria-hidden="true"></i>A&ccedil;&atilde;o</a>
-							<a href="#"><i class="fa fa-car"></i>Corrida</a>
-							<a href="#"><i class="fa fa-trophy"></i>Esportes</a>
-							<a href="#"><i class="fa fa-university"></i>Estrat&eacute;gia</a>
-						  </ul>  
-						</nav>
-					</div>	
-				</aside>
-				
-				<div role="main" class="col-md-10 col-xs-12 col-sm-9">
-					<div class="row">
-					
-						<div id="">
-							<div class=" ">
-								<img id="imagem" src="/e-gammer/web_apps/images/site/banner/Mirrors-Edge-Catalyst.jpg" alt="Profile Photo" class="img-responsive">  
-							</div>
-						</div>
-						
-					</div>
-					<div class="row">
-						<section>
-							<header>
-								<h2 class="section-title">promoção</h2>
-								<a href="produtos.html" class="all">Show All</a>
-							</header>
-
-							<div class="product-list">
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="detalhes.html"><img src="/e-gammer/web_apps/images/site/capa/nfs-rivals-capa-small.jpg" alt="Game 1"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Need</a></h3>
-										<small class="price">R$39,89</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button unmuted">Add carrinho</a>
-										<a href="#" class="button muted">Mais detalhes</a>
-									</div>
-								</div> <!-- .product -->
-								
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="dummy/game-6.jpg" alt="Game 2"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Mortal Kombat X</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button  unmuted">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-								
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="dummy/game-7.jpg" alt="Game 3"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Metal Gear Solid V</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button unmuted">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-								
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="dummy/game-8.jpg" alt="Game 4"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Nascar '14</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button unmuted">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-								
-							</div> <!-- .product-list -->
-
-						</section>
-					</div>
-				</div> <!--FECHA MAIN-->
-			
-			</div>
+			<div ng-view></div>
 			
 
+			<div ng-include=" 'footer.html' "></div>
+
 			
+		</div> <!-- fecha site-content -->
 
-			<div class="site-footer" style="font-size: 15px">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-2">
-							<div class="widget">
-								<h3 class="widget-title" style="font-size:20px">Informações</h3>
-								<ul class="no-bullet">
-									<li><a href="#">Mapa do Site</a></li>
-									<li><a href="#">Sobre nós</a></li>
-									<li><a href="#">FAQ</a></li>
-									<li><a href="#">Politica de Privacidade</a></li>
-									<li><a href="#">Contato</a></li>
-								</ul>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-						<div class="col-md-2">
-							<div class="widget">
-								<h3 class="widget-title" style="font-size:20px">Atendimento ao consumidor</h3>
-								<ul class="no-bullet">
-									<li><a href="#">Segurança</a></li>
-									<li><a href="#">Shipping</a></li>
-									<li><a href="#">Pedidos &amp; Retornos</a></li>
-									<li><a href="#">Gropos de Vendas</a></li>
-								</ul>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-						<div class="col-md-2">
-							<div class="widget">
-								<h3 class="widget-title" style="font-size:20px">Minha conta</h3>
-								<ul class="no-bullet">
-									<li><a href="#">Login/Register</a></li>
-									<li><a href="#">Configurações</a></li>
-									<li><a href="#">Carrinho</a></li>
-									<li><a href="#">Rastrear Pedido</a></li>
-									<li><a href="#">Sair</a></li>
-								</ul>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-						<div class="col-md-6">
-							<div class="widget">
-								<h3 class="widget-title" style="font-size:20px">Assine nossa newsletter</h3>
-								<form action="#" class="newsletter-form">
-									<input type="text" placeholder="Entre com seu email...">
-									<input type="submit" value="Inscrever-me">
-								</form>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-					</div><!-- .row -->
-
-					<div class="colophon">
-						<div class="copy">Copyright 2016 E-Gammer. Designed by Themezy. All rights reserved.</div>
-						<div class="social-links square">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-google-plus"></i></a>
-							<a href="#"><i class="fa fa-pinterest"></i></a>
-						</div> <!-- .social-links -->
-					</div> <!-- .colophon -->
-				</div> <!-- .container -->
-			</div> <!-- .site-footer -->
-		</div>
-
+		
+		<!-- angular js -->
+		<script src="/e-gammer/web_apps/js/bibliotecas/angular.min.js"></script>
+		<script src="/e-gammer/web_apps/js/bibliotecas/angular-route.js"></script>
+		
+		
+		<script src="/e-gammer/web_apps/js/comum/site/app-egammer.js"></script>
+		<script src="/e-gammer/web_apps/js/comum/site/service.js"></script>
+		<script src="/e-gammer/web_apps/js/controller/site/home.controller.js"></script>
+		<script src="/e-gammer/web_apps/js/controller/site/carrinho.controller.js"></script>
+		<script src="/e-gammer/web_apps/js/controller/site/produtos.controller.js"></script>
+		<script src="/e-gammer/web_apps/js/controller/site/detalhes.controller.js"></script>
+		
+		
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="/e-gammer/web_apps/js/bibliotecas/bootstrap.min.js"></script>
+		
 		
 	
 		

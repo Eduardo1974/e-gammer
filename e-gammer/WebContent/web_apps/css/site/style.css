@@ -64,7 +64,7 @@ a:focus {
   outline: thin dotted;
 }
 a:hover, a:active {
-  outline: 0;
+  outline: 0px none;
 }
 
 h1 {
@@ -2026,7 +2026,6 @@ form textarea {
 #branding {
   float: left;
   margin-bottom: 10%;
-  width: 100%;
 }
 #branding .logo, #branding .logo-text {
   display: inline-block;
@@ -2375,7 +2374,7 @@ form textarea {
 }
 .product-list .product .inner-product {
   background: white;
-  padding: 30px;
+  padding: 19px;
   border-radius: 3px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
@@ -2521,7 +2520,7 @@ section header .all {
   border-radius: 3px;
 }
 .page .addtocart-bar {
-  margin-top: 50px;
+  margin-top: 30px;
   background: white;
   padding: 10px 20px;
   border-radius: 3px;

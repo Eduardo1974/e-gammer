@@ -1,0 +1,41 @@
+<div class="row" id="principal">
+	
+	<div role="main">
+		<div>
+		
+			<div id="">
+				<img id="imagem" src="/e-gammer/web_apps/images/site/banner/battlefield1.png" alt="Profile Photo" class="img-responsive">  
+			</div>
+			<div style="margin-top: -197px; margin-left: 290px;">
+				<h3>A Batalha esta prestes a comecar</h3>
+			</div>
+		</div>
+		<div class="row">
+			<section>
+				<header>
+					<h2 class="section-title">{{titulo}}</h2>
+					<a href="#/produtos" class="all">Show All</a>
+				</header>
+
+				<div class="product-list">
+					
+					<div class="product" ng-repeat="game in gamesPromocao">
+						<div class="inner-product">
+							<div class="figure-image">
+								<a href="#/detalhes"><img ng-src="{{game.capa}}" id="capa-game"></a>
+							</div>
+							<h3 class="product-title"><a href="#/detalhes">{{game.titulo}}</a></h3>
+							<small class="price">R${{game.preco}}</small>
+							<p>{{game.descricao.substring(0, 70)}}...</p>
+							<a href="cart.html" class="button unmuted">Add carrinho</a>
+							<a href="#/detalhes#top" class="button muted">Mais detalhes</a>
+						</div>
+					</div> <!-- .product -->
+					
+				</div> <!-- .product-list -->
+
+			</section>
+		</div>
+	</div> <!--FECHA MAIN-->
+
+</div>

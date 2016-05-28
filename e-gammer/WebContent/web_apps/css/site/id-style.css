@@ -1,12 +1,12 @@
 /* estilo formatação dos id's */
 #top-barra {
+	width: 98%;
 	background: #2b2b2b;
 	margin-left: 1%;
     margin-right: 1%;
 	top:0;				/*top, position e deixam fixo a barra no topo */
 	position:fixed;
 	z-index: 10000; 	/* sobrepoe a barra em cima da pagina */
-	width: 98%;
 }
 #site-content {
 	padding-top: 15px;
@@ -17,12 +17,15 @@
 #principal {
 	margin-top: 6%;
 	/*padding-top: 15px;*/
+	padding-left: 100px;
+    padding-right: 100px;
 	padding-bottom: 15px;
 	background-size: cover;
     background-repeat: no-repeat;
 	/*background: url('https://eaassets-a.akamaihd.net/origin-com-store-damassets/content/dam/eadam/N/NFS_16/185353/PDP_Background/1024486_pdpbg_1200x800_en_US_1.jpg') top center fixed;*/
 }
-#logotipo {
+
+#logotipo{
 	width: 60%;
 	margin: auto;
 	padding-top: 10px;
@@ -37,6 +40,16 @@
 	padding-right: 15%;
 	
 }
+#descricao{
+	background-color: rgba(5, 4, 4, 0.79); 
+	padding: 18px;
+}
+#capa-game{
+	height: 310px;
+}
+#procurar{
+	margin-top: 25px;
+}
 /* cor do icone carrinho */
 .fa-shopping-cart{
 	color: #45b77d;
@@ -45,6 +58,7 @@
 a:link, a:visited {
 	text-decoration: none;
 	color: #898e90;
+	outline: 0px none;
 }
 a:hover {
 	text-decoration: underline; 
@@ -55,7 +69,7 @@ a:active {
 }
 /* estilo formatação logotipo */
 #imagem {
-	width: 100%; height: 60%;
+	width: 100%; height: 70%;
 	margin: auto;
 }
 /* estilo ao redimensionar tela de no minimo 768px*/
@@ -72,6 +86,20 @@ a:active {
 	#principal{
 		margin-top: 40%;
 	}
+	#capa-game{
+		height: 100%;
+	}
+	#procurar{
+		margin-left: auto;
+		margin-right: auto;
+		width: 180px;
+		font-size: xx-large;
+	}
+	#principal{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
 	.site-footer .newsletter-form input[type="submit"] {
 	  width: 50%;
 	}
