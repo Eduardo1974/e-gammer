@@ -1,5 +1,4 @@
-angular.module("egammer")
-	.controller("HomeController", HomeController);
+eGammerControllers.controller("HomeController", HomeController);
 	
 	HomeController.$inject = ['$scope' ,'serviceAPI'];
 	

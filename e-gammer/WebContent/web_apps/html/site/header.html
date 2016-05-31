@@ -1,4 +1,5 @@
-		<header class="row" id="top-barra">
+
+		<header ng-controller="HeaderController" class="row" id="top-barra">
 			<div class="col-md-3 col-sm-3">
 				<div class=" " id="logotipo">
 					<a href="#/home #top" id=" ">
@@ -14,11 +15,11 @@
 				    <span class="caret"></span>
 				  </a>
 				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				    <li><a href="#">Acao</a></li>
-				    <li><a href="#">Aventura</a></li>
+				    <li ng-repeat = "gen in generos"><a href="#/home">{{gen.gen_nome}}</a></li>
+				    <!--  <li><a href="#">Aventura</a></li>
 				    <li><a href="#">Corrida</a></li>
 				    <li role="separator" class="divider"></li>
-				    <li><a href="#">Gratis</a></li>
+				    <li><a href="#">Gratis</a></li>-->
 				  </ul>
 				</div>
 			</div>

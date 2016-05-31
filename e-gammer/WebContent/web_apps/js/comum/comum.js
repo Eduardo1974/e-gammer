@@ -1,7 +1,7 @@
 window.publication =  angular.module('egammer', ['ngAnimate', 'ui.bootstrap','ngRoute','eGammerControllers']);
 
 publication.config(function($routeProvider){
-    
+	  var path = '/e-gammer/web_apps/html/site/view/';
 	  $routeProvider
 	  
       .when('/games', {
@@ -33,10 +33,36 @@ publication.config(function($routeProvider){
         controller: 'DesenvolvedoraController'
       })
       
-	  .otherwise({
-        redirectTo: 'genero.html'
-		
-      });
+    .when('/home', {
+      templateUrl: path + 'principal.view.html',
+      controller: 'HomeController'
+    })
+	
+	.when('/carrinho', {
+      templateUrl: path + 'carrinho.view.html',
+      controller: 'CarrinhoController'
+    })
+	
+	.when('/produtos', {
+      templateUrl: path + 'produtos.view.html',
+      controller: 'ProdutosController'
+    })
+	
+	.when('/detalhes', {
+      templateUrl: path + 'detalhes.view.html',
+      controller: 'DetalhesController'
+    })
+	
+    .when('/game/:id', {
+      templateUrl: path + 'detalhes.html',
+      controller: 'DetalhesController'
+    })
+	
+	.otherwise({
+      redirectTo: '/'
+    });
+	  
+	  
 	  
 	  
 });
@@ -70,5 +96,5 @@ var TelaHelper = (function(){
 
 })();
 
-window.eGammerControllers = angular.module('eGammerControllers', ['ngAnimate', 'ui.bootstrap']);
+window.eGammerControllers = angular.module('eGammerControllers', []);
 
