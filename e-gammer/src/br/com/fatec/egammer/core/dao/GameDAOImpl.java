@@ -41,7 +41,7 @@ public class GameDAOImpl implements GameDAO {
 					Game.getColunas());
 
 			String values = DAOUtils.completarClausulaValues(getDefaultConnectionType(),
-					10, "SEQ_GAME");
+					13, "SEQ_GAME");
 
 			String sql = "INSERT INTO " + Game.TABLE + colunas + " VALUES " + values;
 
@@ -53,11 +53,14 @@ public class GameDAOImpl implements GameDAO {
 			insert.setDouble(3, game.getGam_preco());
 			insert.setInt(4, game.getGam_quantidade());
 			insert.setString(5, game.getGam_imagem());
-			insert.setString(6, game.getGam_classificacao());
-			insert.setDate(7, (Date)game.getGam_data_lancamento());
-			insert.setString(8, game.getGam_plataforma());
-			insert.setLong(9, game.getGenero().getGen_codigo());
-			insert.setLong(10, game.getDesenvolvedora().getDes_codigo());
+			insert.setString(6, game.getGam_imagem2());
+			insert.setString(7, game.getGam_imagem3());
+			insert.setString(8, game.getGam_imagem4());
+			insert.setString(9, game.getGam_classificacao());
+			insert.setDate(10, (Date)game.getGam_data_lancamento());
+			insert.setString(11, game.getGam_plataforma());
+			insert.setLong(12, game.getGenero().getGen_codigo());
+			insert.setLong(13, game.getDesenvolvedora().getDes_codigo());
 			insert.execute();
 
 			ResultSet generatedKeys = insert.getGeneratedKeys();
@@ -84,21 +87,25 @@ public class GameDAOImpl implements GameDAO {
 			update = conn.prepareStatement("UPDATE " + Game.TABLE + " SET "
 					+ Game.COL_TITULO + " = ?, " + Game.COL_DESCRICAO + " = ?, "
 					+ Game.COL_PRECO + " = ?, " + Game.COL_QUANTIDADE + " = ?, "
-					+ Game.COL_IMAGEM + " = ?, " + Game.COL_CLASSIFICACAO + " = ?, "
-					+ Game.COL_DATA_LANCAMENTO + " = ?, " + Game.COL_PLATAFORMA + " = ?, "
-					+ Game.COL_GEN_CODIGO + " = ?, " + Game.COL_DES_CODIGO + " = ? "
-					+ " WHERE " + Game.COL_CODIGO + " = ?;");
+					+ Game.COL_IMAGEM + " = ?, " + Game.COL_IMAGEM2 + " = ?, "
+					+ Game.COL_IMAGEM3 + " = ?, " + Game.COL_IMAGEM4 + " = ?, "
+					+ Game.COL_CLASSIFICACAO + " = ?, " + Game.COL_DATA_LANCAMENTO 
+					+ " = ?, " + Game.COL_PLATAFORMA + " = ?, " + Game.COL_GEN_CODIGO + " = ?, " 
+					+ Game.COL_DES_CODIGO + " = ? " + " WHERE " + Game.COL_CODIGO + " = ?;");
 			update.setString(1, game.getGam_titulo());
 			update.setString(2, game.getGam_descricao());
 			update.setDouble(3, game.getGam_preco());
 			update.setInt(4, game.getGam_quantidade());
 			update.setString(5, game.getGam_imagem());
-			update.setString(6, game.getGam_classificacao());
-			update.setDate(7, (Date)game.getGam_data_lancamento());
-			update.setString(8, game.getGam_plataforma());
-			update.setLong(9, game.getGenero().getGen_codigo());
-			update.setLong(10, game.getDesenvolvedora().getDes_codigo());
-			update.setLong(11, game.getGam_codigo());
+			update.setString(6, game.getGam_imagem2());
+			update.setString(7, game.getGam_imagem3());
+			update.setString(8, game.getGam_imagem4());
+			update.setString(9, game.getGam_classificacao());
+			update.setDate(10, (Date)game.getGam_data_lancamento());
+			update.setString(11, game.getGam_plataforma());
+			update.setLong(12, game.getGenero().getGen_codigo());
+			update.setLong(13, game.getDesenvolvedora().getDes_codigo());
+			update.setLong(14, game.getGam_codigo());
 			update.execute();
 		} catch (Exception e) {
 			throw new RuntimeException(e);
@@ -184,6 +191,9 @@ public class GameDAOImpl implements GameDAO {
 		game.setGam_preco(rs.getDouble(Game.COL_PRECO));
 		game.setGam_quantidade(rs.getInt(Game.COL_QUANTIDADE));
 		game.setGam_imagem(rs.getString(Game.COL_IMAGEM));
+		game.setGam_imagem2(rs.getString(Game.COL_IMAGEM2));
+		game.setGam_imagem3(rs.getString(Game.COL_IMAGEM3));
+		game.setGam_imagem4(rs.getString(Game.COL_IMAGEM4));
 		game.setGam_classificacao(rs.getString(Game.COL_CLASSIFICACAO));
 		game.setGam_data_lancamento(rs.getDate(Game.COL_DATA_LANCAMENTO));
 		game.setGam_plataforma(rs.getString(Game.COL_PLATAFORMA));

@@ -14,6 +14,9 @@ public class Game {
 	public static final String COL_PRECO = "GAM_PRECO";
 	public static final String COL_QUANTIDADE = "GAM_QUANTIDADE";
 	public static final String COL_IMAGEM = "GAM_IMAGEM";
+	public static final String COL_IMAGEM2 = "GAM_IMAGEM2";
+	public static final String COL_IMAGEM3 = "GAM_IMAGEM3";
+	public static final String COL_IMAGEM4 = "GAM_IMAGEM4";
 	public static final String COL_CLASSIFICACAO = "GAM_CLASSIFICACAO";
 	public static final String COL_DATA_LANCAMENTO = "GAM_DATA_LANCAMENTO";
 	public static final String COL_PLATAFORMA = "GAM_PLATAFORMA";
@@ -26,6 +29,9 @@ public class Game {
 	private Double gam_preco;
 	private Integer gam_quantidade;
 	private String gam_imagem;
+	private String gam_imagem2;
+	private String gam_imagem3;
+	private String gam_imagem4;
 	private String gam_classificacao;
 	private Date gam_data_lancamento;
 	private String gam_plataforma;
@@ -93,23 +99,41 @@ public class Game {
 	public void setDesenvolvedora(Desenvolvedora desenvolvedora) {
 		this.desenvolvedora = desenvolvedora;
 	}
-	
-	public static List<String> getColunas() {
-		return Lists.newArrayList(COL_CODIGO, COL_TITULO, COL_DESCRICAO, COL_PRECO,
-				COL_QUANTIDADE, COL_IMAGEM, COL_CLASSIFICACAO, COL_DATA_LANCAMENTO,
-				COL_PLATAFORMA, COL_GEN_CODIGO, COL_DES_CODIGO);
-	}
-
-	public static String[] getColunasArray() {
-		return new String[] { COL_CODIGO, COL_TITULO, COL_DESCRICAO, COL_PRECO,
-				COL_QUANTIDADE, COL_IMAGEM, COL_CLASSIFICACAO, COL_DATA_LANCAMENTO,
-				COL_PLATAFORMA, COL_GEN_CODIGO, COL_DES_CODIGO };
-	}
 	public String getGam_classificacao() {
 		return gam_classificacao;
 	}
 	public void setGam_classificacao(String gam_classificacao) {
 		this.gam_classificacao = gam_classificacao;
+	}
+	public String getGam_imagem2() {
+		return gam_imagem2;
+	}
+	public void setGam_imagem2(String gam_imagem2) {
+		this.gam_imagem2 = gam_imagem2;
+	}
+	public String getGam_imagem3() {
+		return gam_imagem3;
+	}
+	public void setGam_imagem3(String gam_imagem3) {
+		this.gam_imagem3 = gam_imagem3;
+	}
+	public String getGam_imagem4() {
+		return gam_imagem4;
+	}
+	public void setGam_imagem4(String gam_imagem4) {
+		this.gam_imagem4 = gam_imagem4;
+	}
+	
+	public static List<String> getColunas() {
+		return Lists.newArrayList(COL_CODIGO, COL_TITULO, COL_DESCRICAO, COL_PRECO,
+				COL_QUANTIDADE, COL_IMAGEM,COL_IMAGEM2,COL_IMAGEM3,COL_IMAGEM4, COL_CLASSIFICACAO, COL_DATA_LANCAMENTO,
+				COL_PLATAFORMA, COL_GEN_CODIGO, COL_DES_CODIGO);
+	}
+
+	public static String[] getColunasArray() {
+		return new String[] { COL_CODIGO, COL_TITULO, COL_DESCRICAO, COL_PRECO,
+				COL_QUANTIDADE, COL_IMAGEM,COL_IMAGEM2,COL_IMAGEM3,COL_IMAGEM4, COL_CLASSIFICACAO, COL_DATA_LANCAMENTO,
+				COL_PLATAFORMA, COL_GEN_CODIGO, COL_DES_CODIGO };
 	}
 	
 }

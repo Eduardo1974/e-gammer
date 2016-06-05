@@ -13,6 +13,9 @@ public class GameDTO {
 	private Double gam_preco;
 	private Integer gam_quantidade;
 	private String gam_imagem;
+	private String gam_imagem2;
+	private String gam_imagem3;
+	private String gam_imagem4;
 	private String gam_classificacao;
 	private Date gam_data_lancamento;
 	private String gam_plataforma;
@@ -102,11 +105,6 @@ public class GameDTO {
 	public void setDesenvolvedora(Desenvolvedora desenvolvedora) {
 		this.desenvolvedora = desenvolvedora;
 	}
-	
-	@Override
-	public String toString(){
-		return "Game[" + this.gam_codigo + " - " + this.gam_titulo + "]";
-	}
 
 	public String getGam_classificacao() {
 		return gam_classificacao;
@@ -114,6 +112,35 @@ public class GameDTO {
 
 	public void setGam_classificacao(String gam_classificacao) {
 		this.gam_classificacao = gam_classificacao;
+	}
+
+	public String getGam_imagem2() {
+		return gam_imagem2;
+	}
+
+	public void setGam_imagem2(String gam_imagem2) {
+		this.gam_imagem2 = gam_imagem2;
+	}
+
+	public String getGam_imagem3() {
+		return gam_imagem3;
+	}
+
+	public void setGam_imagem3(String gam_imagem3) {
+		this.gam_imagem3 = gam_imagem3;
+	}
+
+	public String getGam_imagem4() {
+		return gam_imagem4;
+	}
+
+	public void setGam_imagem4(String gam_imagem4) {
+		this.gam_imagem4 = gam_imagem4;
+	}
+	
+	@Override
+	public String toString(){
+		return "Game[" + this.gam_codigo + " - " + this.gam_titulo + "]";
 	}
 
 }

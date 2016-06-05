@@ -20,6 +20,9 @@ public class GameDTOConverter implements DTOConverter<Game, GameDTO>{
 		dto.setGam_data_lancamento(game.getGam_data_lancamento());
 		dto.setGam_descricao(game.getGam_descricao());
 		dto.setGam_imagem(game.getGam_imagem());
+		dto.setGam_imagem2(game.getGam_imagem2());
+		dto.setGam_imagem3(game.getGam_imagem3());
+		dto.setGam_imagem4(game.getGam_imagem4());
 		dto.setGam_plataforma(game.getGam_plataforma());
 		dto.setGam_preco(game.getGam_preco());
 		dto.setGam_quantidade(game.getGam_quantidade());
@@ -48,6 +51,9 @@ public class GameDTOConverter implements DTOConverter<Game, GameDTO>{
 		 entidade.setGam_data_lancamento(dataSql );
 		 entidade.setGam_descricao(dto.getGam_descricao());
 		 entidade.setGam_imagem(dto.getGam_imagem());
+		 entidade.setGam_imagem2(dto.getGam_imagem2());
+		 entidade.setGam_imagem3(dto.getGam_imagem3());
+		 entidade.setGam_imagem4(dto.getGam_imagem4());
 		 entidade.setGam_plataforma(dto.getGam_plataforma());
 		 entidade.setGam_preco(dto.getGam_preco());
 		 entidade.setGam_quantidade(dto.getGam_quantidade());

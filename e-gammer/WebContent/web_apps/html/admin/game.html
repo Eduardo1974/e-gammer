@@ -59,26 +59,40 @@
 						</div>
 						
 					</div>
-					
+					<div class="row">
+					<div class="col-md-2 fields-css">
+						<select class=" form-control" ng-model="game.genero.gen_codigo" ng-options="item.gen_codigo as item.gen_nome for item in generos">
+							<option value="" disabled selected>Generos</option>
+						</select>
+					</div>
+				
+					<div class="col-md-2 fields-css">
+						<select class=" form-control combo-size" ng-model="game.desenvolvedora.des_codigo" ng-options="item.des_codigo as item.des_studio for item in desenvolvedoras ">
+							<option value="" disabled selected>Desenvolvedoras</option>
+						</select>
+					</div>
+					</div>	
 					<div class="row">
 						<div class=" col-md-6">
 							<div  class="input-group border-field image-css">
-								<input type="text" class="form-control border-field " placeholder="Imagem" ng-model="game.gam_imagem">
+								<input type="text" class="form-control border-field " placeholder="Imagem de capa" ng-model="game.gam_imagem">
+							</div>
+							<br>
+							<div  class="input-group border-field image-css">
+								<input type="text" class="form-control border-field " placeholder="Imagem de detalhe" ng-model="game.gam_imagem2">
 							</div>
 						</div>
 						
-						<div class="col-md-2 fields-css">
-							<select class=" form-control" ng-model="game.genero.gen_codigo" ng-options="item.gen_codigo as item.gen_nome for item in generos">
-								<option value="" disabled selected>Generos</option>
-							</select>
-							
+						<div class=" col-md-6">
+							<div  class="input-group border-field image-css">
+								<input type="text" class="form-control border-field " placeholder="Imagem de detalhe" ng-model="game.gam_imagem3">
+							</div>
+							</br>
+							<div  class="input-group border-field image-css">
+								<input type="text" class="form-control border-field " placeholder="Imagem de detalhe" ng-model="game.gam_imagem4">
+							</div>
 						</div>
-					
-						<div class="col-md-2 fields-css">
-							<select class=" form-control combo-size" ng-model="game.desenvolvedora.des_codigo" ng-options="item.des_codigo as item.des_studio for item in desenvolvedoras ">
-								<option value="" disabled selected>Desenvolvedoras</option>
-							</select>
-						</div>
+						</br>
 					</div>
 					
 					<div class="form-group ">
