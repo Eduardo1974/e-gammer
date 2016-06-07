@@ -21,7 +21,7 @@ public class GameDTO {
 	private String gam_plataforma;
 	private Genero genero;
 	private Desenvolvedora desenvolvedora;
-	
+	private Long codigo;
 	
 
 	public Long getGam_codigo() {
@@ -141,6 +141,14 @@ public class GameDTO {
 	@Override
 	public String toString(){
 		return "Game[" + this.gam_codigo + " - " + this.gam_titulo + "]";
+	}
+
+	public Long getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
 	}
 
 }

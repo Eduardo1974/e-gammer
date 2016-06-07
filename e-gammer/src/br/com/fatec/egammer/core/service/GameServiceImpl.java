@@ -48,4 +48,9 @@ public class GameServiceImpl implements GameService{
 		return this.converter.toDTO(this.dao.buscarCodigo(gameId));
 	}
 
+	@Override
+	public List<GameDTO> buscaGamesPorGenero(Long codigo) {
+		return this.converter.toDTO(this.dao.buscaPorGenero(codigo));
+	}
+
 }

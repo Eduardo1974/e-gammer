@@ -46,7 +46,7 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce','Client
 		    	$scope.isLogado = true;
 		    	alert(response.contexto.cliente.cli_tipo);
 		    	if(response.contexto.cliente.cli_tipo == "cliente"){
-		    		document.location.href='index.html';
+		    		document.location.href='index.html#/home';
 		    	}else{
 		    		document.location.href='../admin/administrador.html';
 		    	} 	

@@ -23,6 +23,10 @@ public abstract class ProjetoWebAction extends ActionSupport
 	protected Map<String, Object> getSession() {
 		return ActionContext.getContext().getSession();
 	}
+	
+	public HttpServletRequest getServletRequest() {
+		return this.servletRequest;
+	}
 
 	@Override
 	public void setServletRequest(HttpServletRequest servletRequest) {

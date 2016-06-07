@@ -15,5 +15,7 @@ public interface GameService {
 	List<GameDTO> listar();
 
 	GameDTO buscarPorId(Long gameId);
+	
+	List<GameDTO>  buscaGamesPorGenero(Long codigo);
 
 }

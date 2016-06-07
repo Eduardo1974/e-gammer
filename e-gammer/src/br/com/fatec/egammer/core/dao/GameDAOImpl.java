@@ -166,7 +166,10 @@ public class GameDAOImpl implements GameDAO {
 			conn = ConfigDBMapper.getDefaultConnection();
 			buscarTodos = conn.prepareStatement("SELECT * FROM " + Game.TABLE);
 			ResultSet rs = buscarTodos.executeQuery();
-			return this.criarGames(rs);
+			if(rs.next()){
+				return this.criarGames(rs);
+			}else return null;
+			
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		} finally {
@@ -177,9 +180,9 @@ public class GameDAOImpl implements GameDAO {
 	
 	private List<Game> criarGames(ResultSet rs) throws SQLException {
 		List<Game> games = Lists.newArrayList();
-		while (rs.next()) {
+		do {
 			games.add(this.criarGame(rs));
-		}
+		}while (rs.next());
 		return games;
 	}
 	
@@ -200,6 +203,30 @@ public class GameDAOImpl implements GameDAO {
 		game.setGenero( this.generoDao.buscaCodigo(rs.getLong(Game.COL_GEN_CODIGO) ));
 		game.setDesenvolvedora( this.desenvolvedoraDao.buscarCodigo(rs.getLong(Game.COL_DES_CODIGO) ));
 		return game;
+	}
+
+	@Override
+	public List<Game> buscaPorGenero(Long codigo) {
+		Connection conn = null;
+		PreparedStatement find = null;
+		List<Game> game = null;
+		try {
+			conn = ConfigDBMapper.getDefaultConnection();
+			String sql = "SELECT * FROM " + Game.TABLE + " WHERE " +Game.COL_GEN_CODIGO+ " = ? ORDER BY rand() LIMIT 4;";
+			find = conn.prepareStatement(sql);
+			find.setLong(1, codigo);
+			ResultSet rs = find.executeQuery();
+			if (rs.next()) {
+				game = this.criarGames(rs);
+			}
+			return game;
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			DbUtils.closeQuietly(conn);
+			DbUtils.closeQuietly(find);
+		}
 	}
 
 }

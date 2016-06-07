@@ -31,6 +31,7 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 			}];
 		
 		return {
+			setGamesDestaques: setGamesDest,
 			getGamesPromocao: gamesPromo,
 			getGameCurrent: current,
 			recuperar: get,
@@ -42,6 +43,9 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 			return promo;
 		};
 		
+		function setGamesDest(games) {
+			games = this.games;
+		}
 		function current(){
 			return game;
 		};

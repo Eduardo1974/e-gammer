@@ -1,5 +1,8 @@
 package br.com.fatec.egammer.web.action;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import br.com.fatec.egammer.api.service.GameService;
 import br.com.fatec.egammer.web.context.ContextoGame;
 import br.com.spektro.minispring.core.implfinder.ImplFinder;
@@ -17,6 +20,12 @@ public class GameAction extends ProjetoWebAction{
 	}
 	
 
+	public String buscaPorGenero() {
+	
+		this.contexto.setGames(this.service.buscaGamesPorGenero(this.contexto.getGame().getGenero().getGen_codigo()));
+
+		return SUCESS;
+	}
 	public String listar() {
 		
 		this.contexto.setGames(this.service.listar());
