@@ -1,9 +1,32 @@
 eGammerControllers.controller("HeaderController",  function($scope,GeneroService,HearderService,serviceAPI) {
 	
+	$scope.cliente;
+	$scope.qtdProdutos;
+	
 	function init() {
+		getCliente();
+		getCarrinho();
     	$scope.loadGeneros();
 	}
-	 
+	
+	function getCliente(){
+		var usuario = StorageHelper.getItem('usuario'); 
+		if(usuario != null){
+			$scope.cliente = usuario;
+		}else{
+			$scope.cliente = null;
+		}
+	}
+	
+	function getCarrinho(){
+		var carrinho = StorageHelper.getItem('carrinho');
+		if(carrinho != null){
+			$scope.qtdProdutos = carrinho.length;
+		}else{
+			$scope.qtdProdutos = 0;
+		}
+	}
+	
 	$scope.generos = {};
 	$scope.game = {
 			genero : {

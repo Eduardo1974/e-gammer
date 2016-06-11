@@ -1,16 +1,16 @@
 /* estilo formatação dos id's */
 #top-barra {
-	width: 98%;
+	width: 100%;
 	background: #2b2b2b;
-	margin-left: 1%;
-    margin-right: 1%;
+	margin-left: 0%;
+    margin-right: 0%;
 	top:0;				/*top, position e deixam fixo a barra no topo */
 	position:fixed;
 	z-index: 10000; 	/* sobrepoe a barra em cima da pagina */
 }
 #site-content {
 	padding-top: 15px;
-	background-image: url('https://eaassets-a.akamaihd.net/origin-com-store-damassets/content/dam/eadam/N/NFS_16/185353/PDP_Background/1024486_pdpbg_1200x800_en_US_1.jpg');
+	background-image: url('../../images/site/background/need_1200x800.jpg');
 	background-attachment: fixed;
 	background-size: 100%;
 }

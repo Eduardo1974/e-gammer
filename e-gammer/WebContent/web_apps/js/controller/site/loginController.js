@@ -1,8 +1,8 @@
 
 var app = angular.module('egammer');
 
-app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce','ClienteService',
-                                   function($scope, $http, $timeout, $sce,clienteService) {
+app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce', 'ClienteService',
+                                   function($scope, $http, $timeout, $sce, clienteService) {
 
 	var CHAVE_STORAGE = 'usuario';
 	var urlPath = "http://localhost:8085/e-gammer/Cliente!";
@@ -46,7 +46,7 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce','Client
 		    	$scope.isLogado = true;
 		    	alert(response.contexto.cliente.cli_tipo);
 		    	if(response.contexto.cliente.cli_tipo == "cliente"){
-		    		document.location.href='index.html#/home';
+		    		document.location.href='/e-gammer/';
 		    	}else{
 		    		document.location.href='../admin/administrador.html';
 		    	} 	

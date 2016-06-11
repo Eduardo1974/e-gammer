@@ -59,7 +59,7 @@ publication.config(function($routeProvider){
     })
 	
 	.otherwise({
-      redirectTo: '/'
+      redirectTo: '/home'
     });
 	  
 	  

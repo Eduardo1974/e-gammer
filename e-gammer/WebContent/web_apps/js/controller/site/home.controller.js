@@ -4,10 +4,9 @@ eGammerControllers.controller("HomeController", HomeController);
 	
 		function HomeController($scope , serviceAPI) {
 			
-			$scope.titulo = 'Promoções';
+			$scope.titulo = 'Destaques';
 			
 			$scope.gamesPromocao;
-			
 			
 			function init(){
 				$scope.gamesPromocao = serviceAPI.getGamesPromocao();
@@ -15,6 +14,7 @@ eGammerControllers.controller("HomeController", HomeController);
 			};
 			
 			init();
+			
 			
 			
 		/*	$scope.listar = function() {
