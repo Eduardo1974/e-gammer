@@ -30,7 +30,7 @@
 									<p>{{produto.descricao.substring(0, 200)}}</p>
 								</div>
 							</td>
-							<td class="product-price">{{Number(produto.preco.replace(",",".")) | currency}}</td>
+							<td class="product-price">{{produto.preco | currency}}</td>
 							<td class="product-qty">
 								<select name="#" ng-options="item for item in qtdLista" ng-model="produto.qtdItem" ng-change="calculaTotal()">
 								</select>

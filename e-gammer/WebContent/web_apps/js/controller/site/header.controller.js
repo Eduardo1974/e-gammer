@@ -5,7 +5,7 @@ eGammerControllers.controller("HeaderController",  function($scope,GeneroService
 	
 	function init() {
 		getCliente();
-		getCarrinho();
+		getQtdCarrinho();
     	$scope.loadGeneros();
 	}
 	
@@ -18,13 +18,10 @@ eGammerControllers.controller("HeaderController",  function($scope,GeneroService
 		}
 	}
 	
-	function getCarrinho(){
-		var carrinho = StorageHelper.getItem('carrinho');
-		if(carrinho != null){
-			$scope.qtdProdutos = carrinho.length;
-		}else{
-			$scope.qtdProdutos = 0;
-		}
+	function getQtdCarrinho(){
+		
+		$scope.qtdProdutos = serviceAPI.getQtdItensCarrinho();
+		
 	}
 	
 	$scope.generos = {};
@@ -49,7 +46,6 @@ eGammerControllers.controller("HeaderController",  function($scope,GeneroService
 		
 		GeneroService.generoList().then(function (response) {
             $scope.generos =  angular.copy(response.data.contexto.generos);
-            console.log($scope.generos);
         });
 	};
 	init();

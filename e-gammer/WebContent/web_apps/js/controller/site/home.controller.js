@@ -10,7 +10,7 @@ eGammerControllers.controller("HomeController",  function($scope, serviceAPI) {
 	
 	function init(){
 		$scope.gamesDestaques = serviceAPI.getGamesDestaques();
-		console.log($scope.gamesDestaques);
+		
 	};
 	
 	init();

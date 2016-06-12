@@ -30,7 +30,6 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 	}
 /** função que verifica se a lista está vazia */	
 	function verificaLista(){
-		
 		if($scope.lista.length > 0){
 			$scope.listaVazia = true;
 		}else{
@@ -44,9 +43,8 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 			var subtotal = 0;
 			/** aqui pega o valor de cada produto da lista e a quantidade, para calcular o subtotal */
 			angular.forEach(lista, function (value, key) {
-				var preco = Number(lista[key].preco.replace(',','.'));
-				var qtdItem = Number(lista[key].qtdItem);
-				console.log( preco * qtdItem );
+				var preco = lista[key].preco;
+				var qtdItem = lista[key].qtdItem;
 				subtotal = subtotal + (preco * qtdItem);	        
 		    });
 			$scope.valor.subtotal = subtotal;
@@ -59,10 +57,8 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 	}
 /** esta função recebe uma posição, e remove da lista o produto escolhido	*/	
 	function _removerItem(posicao){
-		var decisao = confirm('deseja remover este produto?');
-		if(decisao){
-			$scope.lista.splice(posicao, 1);
-		}
+		serviceAPI.delCarrinho(posicao);
+		getCarrinho();
 		verificaLista();
 		_precoTotal();
 	}
