@@ -1,24 +1,31 @@
-eGammerControllers.controller("HomeController", HomeController);
+
+eGammerControllers.controller("HomeController",  function($scope, serviceAPI) {
 	
-	HomeController.$inject = ['$scope' ,'serviceAPI'];
+	$scope.titulo = 'Destaques';
 	
-		function HomeController($scope , serviceAPI) {
-			
-			$scope.titulo = 'Destaques';
-			
-			$scope.gamesPromocao;
-			
-			function init(){
-				$scope.gamesPromocao = serviceAPI.getGamesPromocao();
-				console.log($scope.gamesPromocao);
-			};
-			
-			init();
-			
-			
-			
-		/*	$scope.listar = function() {
-				return serviceAPI.listar();
-			};
-		*/	
-		}
+	$scope.addCarrinho = _addCarrinho;
+	$scope.detalhes = _detalhes;
+	
+	$scope.gamesDestaques;
+	
+	function init(){
+		$scope.gamesDestaques = serviceAPI.getGamesDestaques();
+		console.log($scope.gamesDestaques);
+	};
+	
+	init();
+
+	$scope.listar = function() {
+		return serviceAPI.listar();
+	};
+	
+	function _addCarrinho(game){
+		game.qtdItem = 1;
+		serviceAPI.addCarrinho(game);
+	}
+	
+	function _detalhes(game){
+		serviceAPI.setGameCurrent(game);
+	}
+
+});

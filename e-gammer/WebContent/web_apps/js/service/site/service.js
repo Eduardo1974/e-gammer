@@ -30,25 +30,47 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 				"descricao": "Chegou a sua hora de participar para valer da emoção a toda velocidade da série de corridas mais eletrizante do mundo no NASCAR '14. Assuma a direção como seu piloto favorito e vivencie toda a experiência da semana de corrida com os desafios do treino, da qualificação e do dia da corrida. Com suas personalidades preferidas e o replay ao vivo, o NASCAR '14 é a experiência autêntica da NASCAR para os fãs."
 			}];
 		
+		var carrinho = [];
+		var gameCurrent = {};
+		var valorQtds = [1, 2, 3];
+		
 		return {
-			setGamesDestaques: setGamesDest,
-			getGamesPromocao: gamesPromo,
-			getGameCurrent: current,
+			setGamesDestaques: _setDestaques,
+			getGamesDestaques: _getDestaques,
+			getGameCurrent: _getCurrent,
+			setGameCurrent: _setCurrent,
 			recuperar: get,
-			listar: list
+			listar: list,
+			addCarrinho: _addCarrinho,
+			getValoresQtds: _getQtds,
 		};
 		
-		function gamesPromo(){
+		function _getQtds(){
+			return valorQtds;
+		}
+		
+		function _addCarrinho(game){
+			alert(game.titulo + ' qtd:' + game.qtdItem);
+			carrinho.push(game);
+			StorageHelper.setItem('carrinho', carrinho);
+		}
+		
+		function _getDestaques(){
 			var promo = [games[0], games[1], games[3], games[2]];
 			return promo;
-		};
-		
-		function setGamesDest(games) {
-			games = this.games;
 		}
-		function current(){
-			return game;
-		};
+		
+		function _setDestaques(games) {
+			this.games = games;
+		}
+		
+		function _getCurrent(){
+			return gameCurrent;
+		}
+		
+		function _setCurrent(game){
+			gameCurrent = game;
+		}
 		
 		function get(id) {
 		  return games[id];
@@ -57,9 +79,6 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 		function list() {
 		  return games;
 		}
-		
-		
 
 		
-		//return 0;
 	}

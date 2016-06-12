@@ -19,31 +19,31 @@
 							<th class="action"></th>
 						</tr>
 					</thead>
-					<tbody ng-if="lista != null">
+					<tbody ng-if="listaVazia">
 						<tr ng-repeat="produto in lista">
 							<td class="product-name">
 								<div class="product-thumbnail">
-									<img src="dummy/cart-thumb-1.jpg" alt=""></img>
+									<img ng-src="{{produto.capa}}" alt="" style="height:110px;"></img>
 								</div>
 								<div class="product-detail">
 									<h3 class="product-title">{{produto.gam_titulo}}</h3>
-									<p>{{produto.descricao.substring(0, 215)}}</p>
+									<p>{{produto.descricao.substring(0, 200)}}</p>
 								</div>
 							</td>
-							<td class="product-price">{{produto.preco | currency}}</td>
+							<td class="product-price">{{Number(produto.preco.replace(",",".")) | currency}}</td>
 							<td class="product-qty">
-								<select name="#" ng-options="item as item.qtd for item in qtdLista track by item.qtd" ng-model="">
+								<select name="#" ng-options="item for item in qtdLista" ng-model="produto.qtdItem" ng-change="calculaTotal()">
 								</select>
 							</td>
-							<td class="product-total">$150.00</td>
-							<td class="action"><a href="#"><i class="fa fa-times"></i></a></td>
+							<td class="product-total">{{( produto.preco * produto.qtdItem ) | currency}}</td>
+							<td class="action"><a href="" ng-click="removerItem($index);"><i class="fa fa-times"></i></a></td>
 						</tr>
 					</tbody>
-					<tbody ng-if="lista == null">
+					<tbody ng-if="!listaVazia">
 						<tr>
 							<td class="product-name">
 								<div class="product-detail">
-									<h3 class="product-title">Não há produtos</h3>
+									<h3 class="product-title">Não há produtos no carrinho</h3>
 								</div>
 							</td>
 							<td class="product-price"></td>
@@ -55,12 +55,12 @@
 				</table> <!-- .cart -->
 
 				<div class="cart-total">
-					<p><strong>Subtotal:</strong> $650.00</p>
-					<p><strong>Shipment:</strong> $15.00</p>
-					<p class="total"><strong>Total</strong><span class="num">$665.00</span></p>
+					<p><strong>Subtotal:</strong> {{valor.subtotal | currency}}</p>
+					<p><strong>Descontos:</strong> {{valor.desconto | currency}}</p>
+					<p class="total"><strong>Total</strong><span class="num"> {{valor.total | currency}}</span></p>
 					<p>
-						<a href="#" class="button muted">Continue Shopping</a>
-						<a href="#" class="button unmuted">Finalize and pay</a>
+						<a href="#" class="button muted">Continuar comprando</a>
+						<a href="#" class="button unmuted">Finalizar compras</a>
 					</p>
 				</div> <!-- .cart-total -->
 				

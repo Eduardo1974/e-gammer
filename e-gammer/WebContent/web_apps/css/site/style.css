@@ -2540,7 +2540,7 @@ section header .all {
 .page .addtocart-bar form select {
   padding: 10px 50px 10px 10px;
   margin-left: 10px;
-  background: #e9e9e9 url(images/select.png) no-repeat right center;
+  background: #e9e9e9 url(../../images/select.png) no-repeat right center;
   border: none;
   -webkit-appearance: none;
   -moz-appearance: none;

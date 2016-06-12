@@ -1,17 +1,33 @@
-angular.module("egammer")
-	.controller("DetalhesController", DetalhesController);
+
+eGammerControllers.controller("DetalhesController",  function($scope, serviceAPI) {
 	
-	DetalhesController.$inject = ['$scope', '$routeParams', 'serviceAPI'];
+	$scope.addCarrinho = _addCarrinho;
 	
-		function DetalhesController($scope, $routeParams, serviceAPI) {
-			
-			//$scope.game = serviceAPI.recuperar($routeParams.id);
-			$scope.game = serviceAPI.getGameCurrent();
-			console.log($scope.game);
-		/*	$scope.titulo = 'Lista de Games';
-			
-			$scope.listar = function() {
-				return serviceAPI.listar();
-			};
-		*/	
+	$scope.game;
+	
+	$scope.similares = [];//[{titulo:'blah', preco: 100, descricao:'blahhhhhhhhhhhhhhhhhhhhhhhhhhh'}];
+	$scope.qtdLista = serviceAPI.getValoresQtds();
+	
+	function init(){
+		loadGame();
+	}
+	
+	init();
+	
+	function loadGame(){
+		var game = serviceAPI.getGameCurrent();
+		/** varifica se o objeto é vazio*/
+		if(Object.keys(game).length !== 0){		
+			$scope.game = game;
+			$scope.game.qtdItem = 1;
+		}else{
+			console.log('else');
+			document.location = '';
 		}
+	}
+	
+	function _addCarrinho(game){
+		serviceAPI.addCarrinho(game);
+	}
+	
+});
