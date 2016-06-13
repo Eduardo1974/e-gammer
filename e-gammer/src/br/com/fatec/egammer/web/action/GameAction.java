@@ -27,6 +27,13 @@ public class GameAction extends ProjetoWebAction{
 		return SUCESS;
 	}
 	
+	public String buscaPorTitulo() {
+		
+		this.contexto.setGames(this.service.buscaPorTitulo(this.contexto.getGame().getGam_titulo()));
+
+		return SUCESS;
+	}
+	
 	public String buscaDestaques() {
 		
 		this.contexto.setGames(this.service.buscaDestaques());

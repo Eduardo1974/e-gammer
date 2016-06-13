@@ -19,4 +19,6 @@ public interface GameDAO {
 	List<Game> buscaPorGenero(Long codigo);
 	
 	List<Game> buscaDestques();
+	
+	List<Game> buscaPorTitulo(String titulo);
 }

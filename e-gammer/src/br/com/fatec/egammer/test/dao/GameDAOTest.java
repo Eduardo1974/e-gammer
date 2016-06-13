@@ -206,5 +206,56 @@ public class GameDAOTest extends TestBase{
 		Assert.assertEquals("nfs 2016", encontrados.get(1).getGam_titulo());
 		Assert.assertEquals("Jogo de Corrida", encontrados.get(1).getGam_descricao());
 	}
+	
+	@Test
+	public void testBuscaPorTitulo() throws ParseException {
+		Desenvolvedora des = new Desenvolvedora();
+		//des.setDes_codigo((long) 1);
+		des.setDes_distribuidora("EA Games");
+		des.setDes_studio("Santa Monica");
+		
+		Long id_desenv = daoDesenvolvedora.save(des);
+		
+		Genero genero = new Genero();
+		//genero.setGen_codigo((long)1);
+		genero.setGen_nome("Ação");
+		
+		Long id_genero = daoGenero.save(genero);
+		
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		Date data = new Date(format.parse("28/03/2016").getTime());
+		
+		Game game1 = new Game();
+		game1.setGam_classificacao("8");
+		game1.setGam_data_lancamento(data);
+		game1.setGam_descricao("Jogo de Guerra Moderna");
+		game1.setGam_imagem("C:\\TEMP\\battlefield");
+		game1.setGam_plataforma("PC");
+		game1.setGam_preco(230.98);
+		game1.setGam_quantidade(200);
+		game1.setGam_titulo("Battle Field");
+		game1.setDesenvolvedora(this.daoDesenvolvedora.buscarCodigo(id_desenv));
+		game1.setGenero(this.daoGenero.buscaCodigo(id_genero));
+
+		Game game2 = new Game();
+		game2.setGam_classificacao("8");
+		game2.setGam_data_lancamento(data);
+		game2.setGam_descricao("Jogo de Corrida");
+		game2.setGam_imagem("C:\\TEMP\\Need FS");
+		game2.setGam_plataforma("PC");
+		game2.setGam_preco(100.10);
+		game2.setGam_quantidade(30);
+		game2.setGam_titulo("nfs 2016");
+		game2.setDesenvolvedora(this.daoDesenvolvedora.buscarCodigo(id_desenv));
+		game2.setGenero(this.daoGenero.buscaCodigo(id_genero));
+		
+		this.dao.save(game1);
+		this.dao.save(game2);
+
+		List<Game> encontrados = this.dao.buscaPorTitulo("Battle");
+
+		Assert.assertEquals(1, encontrados.size());
+		
+	}
 
 }

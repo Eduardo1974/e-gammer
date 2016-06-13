@@ -19,5 +19,7 @@ public interface GameService {
 	List<GameDTO>  buscaGamesPorGenero(Long codigo);
 	
 	List<GameDTO>  buscaDestaques();
+	
+	List<GameDTO> buscaPorTitulo(String titulo);
 
 }

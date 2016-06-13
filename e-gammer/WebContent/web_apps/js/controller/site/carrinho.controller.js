@@ -43,7 +43,7 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 			var subtotal = 0;
 			/** aqui pega o valor de cada produto da lista e a quantidade, para calcular o subtotal */
 			angular.forEach(lista, function (value, key) {
-				var preco = lista[key].preco;
+				var preco = lista[key].gam_preco;
 				var qtdItem = lista[key].qtdItem;
 				subtotal = subtotal + (preco * qtdItem);	        
 		    });

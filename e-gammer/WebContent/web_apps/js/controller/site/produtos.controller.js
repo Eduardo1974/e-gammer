@@ -26,14 +26,13 @@ eGammerControllers.controller("ProdutosController",  function($scope,serviceAPI,
 	   $log.log('Page changed to: ' + $scope.currentPage);
 	};
 	
-	function addCarrinho(game){
+	$scope.addCarrinho = function (game){
 		game.qtdItem = 1;
 		serviceAPI.addCarrinho(game);
 	}
 	
-	function detalhes(game){
+	$scope.detalhes = function (game){
 		serviceAPI.setGameCurrent(game);
-		alert("vddvdv");
 	}
 	
 	$scope.buscaGenero = function(genero){

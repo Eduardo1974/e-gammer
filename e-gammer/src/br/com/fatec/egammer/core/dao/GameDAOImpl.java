@@ -251,6 +251,30 @@ public class GameDAOImpl implements GameDAO {
 			DbUtils.closeQuietly(find);
 		}
 	}
+
+	@Override
+	public List<Game> buscaPorTitulo(String titulo) {
+		Connection conn = null;
+		PreparedStatement find = null;
+		List<Game> game = null;
+		try {
+			conn = ConfigDBMapper.getDefaultConnection();
+			String sql = "SELECT * FROM " + Game.TABLE + " WHERE " +Game.COL_TITULO+ " like ?;";
+			find = conn.prepareStatement(sql);
+			find.setString(1, "%" + titulo + "%");
+			ResultSet rs = find.executeQuery();
+			if (rs.next()) {
+				game = this.criarGames(rs);
+			}
+			return game;
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			DbUtils.closeQuietly(conn);
+			DbUtils.closeQuietly(find);
+		}
+	}
 	
 	
 

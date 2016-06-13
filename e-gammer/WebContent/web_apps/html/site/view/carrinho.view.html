@@ -23,19 +23,19 @@
 						<tr ng-repeat="produto in lista">
 							<td class="product-name">
 								<div class="product-thumbnail">
-									<img ng-src="{{produto.capa}}" alt="" style="height:110px;"></img>
+									<img ng-src="{{produto.gam_imagem}}" alt="" style="height:110px;"></img>
 								</div>
 								<div class="product-detail">
 									<h3 class="product-title">{{produto.gam_titulo}}</h3>
-									<p>{{produto.descricao.substring(0, 200)}}</p>
+									<p>{{produto.gam_descricao.substring(0, 200)}}</p>
 								</div>
 							</td>
-							<td class="product-price">{{produto.preco | currency}}</td>
+							<td class="product-price">{{produto.gam_preco | currency}}</td>
 							<td class="product-qty">
 								<select name="#" ng-options="item for item in qtdLista" ng-model="produto.qtdItem" ng-change="calculaTotal()">
 								</select>
 							</td>
-							<td class="product-total">{{( produto.preco * produto.qtdItem ) | currency}}</td>
+							<td class="product-total">{{( produto.gam_preco * produto.qtdItem ) | currency}}</td>
 							<td class="action"><a href="" ng-click="removerItem($index);"><i class="fa fa-times"></i></a></td>
 						</tr>
 					</tbody>

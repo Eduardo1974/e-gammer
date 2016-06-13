@@ -49,6 +49,7 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 			delCarrinho: _delCarrinho,
 			getValoresQtds: _getQtds,
 			getQtdItensCarrinho: _getQtdItens,
+			buscaPorTitulo: _buscaPorTitulo
 		};
 		
 		function _getQtds(){
@@ -113,6 +114,23 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 				cache : false
 			}).success(function(response) {
 				return promessa.data;
+			});
+	    	return promessa;
+	    }
+		
+		function _buscaPorTitulo(gamObj) {
+	    	var data = JSON.stringify(gamObj);
+	    	var promessa;
+	    	promessa = jQuery.ajax({
+	    		url: urlPath + 'buscaPorTitulo.action',
+			    data: data,
+			    dataType: 'json',
+			    contentType: 'application/json',
+			    type: 'POST',
+			    async: false,
+			    success: function (response) {
+			    	return promessa;
+			    }
 			});
 	    	return promessa;
 	    }
