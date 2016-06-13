@@ -15,15 +15,17 @@ eGammerControllers.controller("DetalhesController",  function($scope, serviceAPI
 	init();
 	
 	function loadGame(){
-		var game = serviceAPI.getGameCurrent();
-		/** varifica se o objeto é vazio*/
+		$scope.game = serviceAPI.getGameCurrent();
+		$scope.game.qtdItem = 1;
+		/*var game = serviceAPI.getGameCurrent();
+		// varifica se o objeto é vazio
 		if(Object.keys(game).length !== 0){		
 			$scope.game = game;
 			$scope.game.qtdItem = 1;
 		}else{
 			console.log('else');
 			document.location = '';
-		}
+		}*/
 	}
 	
 	function _addCarrinho(game){

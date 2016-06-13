@@ -9,14 +9,15 @@ eGammerControllers.controller("HomeController",  function($scope, serviceAPI) {
 	$scope.gamesDestaques;
 	
 	function init(){
-		$scope.gamesDestaques = serviceAPI.getGamesDestaques();
-		
+		$scope.listDestaques();
 	};
 	
-	init();
-
-	$scope.listar = function() {
-		return serviceAPI.listar();
+	$scope.listDestaques = function() {
+		serviceAPI.listDestaques().then(function (response) {
+			$scope.gamesDestaques =  angular.copy(response.data.contexto.games);
+    		console.log($scope.gamesDestaques );	
+            
+        });
 	};
 	
 	function _addCarrinho(game){
@@ -27,5 +28,7 @@ eGammerControllers.controller("HomeController",  function($scope, serviceAPI) {
 	function _detalhes(game){
 		serviceAPI.setGameCurrent(game);
 	}
+	
+	init();
 
 });

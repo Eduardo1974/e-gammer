@@ -53,4 +53,9 @@ public class GameServiceImpl implements GameService{
 		return this.converter.toDTO(this.dao.buscaPorGenero(codigo));
 	}
 
+	@Override
+	public List<GameDTO> buscaDestaques() {
+		return this.converter.toDTO(this.dao.buscaDestques());
+	}
+
 }

@@ -212,7 +212,7 @@ public class GameDAOImpl implements GameDAO {
 		List<Game> game = null;
 		try {
 			conn = ConfigDBMapper.getDefaultConnection();
-			String sql = "SELECT * FROM " + Game.TABLE + " WHERE " +Game.COL_GEN_CODIGO+ " = ? ORDER BY rand() LIMIT 4;";
+			String sql = "SELECT * FROM " + Game.TABLE + " WHERE " +Game.COL_GEN_CODIGO+ " = ?;";
 			find = conn.prepareStatement(sql);
 			find.setLong(1, codigo);
 			ResultSet rs = find.executeQuery();
@@ -228,5 +228,30 @@ public class GameDAOImpl implements GameDAO {
 			DbUtils.closeQuietly(find);
 		}
 	}
+
+	@Override
+	public List<Game> buscaDestques() {
+		Connection conn = null;
+		PreparedStatement find = null;
+		List<Game> game = null;
+		try {
+			conn = ConfigDBMapper.getDefaultConnection();
+			String sql = "SELECT * FROM " + Game.TABLE + " ORDER BY rand() LIMIT 4;";
+			find = conn.prepareStatement(sql);
+			ResultSet rs = find.executeQuery();
+			if (rs.next()) {
+				game = this.criarGames(rs);
+			}
+			return game;
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			DbUtils.closeQuietly(conn);
+			DbUtils.closeQuietly(find);
+		}
+	}
+	
+	
 
 }

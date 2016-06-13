@@ -8,6 +8,14 @@ eGammerControllers.controller("HeaderController",  function($scope,GeneroService
 		getQtdCarrinho();
     	$scope.loadGeneros();
 	}
+
+	
+	$scope.generos = {};
+	$scope.game = {
+			genero : {
+				gen_codigo : null
+			}
+	};
 	
 	function getCliente(){
 		var usuario = StorageHelper.getItem('usuario'); 
@@ -24,20 +32,17 @@ eGammerControllers.controller("HeaderController",  function($scope,GeneroService
 		
 	}
 	
-	$scope.generos = {};
-	$scope.game = {
-			genero : {
-				gen_codigo : null
-			}
-	};
 	$scope.buscaGenero = function(genero){
 		$scope.game.genero.gen_codigo = genero
 		var data = {'contexto' : {
 			'game' : $scope.game
 		}};
 		HearderService.buscaGenero(data).then(function (response) {
-			serviceAPI.setGamesDest(response.contexto.games);
-            //console.log(response.contexto.games);
+			serviceAPI.setGames(response.contexto.games);
+			console.log(response.contexto.games);
+			//document.location.href.reload("#/produtos") 
+			document.location.href = "#/home";
+			document.location.href = "#/produtos";
 			
         });
 	}

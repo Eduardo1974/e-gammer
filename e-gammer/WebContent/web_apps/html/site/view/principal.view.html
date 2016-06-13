@@ -22,11 +22,11 @@
 					<div class="product" ng-repeat="game in gamesDestaques">
 						<div class="inner-product">
 							<div class="figure-image">
-								<a href="#/detalhes" ng-click="detalhes(game)"><img ng-src="{{game.capa}}" id="capa-game"></a>
+								<a href="#/detalhes" ng-click="detalhes(game)"><img ng-src="{{game.gam_imagem}}" id="capa-game"></a>
 							</div>
-							<h3 class="product-title"><a href="#/detalhes">{{game.titulo}}</a></h3>
-							<small class="price">R${{game.preco}}</small>
-							<p>{{game.descricao.substring(0, 70)}}...</p>
+							<h3 class="product-title"><a href="#/detalhes">{{game.gam_titulo}}</a></h3>
+							<small class="price">R${{game.gam_preco}}</small>
+							<p>{{game.gam_descricao.substring(0, 70)}}...</p>
 							<a href="" class="button unmuted" ng-click="addCarrinho(game)">Add carrinho</a>
 							<a href="#/detalhes#" class="button muted" ng-click="detalhes(game)">Mais detalhes</a>
 						</div>

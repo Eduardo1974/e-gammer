@@ -55,9 +55,9 @@
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.GeneroDTO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.GeneroService"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.web.context.ContextoGenero"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.GameDTO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.web.context.ContextoGame"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.GameService"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Cliente"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.GameDTO"/>
 </qualifiedTypeNameHistroy>

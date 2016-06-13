@@ -1,7 +1,9 @@
 angular.module("egammer").factory("serviceAPI",  serviceAPI);
 
-	function serviceAPI() {
-
+	function serviceAPI($http) {
+		
+		var urlPath = "http://localhost:8085/e-gammer/Game!";
+		
 		var games = [{
 				"id": 0,
 				"titulo": "Need for Speed Rivals",
@@ -40,7 +42,9 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 			getGameCurrent: _getCurrent,
 			setGameCurrent: _setCurrent,
 			recuperar: get,
-			listar: list,
+			listDestaques: _listDestaques,
+			setGames: _setGames,
+			getGames: _getGames,
 			addCarrinho: _addCarrinho,
 			delCarrinho: _delCarrinho,
 			getValoresQtds: _getQtds,
@@ -75,11 +79,19 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 		}
 		
 		function _getDestaques(){
-			var promo = [games[0], games[1], games[3], games[2]];
+			var promo = this.games;
 			return promo;
 		}
 		
 		function _setDestaques(games) {
+			this.games = games;
+		}
+		
+		function _getGames(){
+			return this.games;
+		}
+		
+		function _setGames(games) {
 			this.games = games;
 		}
 		
@@ -95,9 +107,15 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 		  return games[id];
 		}
 		
-		function list() {
-		  return games;
-		}
-
+		function _listDestaques() {
+	    	var promessa;
+	    	promessa = $http.get(urlPath + 'buscaDestaques.action', {
+				cache : false
+			}).success(function(response) {
+				return promessa.data;
+			});
+	    	return promessa;
+	    }
+		
 		
 	}
