@@ -20,6 +20,15 @@ eGammerControllers.controller("HomeController",  function($scope, serviceAPI) {
         });
 	};
 	
+	$scope.buscaTodos = function(){
+		serviceAPI.buscaTodos().then(function (response) {
+			
+			serviceAPI.setGames(response.data.contexto.games);
+            document.location.href = "#/home";
+			document.location.href = "#/produtos";
+        });
+	}
+	
 	function _addCarrinho(game){
 		game.qtdItem = 1;
 		serviceAPI.addCarrinho(game);

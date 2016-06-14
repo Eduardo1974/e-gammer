@@ -49,7 +49,8 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 			delCarrinho: _delCarrinho,
 			getValoresQtds: _getQtds,
 			getQtdItensCarrinho: _getQtdItens,
-			buscaPorTitulo: _buscaPorTitulo
+			buscaPorTitulo: _buscaPorTitulo,
+			buscaTodos: _buscaTodos
 		};
 		
 		function _getQtds(){
@@ -111,6 +112,16 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 		function _listDestaques() {
 	    	var promessa;
 	    	promessa = $http.get(urlPath + 'buscaDestaques.action', {
+				cache : false
+			}).success(function(response) {
+				return promessa.data;
+			});
+	    	return promessa;
+	    }
+		
+		function _buscaTodos() {
+	    	var promessa;
+	    	promessa = $http.get(urlPath + 'listar.action', {
 				cache : false
 			}).success(function(response) {
 				return promessa.data;

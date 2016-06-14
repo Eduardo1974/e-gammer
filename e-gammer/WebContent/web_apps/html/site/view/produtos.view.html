@@ -14,20 +14,16 @@
 					</span>
 					<span class="col-md-2 fields-css">
 						<label>Genero</label>
-						<select name="#" class=" form-control">
-							<option value="#">Show All</option>
-							<option value="#">Action</option>
-							<option value="#">Racing</option>
-							<option value="#">Strategy</option>
+						<select class=" form-control" ng-model="generoSelecionado" ng-options="item.gen_codigo as item.gen_nome for item in generos ">
+							<option value="" disabled selected>Generos</option>
 						</select>
-						
 					</span>
 					<span class="col-md-2 fields-css">
 						<label>Show:</label>
-						<select name="#" class=" form-control">
-							<option value="#">8</option>
-							<option value="#">16</option>
-							<option value="#">24</option>
+						<select name="#" ng-model = "itemsPerPage" class=" form-control">
+							<option value="8">8</option>
+							<option value="16">16</option>
+							<option value="24">24</option>
 						</select>
 					</span>
 					
@@ -42,7 +38,7 @@
 			</div> <!-- .filter-bar -->
 			
 			<div class="product-list">
-				<div class="product" ng-repeat="game in gamesDestaques.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))"  ng-if="gamesDestaques.length != 0">
+				<div class="product" ng-repeat="game in gamesDestaques.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter:generoSelecionado.gen_nome"  ng-if="gamesDestaques.length != 0">
 					<div class="inner-product">
 						<div class="figure-image">
 							<a href="#/detalhes" ng-click="detalhes(game)"><img ng-src="{{game.gam_imagem}}" id="capa-game"></a>

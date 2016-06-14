@@ -7,6 +7,7 @@ eGammerControllers.controller("ProdutosController",  function($scope,serviceAPI,
 	$scope.bigCurrentPage = 1;
 	$scope.gamesDestaques;
 	$scope.generos = {};
+	$scope.generoSelecionado;
 	$scope.game = {
 			genero : {
 				gen_codigo : null
@@ -17,6 +18,7 @@ eGammerControllers.controller("ProdutosController",  function($scope,serviceAPI,
 		$scope.gamesDestaques = serviceAPI.getGames();
 		$scope.loadGeneros();
 	};
+	
 	
 	$scope.setPage = function (pageNo) {
 	    $scope.currentPage = pageNo;
@@ -48,6 +50,7 @@ eGammerControllers.controller("ProdutosController",  function($scope,serviceAPI,
 			
         });
 	}
+
 	
 	$scope.loadGeneros = function() {
 		
