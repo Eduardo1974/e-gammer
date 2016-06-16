@@ -10,8 +10,10 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 	$scope.qtdLista = serviceAPI.getValoresQtds();
 	$scope.listaVazia = false;
 	$scope.valor = {subtotal: 0, desconto: 0, total: 0};
-	
-	
+	//montar o objeto com  $scope.lista (qtdItem) + $scope.valor.total + cli_codigo
+	//var carrinho = StorageHelper.getItem('cliente').cli_codigo;
+	//fzer delete dos atributos nao necessarios delete $scope.lista[0]['gam_titulo']
+	//fzer delete dos atributos nao necessarios  $scope.lista[0]['valorTotalItem'] = a multimplicaçao de a + b
 	init();
 	
 	function init(){
