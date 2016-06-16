@@ -3,6 +3,7 @@ eGammerControllers.controller("HeaderController",  function($scope,GeneroService
 	$scope.cliente;
 	$scope.qtdProdutos;
 	$scope.gam_titulo;
+	$scope.qtdItens = _qtdItens;
 	
 	function init() {
 		getCliente();
@@ -19,6 +20,11 @@ eGammerControllers.controller("HeaderController",  function($scope,GeneroService
 			gam_titulo: null
 	
 	};
+	
+	function _qtdItens (){
+		var size = StorageHelper.getItem('carrinho');
+		return (size != null) ? size.length : 0;
+	}
 	
 	function getCliente(){
 		var usuario = StorageHelper.getItem('usuario'); 

@@ -33,7 +33,7 @@
 			</div>
 			<div class="col-md-3 col-xs-4 col-sm-2">
 				<div class="right-section pull-right" id="carrinho-login">
-					<a href="#/carrinho" class="cart"><i class="fa fa-shopping-cart"></i> {{qtdProdutos}} itens </a>
+					<a href="#/carrinho" class="cart"><i class="fa fa-shopping-cart"></i> {{qtdItens()}} itens </a>
 					<a href="web_apps/html/site/login.html" class="login-button" ng-if="cliente == null">Login/Register</a>
 					<a href="#" class="login-button" ng-if="cliente != null">Olá, {{cliente.cli_nome}}</a>
 				</div>	
