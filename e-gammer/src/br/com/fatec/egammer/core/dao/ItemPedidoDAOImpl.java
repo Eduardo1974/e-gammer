@@ -56,7 +56,7 @@ public class ItemPedidoDAOImpl implements ItemPedidoDAO{
 			insert.setInt(2, itemPedido.getItp_quantidade());
 			insert.setDouble(3, itemPedido.getIpt_preco_total());
 			insert.setLong(4, itemPedido.getPed_codigo());
-			insert.setLong(5, itemPedido.getGame().getGam_codigo());
+			insert.setLong(5, itemPedido.getGam_codigo());
 			insert.execute();
 
 			ResultSet generatedKeys = insert.getGeneratedKeys();
@@ -211,7 +211,7 @@ public class ItemPedidoDAOImpl implements ItemPedidoDAO{
 		itemPedido.setIpt_preco_total(rs.getDouble(ItemPedido.COL_PRECO_TOTAL));
 		itemPedido.setItp_preco_unitario(rs.getDouble(ItemPedido.COL_PRECO_UNITARIO));
 		itemPedido.setItp_quantidade(rs.getInt(ItemPedido.COL_QUANTIDADE));
-		itemPedido.setGame(this.gameDao.buscarCodigo(rs.getLong("GAM_COD")));
+		itemPedido.setGam_codigo((rs.getLong("GAM_COD")));
 		itemPedido.setPed_codigo(rs.getLong("P_COD"));
 		return itemPedido;
 	}

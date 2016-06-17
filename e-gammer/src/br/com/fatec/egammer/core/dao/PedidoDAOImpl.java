@@ -6,7 +6,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.apache.commons.dbutils.DbUtils;
@@ -36,6 +40,9 @@ public class PedidoDAOImpl implements PedidoDAO{
 	
 	@Override
 	public Long save(Pedido pedido) {
+	
+		Date date = new java.sql.Date(new java.util.Date().getTime());
+
 		Connection conn = null;
 		PreparedStatement insert = null;
 		try {
@@ -52,7 +59,8 @@ public class PedidoDAOImpl implements PedidoDAO{
 			insert = DAOUtils.criarStatment(sql, conn, getDefaultConnectionType(),
 					Pedido.getColunasArray());
 			
-			insert.setDate(1, new java.sql.Date(pedido.getPed_data().getDate()));
+			//insert.setDate(1, (Date)pedido.getPed_data());
+			insert.setDate(1,date);
 			insert.setDouble(2, pedido.getPed_valor_total());
 			insert.setLong(3, pedido.getCliente().getCli_codigo());
 			
@@ -203,7 +211,7 @@ public class PedidoDAOImpl implements PedidoDAO{
 	private Pedido criarPedido(ResultSet rs) throws SQLException {
 		Pedido pedido = new Pedido();
 		pedido.setPed_codigo(rs.getLong("PED_CODIGO"));
-		//pedido.setPed_data(rs.getDate("PED_DATA"));
+		pedido.setPed_data(rs.getDate("PED_DATA"));
 		pedido.setPed_valor_total(rs.getDouble("PED_VALOR_TOTAL"));
 		pedido.setCliente(this.cliDao.buscarCodigo(rs.getLong("CLI_CODIGO")));
 		pedido.setItensPedido(this.itemDao.buscaTodosItemPedido(rs.getLong("PED_CODIGO")));

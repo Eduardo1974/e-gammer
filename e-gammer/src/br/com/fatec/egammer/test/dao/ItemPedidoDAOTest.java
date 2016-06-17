@@ -88,7 +88,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		ItemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		ItemPedidoDAO_salvar.setItp_quantidade(10);
 		ItemPedidoDAO_salvar.setPed_codigo(pedCodigo);
-		ItemPedidoDAO_salvar.setGame(game);
+		ItemPedidoDAO_salvar.setGam_codigo(game.getGam_codigo());
 	
 		
 		Long id = this.dao.save(ItemPedidoDAO_salvar);
@@ -96,7 +96,6 @@ public class ItemPedidoDAOTest extends TestBase {
 		ItemPedido itemPedidoDAO_salvo = this.dao.buscaCodigoItemPedido(id);
 		
 		Assert.assertNotNull(itemPedidoDAO_salvo);
-		Assert.assertEquals("Battlefied 4", itemPedidoDAO_salvo.getGame().getGam_titulo());
 		Assert.assertEquals(100.00, itemPedidoDAO_salvo.getIpt_preco_total(), 0.001);
 		Assert.assertEquals(10.00, itemPedidoDAO_salvo.getItp_preco_unitario(), 0.001);
 		Assert.assertEquals(10, itemPedidoDAO_salvo.getItp_quantidade(), 1);
@@ -157,7 +156,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		ItemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		ItemPedidoDAO_salvar.setItp_quantidade(10);
 		ItemPedidoDAO_salvar.setPed_codigo(pedCodigo);
-		ItemPedidoDAO_salvar.setGame(game);
+		ItemPedidoDAO_salvar.setGam_codigo(game.getGam_codigo());
 	
 		
 		Long id = this.dao.save(ItemPedidoDAO_salvar);
@@ -229,7 +228,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar.setItp_quantidade(10);
 		itemPedidoDAO_salvar.setPed_codigo(pedCodigo);
-		itemPedidoDAO_salvar.setGame(game);
+		itemPedidoDAO_salvar.setGam_codigo(game.getGam_codigo());
 	
 		
 		Long id = this.dao.save(itemPedidoDAO_salvar);
@@ -294,7 +293,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar.setItp_quantidade(10);
 		itemPedidoDAO_salvar.setPed_codigo(pedCodigo);
-		itemPedidoDAO_salvar.setGame(game);
+		itemPedidoDAO_salvar.setGam_codigo(game.getGam_codigo());
 		Long id = this.dao.save(itemPedidoDAO_salvar);
 		
 		ItemPedido itemPedidoDAO_salvar2 = new ItemPedido();
@@ -302,14 +301,13 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar2.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar2.setItp_quantidade(10);
 		itemPedidoDAO_salvar2.setPed_codigo(pedCodigo);
-		itemPedidoDAO_salvar2.setGame(game);
+		itemPedidoDAO_salvar2.setGam_codigo(game.getGam_codigo());
 		Long id2 = this.dao.save(itemPedidoDAO_salvar2);
 		
 		List<ItemPedido> encontrados = this.dao.buscaTodosItemPedido(pedCodigo);
 
 		Assert.assertEquals(2, encontrados.size());
 		Assert.assertEquals(100.00, encontrados.get(0).getIpt_preco_total(), 0.001);
-		Assert.assertEquals("Battlefied 4", encontrados.get(1).getGame().getGam_titulo());
 	}
 	
 	@Test
@@ -366,7 +364,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar.setItp_quantidade(10);
 		itemPedidoDAO_salvar.setPed_codigo(pedCodigo);
-		itemPedidoDAO_salvar.setGame(game);
+		itemPedidoDAO_salvar.setGam_codigo(game.getGam_codigo());
 	
 		
 		Long id = this.dao.save(itemPedidoDAO_salvar);
@@ -374,7 +372,6 @@ public class ItemPedidoDAOTest extends TestBase {
 		ItemPedido encontrado = this.dao.buscaCodigoItemPedido(id);
 
 		Assert.assertEquals(100.00, encontrado.getIpt_preco_total(), 0.001);
-		Assert.assertEquals("Battlefied 4", encontrado.getGame().getGam_titulo());
 		Assert.assertEquals(10.00, encontrado.getItp_preco_unitario(), 0.001);
 	}
 	
@@ -432,7 +429,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar.setItp_quantidade(10);
 		itemPedidoDAO_salvar.setPed_codigo(pedCodigo);
-		itemPedidoDAO_salvar.setGame(game);
+		itemPedidoDAO_salvar.setGam_codigo(game.getGam_codigo());
 	
 		
 		Long id1 = this.dao.save(itemPedidoDAO_salvar);
@@ -487,7 +484,7 @@ public class ItemPedidoDAOTest extends TestBase {
 		itemPedidoDAO_salvar2.setItp_preco_unitario(10.00);
 		itemPedidoDAO_salvar2.setItp_quantidade(10);
 		itemPedidoDAO_salvar2.setPed_codigo(pedCodigo2);
-		itemPedidoDAO_salvar2.setGame(game2);
+		itemPedidoDAO_salvar2.setGam_codigo(game.getGam_codigo());
 	
 		Long id2 = this.dao.save(itemPedidoDAO_salvar2);
 		List<Long> ids = Lists.newArrayList();
@@ -497,6 +494,5 @@ public class ItemPedidoDAOTest extends TestBase {
 
 		Assert.assertEquals(2, encontrados.size());
 		Assert.assertEquals(100.00, encontrados.get(0).getIpt_preco_total(), 0.001);
-		Assert.assertEquals("Gta V", encontrados.get(1).getGame().getGam_titulo());
 	}
 }

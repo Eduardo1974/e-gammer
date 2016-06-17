@@ -4,16 +4,20 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 	$scope.removerItem = _removerItem;
 	$scope.calculaTotal = _precoTotal;
 	
-	$scope.lista = [{gam_titulo: 'need', descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nobis architecto dolorum, alias laborum sit odit, saepe expedita similique eius enim quasi obcaecati voluptates, autem eveniet ratione veniam omnis modi.',
-					preco: 147, qtdItem: 1, capa:'https://upload.wikimedia.org/wikipedia/pt/1/17/Need_for_speed_rivals_capa.jpg'}];
-	
+	$scope.lista = [];
 	$scope.qtdLista = serviceAPI.getValoresQtds();
 	$scope.listaVazia = false;
 	$scope.valor = {subtotal: 0, desconto: 0, total: 0};
-	//montar o objeto com  $scope.lista (qtdItem) + $scope.valor.total + cli_codigo
-	//var carrinho = StorageHelper.getItem('cliente').cli_codigo;
-	//fzer delete dos atributos nao necessarios delete $scope.lista[0]['gam_titulo']
-	//fzer delete dos atributos nao necessarios  $scope.lista[0]['valorTotalItem'] = a multimplicaçao de a + b
+	$scope.dadosPedido = [];
+	$scope.pedido = {
+			cliente:{
+				cli_codigo: StorageHelper.getItem('usuario').cli_codigo
+			},
+			ped_valor_total: $scope.valor.total,
+			itensPedidos: $scope.dadosPedido
+	};
+	
+
 	init();
 	
 	function init(){
@@ -21,15 +25,32 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 		verificaLista();
 		_precoTotal();
 	}
+	
+	function montaPedido(){
+		var lista = $scope.lista;
+		angular.forEach(lista, function (value, key) {
+			var qtd =  lista[key].qtdItem;
+			var preco = lista[key].gam_preco;
+			var precoTotal = (lista[key].qtdItem * lista[key].gam_preco);    
+			var codigo = lista[key].gam_codigo;  
+			var obj = {itp_quantidade:qtd, itp_preco_unitario:preco, ipt_preco_total:precoTotal, gam_codigo:codigo};
+			$scope.dadosPedido.push(obj);
+	    });
+	}
+	
 /** função que seta a lista de carrinho	*/	
 	function getCarrinho(){
 		var carrinho = StorageHelper.getItem('carrinho');
 		if(carrinho != null){
 			$scope.lista = carrinho;
+			montaPedido();
+			console.log($scope.dadosPedido);
 		}else{
 			$scope.lista = [];
 		}
 	}
+	
+	
 /** função que verifica se a lista está vazia */	
 	function verificaLista(){
 		if($scope.lista.length > 0){
@@ -64,5 +85,16 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 		verificaLista();
 		_precoTotal();
 	}
+	$scope.finalizarCompra = function() {
+		$scope.pedido.ped_valor_total =  $scope.valor.total;
+		var data = {'contexto' : {
+			'pedido' : $scope.pedido
+		}};
+		
+		serviceAPI.pedidoSave(data).then(function (response) {
+			alert("salvou");
+        });
+	}
+	
 	
 });

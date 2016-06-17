@@ -1,6 +1,8 @@
 package br.com.fatec.egammer.test.dao;
 
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
 import java.util.List;
 
 import org.junit.Assert;
@@ -17,7 +19,8 @@ import br.com.spektro.minispring.core.implfinder.ImplFinder;
 
 public class PedidoDAOTest extends TestBase{
 	private PedidoDAO dao;
-
+	
+	
 	@Before
 	public void config() {
 		this.dao = ImplFinder.getImpl(PedidoDAO.class);
@@ -25,30 +28,41 @@ public class PedidoDAOTest extends TestBase{
 
 	@Test
 	public void testSave() {
-		ClienteDAOImpl cliDao = new ClienteDAOImpl();
-		Cliente cliente = new Cliente();
-		cliente.setCli_email("eduardo@hotmail.com");
-		cliente.setCli_nome("eduardo");
-		cliente.setCli_senha("1234");
-		Long cliCoodigo = cliDao.save(cliente);
-		cliente.setCli_codigo(cliCoodigo);
 		
-		Pedido pedido_salvar = new Pedido();
-		pedido_salvar.setCliente(cliente);
-		pedido_salvar.setPed_data(new Date());
-		pedido_salvar.setPed_valor_total(100.00);
-	
-		Long id = this.dao.save(pedido_salvar);
+		try {
+			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+			Date data = new Date(format.parse("28/03/2012").getTime());
+		
+			ClienteDAOImpl cliDao = new ClienteDAOImpl();
+			Cliente cliente = new Cliente();
+			cliente.setCli_email("eduardo@hotmail.com");
+			cliente.setCli_nome("eduardo");
+			cliente.setCli_senha("1234");
+			Long cliCoodigo = cliDao.save(cliente);
+			cliente.setCli_codigo(cliCoodigo);
+			
+			Pedido pedido_salvar = new Pedido();
+			pedido_salvar.setCliente(cliente);
+			pedido_salvar.setPed_data(data);
+			pedido_salvar.setPed_valor_total(100.00);
+		
+			Long id = this.dao.save(pedido_salvar);
 
-		Pedido pedido_salvo = this.dao.buscaPedidoCodigo(id);
+			Pedido pedido_salvo = this.dao.buscaPedidoCodigo(id);
 
-		Assert.assertNotNull(pedido_salvo);
-       //Assert.assertEquals(new Date(), pedido_salvo.getPed_data());
-		Assert.assertEquals(100.00, pedido_salvo.getPed_valor_total(), 0.001);
+			Assert.assertNotNull(pedido_salvo);
+	       //Assert.assertEquals(new Date(), pedido_salvo.getPed_data());
+			Assert.assertEquals(100.00, pedido_salvo.getPed_valor_total(), 0.001);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}	
 	}
 
 	@Test
-	public void testUpdate() {
+	public void testUpdate() throws ParseException {
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		Date data = new Date(format.parse("28/03/2012").getTime());
+		
 		ClienteDAOImpl cliDao = new ClienteDAOImpl();
 		Cliente cliente = new Cliente();
 		cliente.setCli_email("eduardo@hotmail.com");
@@ -59,7 +73,7 @@ public class PedidoDAOTest extends TestBase{
 		
 		Pedido pedido_salvar = new Pedido();
 		pedido_salvar.setCliente(cliente);
-		pedido_salvar.setPed_data(new Date());
+		pedido_salvar.setPed_data(data);
 		pedido_salvar.setPed_valor_total(100.00);
 		Long id = this.dao.save(pedido_salvar);
 
@@ -74,7 +88,10 @@ public class PedidoDAOTest extends TestBase{
 	}
 
 	@Test
-	public void testDelete() {
+	public void testDelete() throws ParseException {
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		Date data = new Date(format.parse("28/03/2012").getTime());
+		
 		ClienteDAOImpl cliDao = new ClienteDAOImpl();
 		Cliente cliente = new Cliente();
 		cliente.setCli_email("eduardo@hotmail.com");
@@ -85,7 +102,7 @@ public class PedidoDAOTest extends TestBase{
 		
 		Pedido pedido_salvar = new Pedido();
 		pedido_salvar.setCliente(cliente);
-		pedido_salvar.setPed_data(new Date());
+		pedido_salvar.setPed_data(data);
 		pedido_salvar.setPed_valor_total(100.00);
 	
 		Long id = this.dao.save(pedido_salvar);
@@ -99,7 +116,10 @@ public class PedidoDAOTest extends TestBase{
 
 		
 	@Test
-	public void testBuscarTodosCodigos() {
+	public void testBuscarTodosCodigos() throws ParseException {
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		Date data = new Date(format.parse("28/03/2012").getTime());
+		
 		ClienteDAOImpl cliDao = new ClienteDAOImpl();
 		Cliente cliente = new Cliente();
 		cliente.setCli_email("eduardo@hotmail.com");
@@ -110,14 +130,14 @@ public class PedidoDAOTest extends TestBase{
 		
 		Pedido pedido_salvar = new Pedido();
 		pedido_salvar.setCliente(cliente);
-		pedido_salvar.setPed_data(new Date());
+		pedido_salvar.setPed_data(data);
 		pedido_salvar.setPed_valor_total(100.00);
 	
 		Long id1 = this.dao.save(pedido_salvar);
 		
 		Pedido pedido_salvar2 = new Pedido();
 		pedido_salvar2.setCliente(cliente);
-		pedido_salvar2.setPed_data(new Date());
+		pedido_salvar2.setPed_data(data);
 		pedido_salvar2.setPed_valor_total(100.00);
 	
 		Long id2 = this.dao.save(pedido_salvar2);
@@ -133,7 +153,10 @@ public class PedidoDAOTest extends TestBase{
 	}
 	
 	@Test
-	public void testBuscarTodosCliente() {
+	public void testBuscarTodosCliente() throws ParseException {
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		Date data = new Date(format.parse("28/03/2012").getTime());
+		
 		ClienteDAOImpl cliDao = new ClienteDAOImpl();
 		Cliente cliente = new Cliente();
 		cliente.setCli_email("eduardo@hotmail.com");
@@ -144,14 +167,14 @@ public class PedidoDAOTest extends TestBase{
 		
 		Pedido pedido_salvar = new Pedido();
 		pedido_salvar.setCliente(cliente);
-		pedido_salvar.setPed_data(new Date());
+		pedido_salvar.setPed_data(data);
 		pedido_salvar.setPed_valor_total(100.00);
 	
 		Long id1 = this.dao.save(pedido_salvar);
 		
 		Pedido pedido_salvar2 = new Pedido();
 		pedido_salvar2.setCliente(cliente);
-		pedido_salvar2.setPed_data(new Date());
+		pedido_salvar2.setPed_data(data);
 		pedido_salvar2.setPed_valor_total(100.00);
 	
 		Long id2 = this.dao.save(pedido_salvar2);

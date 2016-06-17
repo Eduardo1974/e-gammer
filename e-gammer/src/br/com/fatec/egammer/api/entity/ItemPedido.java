@@ -19,7 +19,7 @@ public class ItemPedido {
 	private Integer itp_quantidade;
 	private  Double ipt_preco_total;
 	private Long ped_codigo;
-	private Game game;
+	private Long gam_codigo;
 	
 	
 	public Long getItp_codigo() {
@@ -46,12 +46,7 @@ public class ItemPedido {
 	public void setIpt_preco_total(Double ipt_preco_total) {
 		this.ipt_preco_total = ipt_preco_total;
 	}
-	public Game getGame() {
-		return game;
-	}
-	public void setGame(Game game) {
-		this.game = game;
-	}
+	
 	
 	public Long getPed_codigo() {
 		return ped_codigo;
@@ -59,7 +54,12 @@ public class ItemPedido {
 	public void setPed_codigo(Long ped_codigo) {
 		this.ped_codigo = ped_codigo;
 	}	
-	
+	public Long getGam_codigo() {
+		return gam_codigo;
+	}
+	public void setGam_codigo(Long gam_codigo) {
+		this.gam_codigo = gam_codigo;
+	}
 	public static List<String> getColunas() {
 		return Lists.newArrayList(COL_CODIGO,COL_PRECO_UNITARIO, COL_QUANTIDADE,COL_PRECO_TOTAL,COL_PED_CODIGO,COL_GAM_CODIGO );
 	}
@@ -67,5 +67,4 @@ public class ItemPedido {
 	public static String[] getColunasArray() {
 		return new String[] {COL_CODIGO,COL_PRECO_UNITARIO,COL_QUANTIDADE,COL_PRECO_TOTAL,COL_PED_CODIGO,COL_GAM_CODIGO};
 	}
-	
 }

@@ -3,6 +3,7 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 	function serviceAPI($http) {
 		
 		var urlPath = "http://localhost:8085/e-gammer/Game!";
+		var urlPathPedido = "http://localhost:8085/e-gammer/Pedido!";
 		
 		var games = [];
 		
@@ -24,7 +25,8 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 			getValoresQtds: _getQtds,
 			getQtdItensCarrinho: _getQtdItens,
 			buscaPorTitulo: _buscaPorTitulo,
-			buscaTodos: _buscaTodos
+			buscaTodos: _buscaTodos,
+			pedidoSave: _pedidoSave
 		};
 		
 		function _getQtds(){
@@ -108,6 +110,24 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 	    	var promessa;
 	    	promessa = jQuery.ajax({
 	    		url: urlPath + 'buscaPorTitulo.action',
+			    data: data,
+			    dataType: 'json',
+			    contentType: 'application/json',
+			    type: 'POST',
+			    async: false,
+			    success: function (response) {
+			    	return promessa;
+			    }
+			});
+	    	return promessa;
+	    }
+		
+		function _pedidoSave(pedObj) {
+	    	var data = JSON.stringify(pedObj);
+	    	console.log(data);
+	    	var promessa;
+	    	promessa = jQuery.ajax({
+			    url: urlPathPedido + 'salvar.action',
 			    data: data,
 			    dataType: 'json',
 			    contentType: 'application/json',

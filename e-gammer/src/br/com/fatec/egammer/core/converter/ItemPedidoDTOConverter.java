@@ -13,7 +13,7 @@ public class ItemPedidoDTOConverter implements DTOConverter<ItemPedido, ItemPedi
 	@Override
 	public ItemPedidoDTO toDTO(ItemPedido entidade) {
 		ItemPedidoDTO itemDTO = new ItemPedidoDTO();
-		itemDTO.setGame(entidade.getGame());
+		itemDTO.setGam_codigo(entidade.getGam_codigo());
 		itemDTO.setIpt_preco_total(entidade.getIpt_preco_total());
 		itemDTO.setItp_codigo(entidade.getItp_codigo());
 		itemDTO.setItp_preco_unitario(entidade.getItp_preco_unitario());
@@ -34,7 +34,7 @@ public class ItemPedidoDTOConverter implements DTOConverter<ItemPedido, ItemPedi
 	@Override
 	public ItemPedido toEntity(ItemPedidoDTO entidade) {
 		ItemPedido itemPedido = new ItemPedido();
-		itemPedido.setGame(entidade.getGame());
+		itemPedido.setGam_codigo(entidade.getGam_codigo());
 		itemPedido.setIpt_preco_total(entidade.getIpt_preco_total());
 		itemPedido.setItp_codigo(entidade.getItp_codigo());
 		itemPedido.setItp_preco_unitario(entidade.getItp_preco_unitario());

@@ -38,8 +38,6 @@
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dao.PedidoDAO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.core.converter.PedidoDTOConverter"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.ItemPedidoDTO"/>
-<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.PedidoDTO"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.service.ClienteService"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.web.context.ContextoCliente"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.web.action.ClienteAction"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.entity.Cliente"/>
 <fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.GameDTO"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.ItemPedidoDTO"/>
+<fullyQualifiedTypeName name="br.com.fatec.egammer.api.dto.PedidoDTO"/>
 </qualifiedTypeNameHistroy>

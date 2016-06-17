@@ -8,7 +8,7 @@ public class ItemPedidoDTO {
 	private Double itp_preco_unitario;
 	private Integer itp_quantidade;
 	private  Double ipt_preco_total;
-	private Game game;
+	private Long gam_codigo;
 	private Long ped_codigo;
 	
 	public Long getItp_codigo() {
@@ -43,14 +43,6 @@ public class ItemPedidoDTO {
 		this.ipt_preco_total = ipt_preco_total;
 	}
 
-	public Game getGame() {
-		return game;
-	}
-
-	public void setGame(Game game) {
-		this.game = game;
-	}
-
 	public Long getPed_codigo() {
 		return ped_codigo;
 	}
@@ -62,5 +54,13 @@ public class ItemPedidoDTO {
 	@Override
 	public String toString(){
 		return "ItemPedido" + this.itp_codigo + " - " + this.ipt_preco_total + "]";
+	}
+
+	public Long getGam_codigo() {
+		return gam_codigo;
+	}
+
+	public void setGam_codigo(Long gam_codigo) {
+		this.gam_codigo = gam_codigo;
 	}
 }

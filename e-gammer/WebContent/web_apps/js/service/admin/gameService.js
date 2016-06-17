@@ -11,6 +11,7 @@ publication.factory('GameService',  ['$http', function ($http) {
     
    function _gameSave(gamObj) {
     	var data = JSON.stringify(gamObj);
+    	console.log(data);
     	var promessa;
     	promessa = jQuery.ajax({
 		    url: urlPath + 'salvar.action',

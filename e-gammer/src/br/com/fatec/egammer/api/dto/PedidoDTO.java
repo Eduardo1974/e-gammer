@@ -48,12 +48,6 @@ public class PedidoDTO {
 		this.cliente = cliente;
 	}
 	
-	@Override
-	public String toString(){
-		return "Pedido[" + this.ped_codigo + " - " + this.ped_valor_total + "]";
-	}
-
-
 	public List<ItemPedido> getItensPedidos() {
 		return itensPedidos;
 	}
@@ -62,6 +56,8 @@ public class PedidoDTO {
 		this.itensPedidos = itensPedidos;
 	}
 	
-	
-
+	@Override
+	public String toString(){
+		return "Pedido[" + this.ped_codigo + " - " + this.ped_valor_total + "]";
+	}
 }

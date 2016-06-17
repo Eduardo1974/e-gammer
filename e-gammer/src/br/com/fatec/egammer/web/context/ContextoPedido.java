@@ -9,19 +9,22 @@ public class ContextoPedido implements Serializable{
 	
 	private static final long serialVersionUID = -4946584307036887149L;
 
-	private PedidoDTO itemPedido;
-	private List<PedidoDTO> itensPedido;
+	private PedidoDTO pedido;
+	private List<PedidoDTO> pedidos;
 	
-	public PedidoDTO getItemPedido() {
-		return itemPedido;
+	public PedidoDTO getPedido() {
+		return pedido;
 	}
-	public void setItemPedido(PedidoDTO itemPedido) {
-		this.itemPedido = itemPedido;
+	public void setPedido(PedidoDTO pedido) {
+		this.pedido = pedido;
 	}
-	public List<PedidoDTO> getItensPedido() {
-		return itensPedido;
+	public List<PedidoDTO> getPedidos() {
+		return pedidos;
 	}
-	public void setItensPedido(List<PedidoDTO> itensPedido) {
-		this.itensPedido = itensPedido;
+	public void setPedidos(List<PedidoDTO> pedidos) {
+		this.pedidos = pedidos;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 }
