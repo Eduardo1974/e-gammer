@@ -54,9 +54,9 @@ publication.config(function($routeProvider){
 		controller: 'DetalhesController'
 	})
 
-	.when('/game/:id', {
-		templateUrl: path + 'detalhes.html',
-		controller: 'DetalhesController'
+	.when('/pagamento', {
+		templateUrl: path + 'pagamento.view.html',
+		controller: 'CarrinhoController'
 	})
 
 	.otherwise({

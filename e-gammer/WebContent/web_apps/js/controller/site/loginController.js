@@ -18,40 +18,46 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce', 'Clien
 	
 
 	$scope.doLogin = function() {
-		$scope.exibirMensagemErro = false;
-		var data = {'contexto' : {
-			'cliente' : $scope.usuario
-		}};
-		
-		var data1 = JSON.stringify(data);
-		
-		console.log(data1);
-		
-		jQuery.ajax({
+		if($scope.usuario.cli_email == null ||  $scope.usuario.cli_senha == null){
+			$scope.exibirMensagemErro = true;
+			alert('verifique seu email /ou senha!');
+		}else{
+			$scope.exibirMensagemErro = false;
+			var data = {'contexto' : {
+				'cliente' : $scope.usuario
+			}};
 			
-		    url: urlPath + 'login.action',
-		    data: data1,
-		    dataType: 'json',
-		    contentType: 'application/json',
-		    type: 'POST',
-		    async: false,
-		    success: function (response) {
-		    	var usuario = response.contexto.cliente
-		    	if (usuario == null) {
-	    			$scope.exibirMensagemErro = true;
-	    			return;
-		    	}
-		    	$scope.usuario = usuario;
-		    	StorageHelper.setItem(CHAVE_STORAGE, usuario);
-		    	$scope.isLogado = true;
-		    	alert(response.contexto.cliente.cli_tipo);
-		    	if(response.contexto.cliente.cli_tipo == "cliente"){
-		    		document.location.href='/e-gammer/';
-		    	}else{
-		    		document.location.href='../admin/administrador.html';
-		    	} 	
-		    }
-		});
+			var data1 = JSON.stringify(data);
+			
+			console.log(data1);
+			
+			jQuery.ajax({
+				
+			    url: urlPath + 'login.action',
+			    data: data1,
+			    dataType: 'json',
+			    contentType: 'application/json',
+			    type: 'POST',
+			    async: false,
+			    success: function (response) {
+			    	var usuario = response.contexto.cliente
+			    	if (usuario == null) {
+		    			$scope.exibirMensagemErro = true;
+		    			return;
+			    	}
+			    	$scope.usuario = usuario;
+			    	StorageHelper.setItem(CHAVE_STORAGE, usuario);
+			    	$scope.isLogado = true;
+			    	alert(response.contexto.cliente.cli_tipo);
+			    	if(response.contexto.cliente.cli_tipo == "cliente"){
+			    		document.location.href='/e-gammer/';
+			    	}else{
+			    		document.location.href='../admin/administrador.html';
+			    	} 	
+			    }
+			});
+		}
+		
 	};
 	
 	$scope.salvar = function() {
@@ -64,6 +70,7 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce', 'Clien
 			clienteService.clienteSave(data).then(function (response) {
 				$scope.usuario = null;
 				$scope.confirmacao = null;
+				document.location.href = "login.html";
 				console.log("salvouu "+response);
 	        });
 		}else{

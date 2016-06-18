@@ -4,6 +4,8 @@ eGammerControllers.controller("HeaderController",  function($scope,GeneroService
 	$scope.qtdProdutos;
 	$scope.gam_titulo;
 	$scope.qtdItens = _qtdItens;
+	$scope.buscaTodos = _buscaTodos;
+	$scope.sair = _sair;
 	
 	function init() {
 		getCliente();
@@ -36,11 +38,23 @@ eGammerControllers.controller("HeaderController",  function($scope,GeneroService
 	}
 	
 	function getQtdCarrinho(){
-		
 		$scope.qtdProdutos = serviceAPI.getQtdItensCarrinho();
-		
 	}
 	
+	function _sair(){
+		document.location.href = "#/home";
+		StorageHelper.removeItem('usuario');
+		$scope.cliente = null;
+	}
+	/**	função que busca todos os jogos cadastrados */	
+	function _buscaTodos(){
+		serviceAPI.buscaTodos().then(function (response) {
+			
+			serviceAPI.setGames(response.data.contexto.games);
+            document.location.href = "#/home";
+			document.location.href = "#/produtos";
+        });
+	}
 	
 	$scope.buscaPorTitulo = function () {
 		$scope.game.gam_titulo = $scope.gam_titulo;

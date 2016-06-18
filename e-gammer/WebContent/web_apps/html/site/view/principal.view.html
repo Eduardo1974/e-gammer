@@ -1,3 +1,8 @@
+<!-- <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+-->
+
 <div class="row" id="principal">
 	
 	<div role="main">
@@ -27,7 +32,7 @@
 							<h3 class="product-title"><a href="#/detalhes">{{game.gam_titulo}}</a></h3>
 							<small class="price">{{game.gam_preco | currency}}</small>
 							<p>{{game.gam_descricao.substring(0, 70)}}...</p>
-							<a href="" class="button unmuted" ng-click="addCarrinho(game)">Add carrinho</a>
+							<a href="#/carrinho" class="button unmuted" ng-click="addCarrinho(game)">Add carrinho</a>
 							<a href="#/detalhes" class="button muted" ng-click="detalhes(game)">Mais detalhes</a>
 						</div>
 					</div> <!-- .product -->

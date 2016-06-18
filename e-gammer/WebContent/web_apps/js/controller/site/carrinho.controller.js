@@ -1,31 +1,58 @@
 	
 eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI) {
 	
+	
 	$scope.removerItem = _removerItem;
 	$scope.calculaTotal = _precoTotal;
+	$scope.finalizarCompra = _finalizarCompra;
 	
+	var cliente;
 	$scope.lista = [];
 	$scope.qtdLista = serviceAPI.getValoresQtds();
 	$scope.listaVazia = false;
 	$scope.valor = {subtotal: 0, desconto: 0, total: 0};
 	$scope.dadosPedido = [];
-	$scope.pedido = {
+	$scope.pedido; /* = {
 			cliente:{
 				cli_codigo: StorageHelper.getItem('usuario').cli_codigo
 			},
 			ped_valor_total: $scope.valor.total,
 			itensPedidos: $scope.dadosPedido
-	};
+	};*/
 	
 
 	init();
 	
 	function init(){
+		loadCliente();
 		getCarrinho();
 		verificaLista();
 		_precoTotal();
 	}
 	
+	function loadPedido(){
+		if(cliente == null){
+			document.location.href = 'web_apps/html/site/login.html';
+		}else{
+			$scope.pedido = {
+					cliente:{
+						cli_codigo: cliente.cli_codigo
+					},
+					ped_valor_total: $scope.valor.total,
+					itensPedidos: $scope.dadosPedido
+			};
+		}
+	}
+	
+	function loadCliente(){
+		var tmp = StorageHelper.getItem('usuario');
+		if(tmp != null){
+			cliente = tmp;
+		}else{
+			cliente = null;
+		}
+	}
+	 
 	function montaPedido(){
 		var lista = $scope.lista;
 		angular.forEach(lista, function (value, key) {
@@ -68,7 +95,12 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 			angular.forEach(lista, function (value, key) {
 				var preco = lista[key].gam_preco;
 				var qtdItem = lista[key].qtdItem;
-				subtotal = subtotal + (preco * qtdItem);	        
+				subtotal = subtotal + (preco * qtdItem);
+				if(subtotal > 200){
+					$scope.valor.desconto = (subtotal/5); //irá receber 10% de desconto acima de 200 reais
+				}else{
+					$scope.valor.desconto = 0;
+				}
 		    });
 			$scope.valor.subtotal = subtotal;
 			$scope.valor.total = subtotal - $scope.valor.desconto;
@@ -85,15 +117,17 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 		verificaLista();
 		_precoTotal();
 	}
-	$scope.finalizarCompra = function() {
-		$scope.pedido.ped_valor_total =  $scope.valor.total;
+	
+	function _finalizarCompra () {
+		//$scope.pedido.ped_valor_total =  $scope.valor.total;
+		loadPedido(); //carrega os pedidos para finalizar a compra
 		var data = {'contexto' : {
 			'pedido' : $scope.pedido
 		}};
-		
+		console.log(data);/*
 		serviceAPI.pedidoSave(data).then(function (response) {
 			alert("salvou");
-        });
+        }); */
 	}
 	
 	

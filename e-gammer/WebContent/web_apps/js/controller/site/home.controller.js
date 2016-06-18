@@ -5,7 +5,8 @@ eGammerControllers.controller("HomeController",  function($scope, serviceAPI) {
 	
 	$scope.addCarrinho = _addCarrinho;
 	$scope.detalhes = _detalhes;
-	
+	$scope.buscaTodos = _buscaTodos;
+		
 	$scope.gamesDestaques;
 	
 	function init(){
@@ -20,7 +21,7 @@ eGammerControllers.controller("HomeController",  function($scope, serviceAPI) {
         });
 	};
 	
-	$scope.buscaTodos = function(){
+	function _buscaTodos(){
 		serviceAPI.buscaTodos().then(function (response) {
 			
 			serviceAPI.setGames(response.data.contexto.games);

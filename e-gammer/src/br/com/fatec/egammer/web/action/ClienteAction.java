@@ -22,11 +22,11 @@ public class ClienteAction extends ProjetoWebAction{
 	public String login() {
 		ClienteDTO usuario = this.contexto.getCliente();
 		ClienteDTO usuarioEncontrado = this.cliService.buscarPorLoginESenha(usuario.getCli_email(),usuario.getCli_senha());
-
 		if (usuarioEncontrado != null) {
 			usuarioEncontrado.setStartSession(new Date().getTime());
 			this.getSession().put("usuario", usuarioEncontrado);
 		}
+		
 		this.contexto.setCliente(usuarioEncontrado);
 		return SUCCESS;
 	}

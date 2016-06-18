@@ -5,7 +5,7 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 		var urlPath = "http://localhost:8085/e-gammer/Game!";
 		var urlPathPedido = "http://localhost:8085/e-gammer/Pedido!";
 		
-		var games = [];
+		var games;
 		
 		var carrinho;
 		var gameCurrent = {};
@@ -14,19 +14,25 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 		return {
 			setGamesDestaques: _setDestaques,
 			getGamesDestaques: _getDestaques,
+			
 			getGameCurrent: _getCurrent,
 			setGameCurrent: _setCurrent,
+			
 			recuperar: get,
 			listDestaques: _listDestaques,
+			
 			setGames: _setGames,
 			getGames: _getGames,
+			
 			addCarrinho: _addCarrinho,
 			delCarrinho: _delCarrinho,
+			
 			getValoresQtds: _getQtds,
 			getQtdItensCarrinho: _getQtdItens,
 			buscaPorTitulo: _buscaPorTitulo,
 			buscaTodos: _buscaTodos,
-			pedidoSave: _pedidoSave
+			pedidoSave: _pedidoSave,
+			
 		};
 		
 		function _getQtds(){
@@ -43,7 +49,7 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 			}
 		}
 		function _addCarrinho(game){
-			alert(game.titulo + ' qtd:' + game.qtdItem);
+			alert(game.gam_titulo + ' qtd:' + game.qtdItem);
 			carrinho.push(game);
 			StorageHelper.setItem('carrinho', carrinho);
 		}

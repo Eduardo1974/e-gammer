@@ -13,12 +13,13 @@
 			</div>
 			<div class="col-md-1 col-sm-3" id="procurar">
 				<div class="dropdown">
-				  <a class="dropdown-toggle" id="dropdownCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				  <a href=""  class="dropdown-toggle" id="dropdownCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 				    Procurar
 				    <span class="caret"></span>
 				  </a>
-				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				    <li ng-repeat = "gen in generos"><a ng-click = "buscaGenero(gen.gen_codigo)">{{gen.gen_nome}}</a></li>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" href="" >
+				    <li ng-repeat = "gen in generos"><a href="" ng-click = "buscaGenero(gen.gen_codigo)">{{gen.gen_nome}}</a></li>
+				    <li><a href="" ng-click = "buscaTodos()">Ver todos</a></li>
 				  </ul>
 				</div>
 			</div>
@@ -35,7 +36,8 @@
 				<div class="right-section pull-right" id="carrinho-login">
 					<a href="#/carrinho" class="cart"><i class="fa fa-shopping-cart"></i> {{qtdItens()}} itens </a>
 					<a href="web_apps/html/site/login.html" class="login-button" ng-if="cliente == null">Login/Register</a>
-					<a href="#" class="login-button" ng-if="cliente != null">Olá, {{cliente.cli_nome}}</a>
+					<a href="" class="login-button" ng-if="cliente != null">Olá, {{cliente.cli_nome}}</a>
+					<a href="" class="login-button" ng-if="cliente != null" ng-click="sair()">Sair</a>
 				</div>	
 
 			</div>

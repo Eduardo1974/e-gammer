@@ -5,9 +5,15 @@ eGammerControllers.controller("ProdutosController",  function($scope,serviceAPI,
 	$scope.maxSize = 5;
 	$scope.bigTotalItems = 175;
 	$scope.bigCurrentPage = 1;
-	$scope.gamesDestaques;
+	$scope.listGames;
 	$scope.generos = {};
 	$scope.generoSelecionado;
+	$scope.numPeginas = [4, 8, 16];
+	
+	$scope.filtroSelecionado;
+	$scope.filtroPreco = [{nome:' Crescente ', valor: false},
+	                      {nome:' Decrescente ', valor: true}];
+	
 	$scope.game = {
 			genero : {
 				gen_codigo : null
@@ -15,10 +21,24 @@ eGammerControllers.controller("ProdutosController",  function($scope,serviceAPI,
 	};
 
 	function init(){
-		$scope.gamesDestaques = serviceAPI.getGames();
+		loadGames();
 		$scope.loadGeneros();
 	};
 	
+	function loadGames (){
+		var tmp = serviceAPI.getGames();
+		
+		if(tmp != null){
+			$scope.listGames = tmp;
+		}else{
+			serviceAPI.buscaTodos().then(function (response) {
+				
+				$scope.listGames = response.data.contexto.games;
+	            
+	        });
+		}
+		 
+	}
 	
 	$scope.setPage = function (pageNo) {
 	    $scope.currentPage = pageNo;

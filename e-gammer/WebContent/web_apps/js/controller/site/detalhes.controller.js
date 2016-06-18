@@ -5,7 +5,7 @@ eGammerControllers.controller("DetalhesController",  function($scope, serviceAPI
 	
 	$scope.game;
 	
-	$scope.similares = [];//[{titulo:'blah', preco: 100, descricao:'blahhhhhhhhhhhhhhhhhhhhhhhhhhh'}];
+	$scope.similares = [];
 	$scope.qtdLista = serviceAPI.getValoresQtds();
 	
 	function init(){
@@ -15,17 +15,14 @@ eGammerControllers.controller("DetalhesController",  function($scope, serviceAPI
 	init();
 	
 	function loadGame(){
-		$scope.game = serviceAPI.getGameCurrent();
-		$scope.game.qtdItem = 1;
-		/*var game = serviceAPI.getGameCurrent();
+		var game = serviceAPI.getGameCurrent();
 		// varifica se o objeto é vazio
 		if(Object.keys(game).length !== 0){		
 			$scope.game = game;
 			$scope.game.qtdItem = 1;
 		}else{
-			console.log('else');
-			document.location = '';
-		}*/
+			document.location = '#home';
+		}
 	}
 	
 	function _addCarrinho(game){
