@@ -98,7 +98,7 @@
 						  					<td>Forma de pagamento:*</td>
 						  					<td>
 						  						<strong>
-								  					<select>
+								  					<select id="appearance-select" style="width: 350px;">
 								  						<option value="01">À vista - Até 10% de desconto - {{(valor.total/100)*90 | currency}} </option>
 								  						<option value="02">2x com desconto de até 5% - {{((valor.total/100)*95)/2 | currency}} </option>
 								  						<option value="03">3x com desconto de até 5% - {{((valor.total/100)*95)/3 | currency}} </option> 
@@ -121,13 +121,13 @@
 						  				<tr>
 						  					<td>Número do cartão:*</td>
 						  					<td>
-						  					<input style="width: 300px" class="form-control" maxlength="16" name="cartao_numero" size="40" tabindex="3" type="text"></td>
+						  					<input style="width: 300px" class="form-control" maxlength="16" name="cartao_numero" size="40" tabindex="3" type="number"></td>
 						  				</tr>
 						  				<tr>
 						  					<td>Validade (mm/aa):</td>
 						  					<td>
 						  						<strong>
-								  					<select style="width: 50px;" name="cartao_mes" size="1" tabindex="4">
+								  					<select id="appearance-select" style="width: 60px; background-position: 30px center;" name="cartao_mes" size="1" tabindex="4">
 									  					<option value=""></option>
 									  					<option value="01">01</option>
 									  					<option value="02">02</option>
@@ -142,7 +142,7 @@
 									  					<option value="11">11</option>			
 									  					<option value="12">12</option>
 													</select>
-								  					<select style="width: 50px;" name="cartao_ano" size="1" tabindex="5">
+								  					<select id="appearance-select" style="width: 60px; background-position: 30px center;" name="cartao_ano" size="1" tabindex="5">
 														<option value="16">16</option>
 								  						<option value="17">17</option>
 									  					<option value="18">18</option>
@@ -165,21 +165,21 @@
 						  				<tr>
 						  					<td>Código de segurança:*</td>
 						  					<td>
-						  						<input style="width: 50px;" class="form-control" maxlength="4" name="cartao_codigoseguranca" size="3" tabindex="6" type="text"> 
+						  						<input style="width: 50px;" class="form-control" maxlength="4" name="cartao_codigoseguranca" size="3" tabindex="6" type="number"> 
 						  						(Últimos 3 dígitos atrás do cartão ou 4 digitos na frente se for American Express)
 						  					</td>
 						  				</tr>
 						  				<tr>
 						  					<td>CPF do proprietário do cartão:*</td>
 						  					<td>
-						  						<input style="width: 300px" class="form-control" name="cartao_cpf" size="40" tabindex="7" type="text">
+						  						<input style="width: 300px" class="form-control" name="cartao_cpf" size="40" tabindex="7" type="number">
 						  					</td>
 						  				</tr>
 						  				<tr>
 						  					<td>Data de nascimento:*</td>
 						  					<td class="product-qty">
 						  						<strong>
-								  					<select style="width: 50px;" name="cartao_dia_nascimento" size="1" tabindex="8">
+								  					<select id="appearance-select" style="width: 60px; background-position: 30px center;" name="cartao_dia_nascimento" size="1" tabindex="8">
 									  					<option value=""></option>
 									  					<option value="01">01</option>
 									  					<option value="02">02</option>
@@ -213,7 +213,7 @@
 									  					<option value="30">30</option>
 									  					<option value="31">31</option>
 								  					</select> 
-								  					<select style="width: 50px;" name="cartao_mes_nascimento" size="1" tabindex="9">
+								  					<select id="appearance-select" style="width: 60px; background-position: 30px center;" name="cartao_mes_nascimento" size="1" tabindex="9">
 									  					<option value=""></option>
 									  					<option value="01">01</option>
 									  					<option value="02">02</option>
@@ -228,7 +228,7 @@
 									  					<option value="11">11</option>
 									  					<option value="12">12</option>
 								  					</select>
-								  					<select style="width: 50px;background-repeat: no-repeat; background-position: right; background-image: url('web_apps/images/site/pagamento/ico-seta.gif'); background-size: 25px;" name="cartao_ano_nascimento" size="1" tabindex="10">
+								  					<select id="appearance-select" style="width: 80px; background-position: 50px center;" name="cartao_ano_nascimento" size="1" tabindex="10">
 								  						<option value=""></option>
 														<option value="2008">2008</option>
 														<option value="2007">2007</option>
