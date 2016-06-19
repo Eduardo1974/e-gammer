@@ -20,7 +20,7 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce', 'Clien
 	$scope.doLogin = function() {
 		if($scope.usuario.cli_email == null ||  $scope.usuario.cli_senha == null){
 			$scope.exibirMensagemErro = true;
-			alert('verifique seu email /ou senha!');
+			alertify.error('Verifique seu email /ou senha!');
 		}else{
 			$scope.exibirMensagemErro = false;
 			var data = {'contexto' : {
@@ -48,7 +48,6 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce', 'Clien
 			    	$scope.usuario = usuario;
 			    	StorageHelper.setItem(CHAVE_STORAGE, usuario);
 			    	$scope.isLogado = true;
-			    	alert(response.contexto.cliente.cli_tipo);
 			    	if(response.contexto.cliente.cli_tipo == "cliente"){
 			    		document.location.href='/e-gammer/';
 			    	}else{
@@ -74,7 +73,8 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce', 'Clien
 				console.log("salvouu "+response);
 	        });
 		}else{
-			alert("Confirmção dos campos invalida!!!")
+			alertify.error("Confirmção dos campos invalida!!!");
+
 		}
 	};
 	

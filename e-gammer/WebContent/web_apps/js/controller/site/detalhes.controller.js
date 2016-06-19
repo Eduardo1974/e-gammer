@@ -27,6 +27,7 @@ eGammerControllers.controller("DetalhesController",  function($scope, serviceAPI
 	
 	function _addCarrinho(game){
 		serviceAPI.addCarrinho(game);
+		
 	}
 	
 });

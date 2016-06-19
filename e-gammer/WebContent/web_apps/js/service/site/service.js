@@ -4,9 +4,9 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 		
 		var urlPath = "http://localhost:8085/e-gammer/Game!";
 		var urlPathPedido = "http://localhost:8085/e-gammer/Pedido!";
-		
+	
 		var games;
-		
+		var pedido;
 		var carrinho;
 		var gameCurrent = {};
 		var valorQtds = [1, 2, 3];
@@ -34,6 +34,8 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 			buscaTodos: _buscaTodos,
 			pedidoSave: _pedidoSave,
 			
+			getPedido: _getPedido,
+			setPedido: _setPedido
 		};
 		
 		function _getQtds(){
@@ -49,10 +51,27 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 				return 0;
 			}
 		}
+		function confirmarCompra(game){
+			var pre = document.createElement('pre');
+			var message = 'Adicionar '+game.gam_titulo+' ao carrinho?';
+			pre.style.maxHeight = "400px";
+			pre.style.overflowWrap = "break-word";
+			pre.style.margin = "-16px -16px -16px 0";
+			pre.style.paddingBottom = "24px";
+			pre.appendChild(document.createTextNode(message));
+			//show as confirm
+			alertify.confirm(pre, function(){
+					carrinho.push(game);
+					StorageHelper.setItem('carrinho', carrinho);
+					document.location.href = '#/carrinho';
+			        alertify.success('Adicionado com sucesso');
+			    },function(){
+			        alertify.error('O jogo não foi adicionado');
+			    }).setting('labels',{'ok':'Aceitar', 'Cancelar': 'Cancelar'});
+		}
+		
 		function _addCarrinho(game){
-			alert(game.gam_titulo + ' qtd:' + game.qtdItem);
-			carrinho.push(game);
-			StorageHelper.setItem('carrinho', carrinho);
+			confirmarCompra(game);
 		}
 		
 		function _updateCarrinho(index, quant){
@@ -60,12 +79,28 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 			StorageHelper.setItem('carrinho', carrinho);
 		}
 		
+		function confirmarRemocao(posicao){
+			var pre = document.createElement('pre');
+			var message = 'Deseja remover este produto?';
+			pre.style.maxHeight = "400px";
+			pre.style.overflowWrap = "break-word";
+			pre.style.margin = "-16px -16px -16px 0";
+			pre.style.paddingBottom = "24px";
+			pre.appendChild(document.createTextNode(message));
+			//show as confirm
+			alertify.confirm(pre, function(){
+					carrinho.splice(posicao, 1);
+					StorageHelper.setItem('carrinho', carrinho);
+					document.location.href = '#/home';
+					document.location.href = '#/carrinho';
+			        alertify.success('Removido com sucesso');
+			    },function(){
+			        alertify.error('Operação cancelada');
+			    }).setting('labels',{'ok':'Aceitar', 'Cancelar': 'Cancelar'});
+		}
+		
 		function _delCarrinho(posicao){
-			var decisao = confirm('deseja remover este produto?');
-			if(decisao){
-				carrinho.splice(posicao, 1);
-				StorageHelper.setItem('carrinho', carrinho);
-			}
+			confirmarRemocao(posicao);
 		}
 		
 		function _getDestaques(){
@@ -75,6 +110,15 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 		
 		function _setDestaques(games) {
 			this.games = games;
+		}
+		
+		function _getPedido(){
+			var pedido = this.pedido;
+			return pedido;
+		}
+		
+		function _setPedido(pedido) {
+			this.pedido = pedido;
 		}
 		
 		function _getGames(){

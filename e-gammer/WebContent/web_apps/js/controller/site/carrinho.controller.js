@@ -6,6 +6,8 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 	$scope.updateCarrinho = _updateCarrinho;
 	$scope.calculaTotal = _precoTotal;
 	$scope.finalizarCompra = _finalizarCompra;
+	$scope.comprar = _comprar;
+	$scope.confirmarCompra = _confirmarCompra;
 	
 	var cliente;
 	$scope.lista = [];
@@ -13,15 +15,8 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 	$scope.listaVazia = false;
 	$scope.valor = {subtotal: 0, desconto: 0, total: 0};
 	$scope.dadosPedido = [];
-	$scope.pedido; /* = {
-			cliente:{
-				cli_codigo: StorageHelper.getItem('usuario').cli_codigo
-			},
-			ped_valor_total: $scope.valor.total,
-			itensPedidos: $scope.dadosPedido
-	};*/
+	$scope.pedido; 
 	
-
 	init();
 	
 	function init(){
@@ -126,22 +121,38 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 	
 	function _finalizarCompra () {
 		if($scope.lista.length == 0){
-			alert(':/ Ops! parece que não há produtos aqui..');
+			alertify.alert(' Ops! parece que não há produtos aqui..');
 			return;
 		}
-		document.location.href = '#pagamento';
 		montaPedido();
-		console.log($scope.dadosPedido);
-		//$scope.pedido.ped_valor_total =  $scope.valor.total;
 		loadPedido(); //carrega os pedidos para finalizar a compra
+		serviceAPI.setPedido($scope.pedido);
+		document.location.href = '#/pagamento';
+	}
+	
+	function _confirmarCompra(){
+		var pre = document.createElement('pre');
+		var message = 'Deseja finalizar sua compra?';
+		pre.style.maxHeight = "400px";
+		pre.style.overflowWrap = "break-word";
+		pre.style.margin = "-16px -16px -16px 0";
+		pre.style.paddingBottom = "24px";
+		pre.appendChild(document.createTextNode(message));
+		//show as confirm
+		alertify.confirm(pre, function(){
+			    $scope.comprar();
+			    alertify.success('Sua compra foi realizada com sucesso');
+		    }).setting('labels',{'ok':'Aceitar', 'Cancelar': 'Cancelar'});
+	}
+	
+	function _comprar() {
+		$scope.pedido = serviceAPI.getPedido();
 		var data = {'contexto' : {
 			'pedido' : $scope.pedido
 		}};
-		console.log(data);/*
+		console.log(data);
 		serviceAPI.pedidoSave(data).then(function (response) {
-			alert("salvou");
-        }); */
+			document.location.href = '#/home';
+        }); 
 	}
-	
-	
 });
