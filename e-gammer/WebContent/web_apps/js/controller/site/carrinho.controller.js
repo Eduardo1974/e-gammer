@@ -142,11 +142,18 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 		alertify.confirm(pre, function(){
 			    $scope.comprar();
 			    alertify.success('Sua compra foi realizada com sucesso');
-		    }).setting('labels',{'ok':'Aceitar', 'Cancelar': 'Cancelar'});
+		    },function(){
+		        alertify.success('Continuar compras');
+		}).setting('labels',{'ok':'Aceitar', 'Cancelar': 'Cancelar'});
 	}
 	
 	function _comprar() {
 		$scope.pedido = serviceAPI.getPedido();
+		if($scope.pedido == null){
+			montaPedido();
+			loadPedido(); //carrega os pedidos para finalizar a compra
+			serviceAPI.setPedido($scope.pedido);
+		}
 		var data = {'contexto' : {
 			'pedido' : $scope.pedido
 		}};
