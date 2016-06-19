@@ -25,6 +25,7 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 			getGames: _getGames,
 			
 			addCarrinho: _addCarrinho,
+			updateCarrinho: _updateCarrinho,
 			delCarrinho: _delCarrinho,
 			
 			getValoresQtds: _getQtds,
@@ -51,6 +52,11 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 		function _addCarrinho(game){
 			alert(game.gam_titulo + ' qtd:' + game.qtdItem);
 			carrinho.push(game);
+			StorageHelper.setItem('carrinho', carrinho);
+		}
+		
+		function _updateCarrinho(index, quant){
+			carrinho[index].qtdItem = quant;
 			StorageHelper.setItem('carrinho', carrinho);
 		}
 		

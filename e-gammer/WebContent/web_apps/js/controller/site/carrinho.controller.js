@@ -3,6 +3,7 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 	
 	
 	$scope.removerItem = _removerItem;
+	$scope.updateCarrinho = _updateCarrinho;
 	$scope.calculaTotal = _precoTotal;
 	$scope.finalizarCompra = _finalizarCompra;
 	
@@ -70,8 +71,6 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 		var carrinho = StorageHelper.getItem('carrinho');
 		if(carrinho != null){
 			$scope.lista = carrinho;
-			montaPedido();
-			console.log($scope.dadosPedido);
 		}else{
 			$scope.lista = [];
 		}
@@ -86,6 +85,13 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 			$scope.listaVazia = false;
 		}
 	}
+	
+	function _updateCarrinho(index, quant){
+		console.log(index + ' : ' + quant);
+		serviceAPI.updateCarrinho(index, quant); //atualizará o carrinho da service e do storage
+		$scope.calculaTotal(); //irá calcular o valor da compra
+	}
+	
 /**	esta função calcula o preço total da lista de produtos	*/	
 	function _precoTotal(){
 		var lista = $scope.lista;
@@ -97,7 +103,7 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 				var qtdItem = lista[key].qtdItem;
 				subtotal = subtotal + (preco * qtdItem);
 				if(subtotal > 200){
-					$scope.valor.desconto = (subtotal/5); //irá receber 10% de desconto acima de 200 reais
+					$scope.valor.desconto = (subtotal/99); //irá receber 1% de desconto acima de 200 reais
 				}else{
 					$scope.valor.desconto = 0;
 				}
@@ -119,6 +125,13 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 	}
 	
 	function _finalizarCompra () {
+		if($scope.lista.length == 0){
+			alert(':/ Ops! parece que não há produtos aqui..');
+			return;
+		}
+		document.location.href = '#pagamento';
+		montaPedido();
+		console.log($scope.dadosPedido);
 		//$scope.pedido.ped_valor_total =  $scope.valor.total;
 		loadPedido(); //carrega os pedidos para finalizar a compra
 		var data = {'contexto' : {
