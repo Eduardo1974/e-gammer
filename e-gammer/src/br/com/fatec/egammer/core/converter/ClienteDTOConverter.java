@@ -26,7 +26,7 @@ public class ClienteDTOConverter implements DTOConverter<Cliente, ClienteDTO>{
 		dto.setCli_nome(entidade.getCli_nome());
 		dto.setCli_senha(entidade.getCli_senha());
 		dto.setCli_tipo(entidade.getCli_tipo());
-		dto.setPedidos(this.pedDAO.buscaTodosPedidosCliente(entidade.getCli_codigo()));
+		//dto.setPedidos(this.pedDAO.buscaTodosPedidosCliente(entidade.getCli_codigo()));
 		return dto;
 	}
 

@@ -16,7 +16,7 @@ public class ProjetoListener implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent arg0) {
 		ContextSpecifier.setContext("br.com.fatec.egammer");
-		ConfigDBMapper.setDefaultConnectionName("hsqldbFIXO");
+		ConfigDBMapper.setDefaultConnectionName("mysql");
 		LiquibaseRunnerService.run();
 	}
 

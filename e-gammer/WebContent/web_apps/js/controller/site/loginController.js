@@ -40,6 +40,7 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce', 'Clien
 			    type: 'POST',
 			    async: false,
 			    success: function (response) {
+			    
 			    	var usuario = response.contexto.cliente
 			    	if (usuario == null) {
 		    			$scope.exibirMensagemErro = true;
